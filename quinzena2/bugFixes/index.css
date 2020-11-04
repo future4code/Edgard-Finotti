@@ -54,6 +54,7 @@ div img {
 .container {
     height: 500px;
     text-align: center;
+    
 }
 
 .icone {
@@ -74,12 +75,31 @@ div img {
     color: white;
 
    padding-top: 50px;
-    
+
+   position: relative;
+     
 }
 
-#container-de-descricao>ol {
+#container-de-descricao > p, ol, h3 {
+    position: absolute;
+    left: 43%;
+    right: 43%;  
+}
+
+
+
+#container-de-descricao > ol {
+    margin-top: 60px;
+    color: white;
     padding: 15px 0px;
 }
+
+#container-de-descricao > h3 {
+   margin-top: 140px;
+   left: 35%;
+   right: 35%;
+}
+
 
 #container-para-comprar {
     background-color: #e7eb90;
@@ -89,6 +109,7 @@ div img {
     color: #c44f00;
     padding: 100px 0;
     font-size: 60px;
+
 }
 
 #container-para-comprar > a {
