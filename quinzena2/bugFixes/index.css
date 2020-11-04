@@ -26,6 +26,17 @@ button:focus {
     color: white;
 }
 
+/* efeito de sobreposição no botão  */
+button:hover {
+    background-color: #fe7e02;
+}
+
+/* efeito de clique no botão  */
+button:active {
+    background-color: black;
+    color: darkgreen;
+}
+
 .container-do-search img { /* alterado tamanho do botão de pesquisa */
     width: 20px;
 }
