@@ -34,9 +34,10 @@ div>p:first-child {
     display: inline;
 }
 
-div img {
+/* Corrigido alteração no fundo da imagem da tabela */
+/* div img {  
     background: black;
-}
+} */
 
 .botao-amarelo {
     background-color: #ffaf43;
@@ -74,13 +75,13 @@ div img {
     background-color: #2274a5;
     color: white;
 
-   padding-top: 50px;
+   padding-top: 50px; /* Corrigir mensagem que está muito proxima */
 
-   position: relative;
+   position: relative; /* alterar posicao do texto  */
      
 }
 
-#container-de-descricao > p, ol, h3 {
+#container-de-descricao > p, ol, h3 { /* alterar posicao do texto  */
     position: absolute;
     left: 43%;
     right: 43%;  
@@ -88,13 +89,13 @@ div img {
 
 
 
-#container-de-descricao > ol {
+#container-de-descricao > ol { /* alterar posicao do texto  */
     margin-top: 60px;
     color: white;
     padding: 15px 0px;
 }
 
-#container-de-descricao > h3 {
+#container-de-descricao > h3 { /* alterar posicao do texto  */
    margin-top: 140px;
    left: 35%;
    right: 35%;
@@ -112,8 +113,8 @@ div img {
 
 }
 
-#container-para-comprar > a {
-    display: block;
+#container-para-comprar > a { /* Corrigir posicionamento do botão comprar */
+    display: block; 
 }
 
 
@@ -133,7 +134,7 @@ div:last-child {
 table {
     width: 60%;
 
-    font-weight: bold; 
+    font-weight: bold;  /* alterado fonte da tabela */
 }
 
 
