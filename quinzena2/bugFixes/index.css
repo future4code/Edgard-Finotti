@@ -132,7 +132,11 @@ div:last-child {
 
 table {
     width: 60%;
+
+    font-weight: bold; 
 }
+
+
 
 td button {
     background-color: #fadf63;
