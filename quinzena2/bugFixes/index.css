@@ -26,21 +26,6 @@ button:focus {
     color: white;
 }
 
-/* efeito de sobreposição no botão  */
-button:hover {
-    background-color: #fe7e02;
-}
-
-/* efeito de clique no botão  */
-button:active {
-    background-color: black;
-    color: darkgreen;
-}
-
-.container-do-search img { /* alterado tamanho do botão de pesquisa */
-    width: 20px;
-}
-
 img {
     width: 100px;
 }
@@ -49,12 +34,6 @@ div>p:first-child {
     display: inline;
 }
 
-
-
-/* Corrigido alteração no fundo da imagem da tabela */
-/* div img {  
-    background: black;
-} */
 
 .botao-amarelo {
     background-color: #ffaf43;
@@ -154,6 +133,9 @@ table {
     font-weight: bold;  /* alterado fonte da tabela */
 }
 
+.container-do-search img { /* alterado tamanho do botão de pesquisa */
+    width: 20px;
+}
 
 
 td button {
@@ -169,6 +151,10 @@ td button {
     height: 100px;
 }
 
+/* ALTERADO BORDA DO CAMPO DE TEXTO DE PESQUISA. */
+.container-do-search input {
+    border-bottom: 1px solid darkgrey;
+}
 
 #back-button {
     background-color: white;
@@ -184,3 +170,19 @@ td button {
 #back-button:hover {
     background-color: #635a3d
 }
+
+/* efeito de sobreposição no botão  */
+button:hover {
+    background-color: #fe7e02;
+}
+
+/* efeito de clique no botão  */
+button:active {
+    background-color: black;
+    color: darkgreen;
+}
+
+/* Corrigido alteração no fundo da imagem da tabela */
+/* div img {  
+    background: black;
+} */
