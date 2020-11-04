@@ -131,6 +131,10 @@ table {
     width: 60%;
 
     font-weight: bold;  /* alterado fonte da tabela */
+
+    /* Alinhar tabela ao centro: */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .container-do-search img { /* alterado tamanho do botão de pesquisa */
