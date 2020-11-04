@@ -102,7 +102,7 @@ div>p:first-child {
     background-color: #e7eb90;
 }
 
-#container-para-comprar>p {
+#container-para-comprar > p {
     color: #c44f00;
     padding: 100px 0;
     font-size: 60px;
@@ -111,6 +111,7 @@ div>p:first-child {
 
 #container-para-comprar > a { /* Corrigir posicionamento do botão comprar */
     display: block; 
+    margin-top: 50px;
 }
 
 
