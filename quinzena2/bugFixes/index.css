@@ -26,6 +26,10 @@ button:focus {
     color: white;
 }
 
+.container-do-search img { /* alterado tamanho do botão de pesquisa */
+    width: 20px;
+}
+
 img {
     width: 100px;
 }
@@ -33,6 +37,8 @@ img {
 div>p:first-child {
     display: inline;
 }
+
+
 
 /* Corrigido alteração no fundo da imagem da tabela */
 /* div img {  
