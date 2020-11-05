@@ -1,0 +1,217 @@
+/** 
+  *
+  *  ESTILOS GERAIS 
+  *
+  **/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2 {
+    background-color: #fe7e02;
+    padding: 10px 5px 10px 5px;
+    color: white;
+    text-align: center;
+}
+
+input {
+    height: 20px;
+    width: 500px;
+}
+
+button:focus {
+    color: white;
+}
+
+img {
+    width: 100px;
+}
+
+div>p:first-child {
+    display: inline;
+}
+
+
+.botao-amarelo {
+    background-color: #ffaf43;
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 20px;
+    color: white;
+}
+
+.botao-amarelo:hover {
+    background-color: #c44f00;
+}
+
+.container {
+    height: 500px;
+    text-align: center;
+    
+}
+
+.icone {
+    height: 15px;
+}
+
+
+/** 
+  *
+  *  ESTILOS HOME 
+  *
+  **/
+
+
+
+#container-de-descricao {
+    background-color: #2274a5;
+    color: white;
+
+   padding-top: 50px; /* Corrigir mensagem que está muito proxima */
+
+   position: relative; /* alterar posicao do texto  */
+     
+}
+
+#container-de-descricao > p, ol, h3 { /* alterar posicao do texto  */
+    position: absolute;
+    left: 43%;
+    right: 43%;  
+}
+
+
+
+#container-de-descricao > ol { /* alterar posicao do texto  */
+    margin-top: 60px;
+    color: white;
+    padding: 15px 0px;
+}
+
+#container-de-descricao > h3 { /* alterar posicao do texto  */
+   margin-top: 140px;
+   left: 35%;
+   right: 35%;
+}
+
+
+#container-para-comprar {
+    background-color: #e7eb90;
+
+}
+
+#container-para-comprar > p {
+    color: #c44f00;
+    /* padding: 100px 0; */
+    font-size: 60px;
+
+    margin-top: 100px;
+
+}
+
+#container-para-comprar > a { /* Corrigir posicionamento do botão comprar */
+    display: block; 
+    margin-top: 50px;
+}
+
+
+
+
+
+/**
+  *
+  *  ESTILOS COMPRAR 
+  *
+  **/
+
+div:nth-child(2),
+div:last-child {
+    text-align: center;
+}
+
+table {
+    width: 60%;
+
+    font-weight: bold;  /* alterado fonte da tabela */
+
+    /* Alinhar tabela ao centro: */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-do-search img { /* alterado tamanho do botão de pesquisa */
+    width: 20px;
+}
+
+/* Efeito na imagem de busca:  */
+.container-do-search img:hover {
+    width: 30px;
+    height: 30px;
+}
+
+
+td button {
+    background-color: #fadf63;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    color: black;
+}
+
+.container-do-search {
+    margin-top: 20px;
+    height: 100px;
+
+    position: relative;
+}
+
+/* ALTERADO BORDA DO CAMPO DE TEXTO DE PESQUISA. */
+.container-do-search input {
+    border-bottom: 1px solid darkgrey;
+
+    font-size: 16px;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#back-button {
+    background-color: white;
+    width: 100px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 10px;
+    color: black;
+
+}
+
+/* CENTRALIZAR BOTÃO: */
+div:nth-of-type(3) {
+    position: absolute;
+    bottom: 120px;
+    right: 45%;
+}
+
+
+#back-button:hover {
+    background-color: #635a3d
+}
+
+/* efeito de sobreposição no botão  */
+button:hover {
+    background-color: #fe7e02;
+}
+
+/* efeito de clique no botão  */
+button:active {
+    background-color: black;
+    color: darkgreen;
+}
+
+/* Corrigido alteração no fundo da imagem da tabela */
+/* div img {  
+    background: black;
+} */
