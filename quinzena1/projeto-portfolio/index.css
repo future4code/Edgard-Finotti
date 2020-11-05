@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    border: 0;
+
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #282A36; /* COR DO FUNDO DA TELA */
+    color: white;        /* COR DAS LETRAS */
+    font-family: 'Nunito', sans-serif; /* FONTE EXTERNA , PARA A PÁGINA TODA */
+}
+
+/* CABEÇALHO: */
+.header {
+    height: 16vh;
+
+    display: flex;
+    align-items: center;
+    
+    border-bottom: 1px solid blue;
+}
+.name h1 {
+    font-size: 40px;
+}
+.name h5 {
+    font-size: 24px;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+.image_logo img {
+    
+    height: 50px;
+    padding: 8px;
+}
+
+.menu {
+    flex: 1; /* para se expandir e ocupar todo o espaço restante; */
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.menu a:hover {
+    border-bottom: 1px solid blue;
+}
+
+/* ==== MAIN ==== */
+
+
+.about-me {
+    text-align: center;
+    padding: 16px;
+
+    width: 800px;
+
+    margin-right: auto;
+    margin-left: auto;
+
+    margin-bottom: 24px;
+
+}
+
+
+.content-about-me img {
+    height: 168px;
+    border-radius: 50%;
+    margin-bottom: 16px;
+
+}
+
+.about-me p {
+    color: gray;
+    font-size: 24px;
+}
+
+/* === FORMAÇÃO:  === */
+.containers {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+
+.container {
+    padding: 16px;
+    width: 300px;
+
+    border: 1px solid black;
+}
+
+.titulo img {
+    height: 56px;
+    margin: 8px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.titulo h4 {
+    font-size: 24px;
+
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+
+.list-content-item {
+    margin: 16px;
+}
+
+.container .titulo {
+    display: flex;
+}
+
+.list-content-item h5 {
+    font-size: 24px;
+}
+
+.list-content-item h6 {
+    font-size: 16px;
+}
+
+/*Botões: */
+.button-concluded {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: green;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 10px;
+    
+}
+
+.button-studying {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: dodgerblue;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+/* ==== RODAPÉ: ==== */
+.footer {
+    margin-top: 24px;
+    text-align: center;
+}
+
+
+.social img {
+    margin-top: 8px;
+    margin-left: 18px;
+    margin-right: 18px;
+    height: 26px;
+}
+
+.social img:hover {
+    cursor: pointer;
+    border: 1px solid green;
+}
+
+
+/* ==== PROJETOS: ==== */
+.projects {
+    margin-top: 24px;
+    /*  text-align: center; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery {
+    margin-top: 16px;
+}
+
+.gallery-project {
+    width: 900px;
+
+    display: flex;
+    justify-content:  space-between;
+}
+
+.gallery-project img {
+    height: 50px;
+}
+
+.project {
+    width: 400px;
+    height: auto;
+
+    border: 1px  solid white;
+}
+
+.project {
+    padding-left: 24px;
+}   
+
+.project h4 {
+    font-size: 24px;
+    
+}
+
+.content-list-tecnology h5 {
+    font-size: 16px;
+}
+.status-project h5 {
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+.status-project {
+    margin-bottom: 16px;
+}
+
+.title-project {
+    margin-top: 8px;
+    margin-right: 8px;
+    
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-project img {
+    height: 32px;
+}
+
+.description-project {
+    margin-bottom: 16px;
+}
+
+.tecnology-project h4 {
+    font-size: 18px;
+}
+
+
+
+.fotos-project img {
+    width: 90%;
+    height: 100%;
+}
+
+/* ==== FORMULÁRIO: ==== */
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    margin: 24px;
+}
+
+.form-title img {
+    margin: 16px;
+    height: 56px;
+}
+
+.form-title {
+    display: flex;
+    align-items: center;
+}
+
+.content-form {
+    padding: 16px;
+
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 16px;
+    
+}
+
+.content-form button {
+    
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.content-form button:hover {
+    color: blue;
+}
+
+.content-form button {
+    cursor: pointer;
+}
