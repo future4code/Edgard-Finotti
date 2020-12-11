@@ -27,25 +27,33 @@
 //     */
 // }
 
-const exerciciosLogicaProgramacao01 = () => {
-   const pokemons = ["Bulbasaur", "Bellsprout","Charmander", "Squirtle", "Vulpix", "Psyduck"]
+// const exerciciosLogicaProgramacao01 = () => {
+//    const pokemons = ["Bulbasaur", "Bellsprout","Charmander", "Squirtle", "Vulpix", "Psyduck"]
 
-    //for(let pokemon of pokemons){
-    //console.log(pokemon)
-    //}
+//     //for(let pokemon of pokemons){
+//     //console.log(pokemon)
+//     //}
 
-    // let contador = 0;
-    // while(contador !== pokemons.length) {
-    //     console.log(pokemons[contador])
-    //     contador++
-    // }
+//     // let contador = 0;
+//     // while(contador !== pokemons.length) {
+//     //     console.log(pokemons[contador])
+//     //     contador++
+//     // }
 
-    pokemons.forEach((pokemon) => {
-        console.log(pokemon)
-    })
+//     pokemons.forEach((pokemon) => {
+//         console.log(pokemon)
+//     })
 
+// }
+
+// exerciciosLogicaProgramacao01()
+
+const exerciciosLogicaProgramacao02 = () => {
+    /*
+    a- false
+    b- false
+    c- true
+    d- true
+    e- true
+    */
 }
-
-exerciciosLogicaProgramacao01()
-
-
