@@ -12,11 +12,18 @@
 //     */
 // }
 
-const ExerciciosInterpretacaoCodigo03 = () => {
+// const ExerciciosInterpretacaoCodigo03 = () => {
+//     /*
+//     Quantidade total de números 14
+//     06
+//     08
+//     */
+// }
+
+const ExerciciosInterpretacaoCodigo04 = () => {
     /*
-    Quantidade total de números 14
-    06
-    08
+    -10
+    1590
     */
 }
 
