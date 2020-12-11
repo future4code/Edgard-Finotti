@@ -58,17 +58,32 @@
 //     */
 // }
 
-const exerciciosLogicaProgramacao03 = () => {
-    const quantidadeDeNumerosPares = 10
-    let i = 0
-    while(i < quantidadeDeNumerosPares) {
-    console.log(i*2)
-    i++
-    }
+// const exerciciosLogicaProgramacao03 = () => {
+//     const quantidadeDeNumerosPares = 10
+//     let i = 0
+//     while(i < quantidadeDeNumerosPares) {
+//     console.log(i*2)
+//     i++
+//     }
 
-    /* não vai funcionar porque o valor de incremento i nao está sendo incrementado; 
-    e o incremento inicia com 0 e vai executa até ele ser menor ou igual quando por começar por 0 tem que ser somente menor.
-    */
+//     /* não vai funcionar porque o valor de incremento i nao está sendo incrementado; 
+//     e o incremento inicia com 0 e vai executa até ele ser menor ou igual quando por começar por 0 tem que ser somente menor.
+//     */
+// }
+
+// exerciciosLogicaProgramacao03()
+
+const exerciciosLogicaProgramacao04 = (a, b, c) => {
+    if( (a === b) && (a === c) && (b === c) ) {
+        return "Equilátero"
+    } else if( (a === b) || (a === c) || (b === c) ) {
+        return "Isósceles"
+    } else if ( (a !== b) && (a !== c) && (b !== c)) {
+        return "Escaleno"
+    }
 }
 
-exerciciosLogicaProgramacao03()
+console.log(exerciciosLogicaProgramacao04(10, 30, 20))
+console.log(exerciciosLogicaProgramacao04(25, 25, 25))
+console.log(exerciciosLogicaProgramacao04(30, 35, 40))
+
