@@ -5,10 +5,18 @@
 //     */
 // }
 
-const ExerciciosInterpretacaoCodigo02 = () => {
+// const ExerciciosInterpretacaoCodigo02 = () => {
+//     /*
+//     165
+//     Alerta "TIPO DE INVESTIMENTO INFORMADO INCORRETO !"
+//     */
+// }
+
+const ExerciciosInterpretacaoCodigo03 = () => {
     /*
-    165
-    Alerta "TIPO DE INVESTIMENTO INFORMADO INCORRETO !"
+    Quantidade total de números 14
+    06
+    08
     */
 }
 
