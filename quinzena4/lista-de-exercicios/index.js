@@ -48,12 +48,27 @@
 
 // exerciciosLogicaProgramacao01()
 
-const exerciciosLogicaProgramacao02 = () => {
-    /*
-    a- false
-    b- false
-    c- true
-    d- true
-    e- true
+// const exerciciosLogicaProgramacao02 = () => {
+//     /*
+//     a- false
+//     b- false
+//     c- true
+//     d- true
+//     e- true
+//     */
+// }
+
+const exerciciosLogicaProgramacao03 = () => {
+    const quantidadeDeNumerosPares = 10
+    let i = 0
+    while(i < quantidadeDeNumerosPares) {
+    console.log(i*2)
+    i++
+    }
+
+    /* não vai funcionar porque o valor de incremento i nao está sendo incrementado; 
+    e o incremento inicia com 0 e vai executa até ele ser menor ou igual quando por começar por 0 tem que ser somente menor.
     */
 }
+
+exerciciosLogicaProgramacao03()
