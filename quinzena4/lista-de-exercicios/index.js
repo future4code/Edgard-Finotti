@@ -5,12 +5,16 @@
 //     */
 // }
 
+/* ============================================================================================ */
+
 // const exerciciosInterpretacaoCodigo02 = () => {
 //     /*
 //     165
 //     Alerta "TIPO DE INVESTIMENTO INFORMADO INCORRETO !"
 //     */
 // }
+
+/* ============================================================================================ */
 
 // const exerciciosInterpretacaoCodigo03 = () => {
 //     /*
@@ -20,12 +24,17 @@
 //     */
 // }
 
+/* ============================================================================================ */
+
+
 // const exerciciosInterpretacaoCodigo04 = () => {
 //     /*
 //     -10
 //     1590
 //     */
 // }
+
+/* ============================================================================================ */
 
 // const exerciciosLogicaProgramacao01 = () => {
 //    const pokemons = ["Bulbasaur", "Bellsprout","Charmander", "Squirtle", "Vulpix", "Psyduck"]
@@ -48,6 +57,8 @@
 
 // exerciciosLogicaProgramacao01()
 
+/* ============================================================================================ */
+
 // const exerciciosLogicaProgramacao02 = () => {
 //     /*
 //     a- false
@@ -57,6 +68,8 @@
 //     e- true
 //     */
 // }
+
+/* ============================================================================================ */
 
 // const exerciciosLogicaProgramacao03 = () => {
 //     const quantidadeDeNumerosPares = 10
@@ -73,17 +86,75 @@
 
 // exerciciosLogicaProgramacao03()
 
-const exerciciosLogicaProgramacao04 = (a, b, c) => {
-    if( (a === b) && (a === c) && (b === c) ) {
-        return "Equilátero"
-    } else if( (a === b) || (a === c) || (b === c) ) {
-        return "Isósceles"
-    } else if ( (a !== b) && (a !== c) && (b !== c)) {
-        return "Escaleno"
+/* ============================================================================================ */
+
+// const exerciciosLogicaProgramacao04 = (a, b, c) => {
+//     if( (a === b) && (a === c) && (b === c) ) {
+//         return "Equilátero"
+//     } else if( (a === b) || (a === c) || (b === c) ) {
+//         return "Isósceles"
+//     } else if ( (a !== b) && (a !== c) && (b !== c)) {
+//         return "Escaleno"
+//     }
+// }
+
+// console.log(exerciciosLogicaProgramacao04(10, 30, 20))
+// console.log(exerciciosLogicaProgramacao04(25, 25, 25))
+// console.log(exerciciosLogicaProgramacao04(30, 35, 40))
+
+/* ============================================================================================ */
+
+const exerciciosLogicaProgramacao05 = (num1, num2) => {
+
+    const maior = verificaMaiorNumero(num1, num2)
+
+    const objDivisão = verificaDivisaoEntreNumeros(num1, num2)
+
+    const diferenca = verificaDiferencaEntreNumeros(num1, num2)
+    
+    exibeResultados(maior, objDivisão, diferenca)
+
+}
+
+const verificaMaiorNumero = (num1, num2) => {
+    
+    if(num1 > num2) {
+        return `O maior é: ${num1}`
+    } else if (num1 < num2) {
+        return `O maior é: ${num2}`
     }
 }
 
-console.log(exerciciosLogicaProgramacao04(10, 30, 20))
-console.log(exerciciosLogicaProgramacao04(25, 25, 25))
-console.log(exerciciosLogicaProgramacao04(30, 35, 40))
+const verificaDivisaoEntreNumeros = (primeiroNumero, segundoNumero) => {
+    
+    let divisivelNum1porNum2 = ""
+    if( (primeiroNumero % segundoNumero) === 0 ){
+        divisivelNum1porNum2 = `${primeiroNumero} é divisível por ${segundoNumero}`
+    } else {
+        divisivelNum1porNum2 = `${primeiroNumero} não é divisível por ${segundoNumero}`
+    }
 
+    let divisivelNum2porNum1 = ""
+    if( (segundoNumero % primeiroNumero) === 0 ){
+        divisivelNum2porNum1 = `${segundoNumero} é divisível por ${primeiroNumero}`
+    } else {
+        divisivelNum2porNum1 = `${segundoNumero} não é divisível por ${primeiroNumero}`
+    }
+
+    return {divisivelNum1porNum2, divisivelNum2porNum1}
+}
+
+const verificaDiferencaEntreNumeros = (num1, num2) => {
+    let diferenca = (num1 - num2) * -1
+    return diferenca
+}   
+
+
+const exibeResultados = (stringMaior, objetoDivisao, valorDiferenca) => {
+    console.log(stringMaior)
+    console.log(objetoDivisao.divisivelNum1porNum2)
+    console.log(objetoDivisao.divisivelNum2porNum1)
+    console.log(`A diferença entre eles é: ${valorDiferenca}`)
+}
+
+exerciciosLogicaProgramacao05(15, 30)
