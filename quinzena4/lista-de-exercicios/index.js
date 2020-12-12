@@ -253,10 +253,43 @@
 
 /* ============================================================================================ */
 
-const exerciciosDeObjetos01 = () => {
-    /*
-    Arrays são uma lista de dados, geralmente lista de coisas do mesmo tipo. Pode ser utilizado para agrupar um conjunto de informações como um array de numeros ou nomes.
-    Objeto são um conjunto de valores e propriedades agrupados. Pode ser utilizado em um conjunto de informações que necessite ter propriedades e valores, como objeto de produtos que tem seu
-    nome, tipo, valor, descrição e quantidade e seus respectivos valores.
-    */
+// const exerciciosDeObjetos01 = () => {
+//     /*
+//     Arrays são uma lista de dados, geralmente lista de coisas do mesmo tipo. Pode ser utilizado para agrupar um conjunto de informações como um array de numeros ou nomes.
+//     Objeto são um conjunto de valores e propriedades agrupados. Pode ser utilizado em um conjunto de informações que necessite ter propriedades e valores, como objeto de produtos que tem seu
+//     nome, tipo, valor, descrição e quantidade e seus respectivos valores.
+//     */
+// }
+
+/* ============================================================================================ */
+
+const exerciciosDeObjetos02 = () => {
+    
+    const objetoRetangulo = criaRetangulo(30, 40)
+
+    exibirResultadosRetangulo(objetoRetangulo)
+    
 }
+
+const criaRetangulo = (lado1, lado2) => {
+    
+    const objeto = {
+        largura: lado1,
+        altura: lado2,
+        perimetro: (2 * (lado1 + lado2)),
+        area: lado1 * lado2
+    }
+
+    return objeto
+}
+const exibirResultadosRetangulo = (objeto) => {
+    console.log(`Largura: ${objeto.largura}`)
+    console.log(`Altura: ${objeto.altura}`)
+    console.log(`Perímetro: ${objeto.perimetro}`)
+    console.log(`Área: ${objeto.area}`)
+}
+
+exerciciosDeObjetos02()
+
+/* ============================================================================================ */
+
