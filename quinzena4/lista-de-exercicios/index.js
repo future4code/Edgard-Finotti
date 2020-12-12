@@ -293,36 +293,60 @@
 
 /* ============================================================================================ */
 
-const exerciciosDeObjetos03 = () => {
+// const exerciciosDeObjetos03 = () => {
     
-    const objetoFilmeFavorito = {
-        titulo: "Cavalo de Guerra",
-        ano: 2011,
-        diretor: "Steven Spielberg",
-        atores: ["Jeremy Irvine", "Peter Mullan", "David Thewlis", "Niels Arestrup", "Tom Hiddleston", "Benedict Cumberbatch" ],
-        atrizes: ["Emily Watson", "Kathleen Kennedy", "Tracey Seaward", "Jina Jay"]
-    }
+//     const objetoFilmeFavorito = {
+//         titulo: "Cavalo de Guerra",
+//         ano: 2011,
+//         diretor: "Steven Spielberg",
+//         atores: ["Jeremy Irvine", "Peter Mullan", "David Thewlis", "Niels Arestrup", "Tom Hiddleston", "Benedict Cumberbatch" ],
+//         atrizes: ["Emily Watson", "Kathleen Kennedy", "Tracey Seaward", "Jina Jay"]
+//     }
     
-    imprimirInformacoesFilme(objetoFilmeFavorito)
+//     imprimirInformacoesFilme(objetoFilmeFavorito)
     
-}
+// }
 
-const imprimirInformacoesFilme = (objetoFilme) => {
-    console.log(`Venha assistir ao filme ${objetoFilme.titulo}, de ${objetoFilme.ano}, dirigido por ${objetoFilme.diretor} e estrelado por ${exibirElenco(objetoFilme)}.`)
-}
+// const imprimirInformacoesFilme = (objetoFilme) => {
+//     console.log(`Venha assistir ao filme ${objetoFilme.titulo}, de ${objetoFilme.ano}, dirigido por ${objetoFilme.diretor} e estrelado por ${exibirElenco(objetoFilme)}.`)
+// }
 
-const exibirElenco= (objetoFilme) => {
-    let elenco = ""
-    objetoFilme.atrizes.forEach((item, index, array) => {
-        elenco += ", " + item
-    }) 
-    objetoFilme.atores.forEach((item, index, array) => {
-        elenco += ", " + item
-    }) 
-    return elenco
-}
+// const exibirElenco= (objetoFilme) => {
+//     let elenco = ""
+//     objetoFilme.atrizes.forEach((item, index, array) => {
+//         elenco += ", " + item
+//     }) 
+//     objetoFilme.atores.forEach((item, index, array) => {
+//         elenco += ", " + item
+//     }) 
+//     return elenco
+// }
 
-exerciciosDeObjetos03()
+// exerciciosDeObjetos03()
 
 /* ============================================================================================ */
 
+let novoObjetoPessoa = {}
+
+const exerciciosDeObjetos04 = () => {
+    
+    const pessoa = {
+        nome: "Highlander Da Silva",
+        idade: 484,
+        email: "highlandersilva@bol.com.br",
+        endereco: " Alameda Tocantins, 75 - Alphaville Industrial, Barueri - SP, 06455-000"
+    }
+
+    anonimizarPessoa(pessoa)
+    console.log(novoObjetoPessoa)
+    console.log(pessoa)
+}
+
+const anonimizarPessoa = (objetoPessoa) => {
+    novoObjetoPessoa = {
+        ...objetoPessoa,
+        nome: "Anônimo"
+    }
+}
+
+exerciciosDeObjetos04()
