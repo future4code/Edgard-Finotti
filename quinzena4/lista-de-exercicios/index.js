@@ -241,13 +241,22 @@
 
 /* ============================================================================================ */
 
+// const exerciciosDeFuncoes02 = () => {
+//     exibirAlerta()
+// }
 
-const exerciciosDeFuncoes02 = () => {
-    exibirAlerta()
+// const exibirAlerta = () => {
+//     alert("Hello Future4")
+// }
+
+// exerciciosDeFuncoes02()
+
+/* ============================================================================================ */
+
+const exerciciosDeObjetos01 = () => {
+    /*
+    Arrays são uma lista de dados, geralmente lista de coisas do mesmo tipo. Pode ser utilizado para agrupar um conjunto de informações como um array de numeros ou nomes.
+    Objeto são um conjunto de valores e propriedades agrupados. Pode ser utilizado em um conjunto de informações que necessite ter propriedades e valores, como objeto de produtos que tem seu
+    nome, tipo, valor, descrição e quantidade e seus respectivos valores.
+    */
 }
-
-const exibirAlerta = () => {
-    alert("Hello Future4")
-}
-
-exerciciosDeFuncoes02()
