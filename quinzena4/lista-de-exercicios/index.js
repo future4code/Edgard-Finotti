@@ -326,27 +326,68 @@
 
 /* ============================================================================================ */
 
-let novoObjetoPessoa = {}
+// let novoObjetoPessoa = {}
 
-const exerciciosDeObjetos04 = () => {
+// const exerciciosDeObjetos04 = () => {
     
-    const pessoa = {
-        nome: "Highlander Da Silva",
-        idade: 484,
-        email: "highlandersilva@bol.com.br",
-        endereco: " Alameda Tocantins, 75 - Alphaville Industrial, Barueri - SP, 06455-000"
-    }
+//     const pessoa = {
+//         nome: "Highlander Da Silva",
+//         idade: 484,
+//         email: "highlandersilva@bol.com.br",
+//         endereco: " Alameda Tocantins, 75 - Alphaville Industrial, Barueri - SP, 06455-000"
+//     }
 
-    anonimizarPessoa(pessoa)
-    console.log(novoObjetoPessoa)
-    console.log(pessoa)
+//     anonimizarPessoa(pessoa)
+//     console.log(novoObjetoPessoa)
+//     console.log(pessoa)
+// }
+
+// const anonimizarPessoa = (objetoPessoa) => {
+//     novoObjetoPessoa = {
+//         ...objetoPessoa,
+//         nome: "Anônimo"
+//     }
+// }
+
+// exerciciosDeObjetos04()
+
+/* ============================================================================================ */
+
+const exerciciosDeFuncoesDeArray01= () => {
+    const array = [
+        { nome: "Pedro", idade: 20 },
+        { nome: "João", idade: 10 },
+        { nome: "Paula", idade: 12 },
+        { nome: "Artur", idade: 89 } 
+    ]
+
+    console.log("Array de Adultos (idade >= 20) = " , retornarAdultos(array))
+    console.log("Array de Crianças (idade < 20) = " , retornarCriancas(array))
 }
 
-const anonimizarPessoa = (objetoPessoa) => {
-    novoObjetoPessoa = {
-        ...objetoPessoa,
-        nome: "Anônimo"
-    }
+const retornarAdultos = (array) => {
+    const arrayAdultos = array.filter((pessoa) => {
+        if(pessoa.idade >= 20) {
+            return true
+        }
+        return false
+    })
+
+    return arrayAdultos
 }
 
-exerciciosDeObjetos04()
+const retornarCriancas = (array) => {
+    const arrayCriancas = array.filter((pessoa) => {
+        if(pessoa.idade < 20) {
+            return true
+        }
+        return false
+    })
+
+    return arrayCriancas
+}
+
+exerciciosDeFuncoesDeArray01()
+
+/* ============================================================================================ */
+
