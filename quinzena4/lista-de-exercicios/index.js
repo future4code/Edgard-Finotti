@@ -162,79 +162,92 @@
 
 /* ============================================================================================ */
 
-const array = [10 , 95, 12 , 50, 3, 100, 30, 93, 40, 90, 1, 5, 7]
+// const array = [10 , 95, 12 , 50, 3, 100, 30, 93, 40, 90, 1, 5, 7]
 
 
-const exerciciosDeFuncoes01 = (arrayDeNumeros) => {
+// const exerciciosDeFuncoes01 = (arrayDeNumeros) => {
   
-    let maiorNumero = verificaMaiorNumero(arrayDeNumeros)
-    let menorNumero = verificaMenorNumero(arrayDeNumeros)
+//     let maiorNumero = verificaMaiorNumero(arrayDeNumeros)
+//     let menorNumero = verificaMenorNumero(arrayDeNumeros)
 
-    let segundoMaiorNumero = verificaSegundoMaiorNumero(maiorNumero, arrayDeNumeros)
-    let segundoMenorNumero = verificaSegundoMenorNumero(menorNumero, arrayDeNumeros)
+//     let segundoMaiorNumero = verificaSegundoMaiorNumero(maiorNumero, arrayDeNumeros)
+//     let segundoMenorNumero = verificaSegundoMenorNumero(menorNumero, arrayDeNumeros)
 
-    imprimirResultado(segundoMaiorNumero, segundoMenorNumero)
+//     imprimirResultado(segundoMaiorNumero, segundoMenorNumero)
 
-}
+// }
 
-const verificaMaiorNumero = (array) => {
-    let maior = -Infinity
+// const verificaMaiorNumero = (array) => {
+//     let maior = -Infinity
     
-    for(let item of array){
+//     for(let item of array){
        
-        if(item > maior ) {
-            maior = item
-        } 
-    }
+//         if(item > maior ) {
+//             maior = item
+//         } 
+//     }
 
-    return maior
-}
+//     return maior
+// }
 
-const verificaMenorNumero = (array) => {
-    let menor = Infinity
+// const verificaMenorNumero = (array) => {
+//     let menor = Infinity
 
-    for(let item of array){
+//     for(let item of array){
        
-        if(item < menor ) {
-            menor = item
-        } 
-    }
+//         if(item < menor ) {
+//             menor = item
+//         } 
+//     }
 
-    return menor
-}
+//     return menor
+// }
 
-const verificaSegundoMaiorNumero = (maiorNumeroArray, array) => {
-    let segundoMaior = 0
-    let maior = -Infinity
+// const verificaSegundoMaiorNumero = (maiorNumeroArray, array) => {
+//     let segundoMaior = 0
+//     let maior = -Infinity
 
-    for(let item of array){
+//     for(let item of array){
        
-        if( (item !== maiorNumeroArray) && (item > maior) ) {
-            segundoMaior = item
-            maior = item
-        } 
-    }
-    return segundoMaior
-}
+//         if( (item !== maiorNumeroArray) && (item > maior) ) {
+//             segundoMaior = item
+//             maior = item
+//         } 
+//     }
+//     return segundoMaior
+// }
 
-const verificaSegundoMenorNumero = (menorNumeroArray, array) => {
-    let segundoMenor = 0
-    let menor = Infinity
+// const verificaSegundoMenorNumero = (menorNumeroArray, array) => {
+//     let segundoMenor = 0
+//     let menor = Infinity
 
-    for(let item of array){
+//     for(let item of array){
        
-        if((item !== menorNumeroArray) && (item < menor) ) {
-            segundoMenor = item
-            menor = item
-        } 
-    }
-    return segundoMenor
+//         if((item !== menorNumeroArray) && (item < menor) ) {
+//             segundoMenor = item
+//             menor = item
+//         } 
+//     }
+//     return segundoMenor
+// }
+
+// const imprimirResultado = (segundoMaior, segundoMenor) => {
+//     console.log(`O segundo maior numero é: ${segundoMaior}` )
+//     console.log(`O segundo menor numero é: ${segundoMenor}` )
+// }
+
+// exerciciosDeFuncoes01(array)
+
+
+/* ============================================================================================ */
+
+
+const exerciciosDeFuncoes02 = () => {
+    exibirAlerta()
 }
 
-const imprimirResultado = (segundoMaior, segundoMenor) => {
-    console.log(`O segundo maior numero é: ${segundoMaior}` )
-    console.log(`O segundo menor numero é: ${segundoMenor}` )
+const exibirAlerta = () => {
+    alert("Hello Future4")
 }
 
-exerciciosDeFuncoes01(array)
-
+exerciciosDeFuncoes02()
