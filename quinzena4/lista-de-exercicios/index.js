@@ -263,33 +263,66 @@
 
 /* ============================================================================================ */
 
-const exerciciosDeObjetos02 = () => {
+// const exerciciosDeObjetos02 = () => {
     
-    const objetoRetangulo = criaRetangulo(30, 40)
+//     const objetoRetangulo = criaRetangulo(30, 40)
 
-    exibirResultadosRetangulo(objetoRetangulo)
+//     exibirResultadosRetangulo(objetoRetangulo)
     
-}
+// }
 
-const criaRetangulo = (lado1, lado2) => {
+// const criaRetangulo = (lado1, lado2) => {
     
-    const objeto = {
-        largura: lado1,
-        altura: lado2,
-        perimetro: (2 * (lado1 + lado2)),
-        area: lado1 * lado2
+//     const objeto = {
+//         largura: lado1,
+//         altura: lado2,
+//         perimetro: (2 * (lado1 + lado2)),
+//         area: lado1 * lado2
+//     }
+
+//     return objeto
+// }
+// const exibirResultadosRetangulo = (objeto) => {
+//     console.log(`Largura: ${objeto.largura}`)
+//     console.log(`Altura: ${objeto.altura}`)
+//     console.log(`Perímetro: ${objeto.perimetro}`)
+//     console.log(`Área: ${objeto.area}`)
+// }
+
+// exerciciosDeObjetos02()
+
+/* ============================================================================================ */
+
+const exerciciosDeObjetos03 = () => {
+    
+    const objetoFilmeFavorito = {
+        titulo: "Cavalo de Guerra",
+        ano: 2011,
+        diretor: "Steven Spielberg",
+        atores: ["Jeremy Irvine", "Peter Mullan", "David Thewlis", "Niels Arestrup", "Tom Hiddleston", "Benedict Cumberbatch" ],
+        atrizes: ["Emily Watson", "Kathleen Kennedy", "Tracey Seaward", "Jina Jay"]
     }
-
-    return objeto
-}
-const exibirResultadosRetangulo = (objeto) => {
-    console.log(`Largura: ${objeto.largura}`)
-    console.log(`Altura: ${objeto.altura}`)
-    console.log(`Perímetro: ${objeto.perimetro}`)
-    console.log(`Área: ${objeto.area}`)
+    
+    imprimirInformacoesFilme(objetoFilmeFavorito)
+    
 }
 
-exerciciosDeObjetos02()
+const imprimirInformacoesFilme = (objetoFilme) => {
+    console.log(`Venha assistir ao filme ${objetoFilme.titulo}, de ${objetoFilme.ano}, dirigido por ${objetoFilme.diretor} e estrelado por ${exibirElenco(objetoFilme)}.`)
+}
+
+const exibirElenco= (objetoFilme) => {
+    let elenco = ""
+    objetoFilme.atrizes.forEach((item, index, array) => {
+        elenco += ", " + item
+    }) 
+    objetoFilme.atores.forEach((item, index, array) => {
+        elenco += ", " + item
+    }) 
+    return elenco
+}
+
+exerciciosDeObjetos03()
 
 /* ============================================================================================ */
 
