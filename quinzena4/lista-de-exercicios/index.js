@@ -104,57 +104,137 @@
 
 /* ============================================================================================ */
 
-const exerciciosLogicaProgramacao05 = (num1, num2) => {
+// const exerciciosLogicaProgramacao05 = (num1, num2) => {
 
-    const maior = verificaMaiorNumero(num1, num2)
+//     const maior = verificaMaiorNumero(num1, num2)
 
-    const objDivisão = verificaDivisaoEntreNumeros(num1, num2)
+//     const objDivisão = verificaDivisaoEntreNumeros(num1, num2)
 
-    const diferenca = verificaDiferencaEntreNumeros(num1, num2)
+//     const diferenca = verificaDiferencaEntreNumeros(num1, num2)
     
-    exibeResultados(maior, objDivisão, diferenca)
+//     exibeResultados(maior, objDivisão, diferenca)
 
-}
+// }
 
-const verificaMaiorNumero = (num1, num2) => {
+// const verificaMaiorNumero = (num1, num2) => {
     
-    if(num1 > num2) {
-        return `O maior é: ${num1}`
-    } else if (num1 < num2) {
-        return `O maior é: ${num2}`
-    }
-}
+//     if(num1 > num2) {
+//         return `O maior é: ${num1}`
+//     } else if (num1 < num2) {
+//         return `O maior é: ${num2}`
+//     }
+// }
 
-const verificaDivisaoEntreNumeros = (primeiroNumero, segundoNumero) => {
+// const verificaDivisaoEntreNumeros = (primeiroNumero, segundoNumero) => {
     
-    let divisivelNum1porNum2 = ""
-    if( (primeiroNumero % segundoNumero) === 0 ){
-        divisivelNum1porNum2 = `${primeiroNumero} é divisível por ${segundoNumero}`
-    } else {
-        divisivelNum1porNum2 = `${primeiroNumero} não é divisível por ${segundoNumero}`
-    }
+//     let divisivelNum1porNum2 = ""
+//     if( (primeiroNumero % segundoNumero) === 0 ){
+//         divisivelNum1porNum2 = `${primeiroNumero} é divisível por ${segundoNumero}`
+//     } else {
+//         divisivelNum1porNum2 = `${primeiroNumero} não é divisível por ${segundoNumero}`
+//     }
 
-    let divisivelNum2porNum1 = ""
-    if( (segundoNumero % primeiroNumero) === 0 ){
-        divisivelNum2porNum1 = `${segundoNumero} é divisível por ${primeiroNumero}`
-    } else {
-        divisivelNum2porNum1 = `${segundoNumero} não é divisível por ${primeiroNumero}`
-    }
+//     let divisivelNum2porNum1 = ""
+//     if( (segundoNumero % primeiroNumero) === 0 ){
+//         divisivelNum2porNum1 = `${segundoNumero} é divisível por ${primeiroNumero}`
+//     } else {
+//         divisivelNum2porNum1 = `${segundoNumero} não é divisível por ${primeiroNumero}`
+//     }
 
-    return {divisivelNum1porNum2, divisivelNum2porNum1}
+//     return {divisivelNum1porNum2, divisivelNum2porNum1}
+// }
+
+// const verificaDiferencaEntreNumeros = (num1, num2) => {
+//     let diferenca = (num1 - num2) * -1
+//     return diferenca
+// }   
+
+
+// const exibeResultados = (stringMaior, objetoDivisao, valorDiferenca) => {
+//     console.log(stringMaior)
+//     console.log(objetoDivisao.divisivelNum1porNum2)
+//     console.log(objetoDivisao.divisivelNum2porNum1)
+//     console.log(`A diferença entre eles é: ${valorDiferenca}`)
+// }
+
+// exerciciosLogicaProgramacao05(15, 30)
+
+
+/* ============================================================================================ */
+
+const array = [10 , 95, 12 , 50, 3, 100, 30, 93, 40, 90, 1, 5, 7]
+
+
+const exerciciosDeFuncoes01 = (arrayDeNumeros) => {
+  
+    let maiorNumero = verificaMaiorNumero(arrayDeNumeros)
+    let menorNumero = verificaMenorNumero(arrayDeNumeros)
+
+    let segundoMaiorNumero = verificaSegundoMaiorNumero(maiorNumero, arrayDeNumeros)
+    let segundoMenorNumero = verificaSegundoMenorNumero(menorNumero, arrayDeNumeros)
+
+    imprimirResultado(segundoMaiorNumero, segundoMenorNumero)
+
 }
 
-const verificaDiferencaEntreNumeros = (num1, num2) => {
-    let diferenca = (num1 - num2) * -1
-    return diferenca
-}   
+const verificaMaiorNumero = (array) => {
+    let maior = -Infinity
+    
+    for(let item of array){
+       
+        if(item > maior ) {
+            maior = item
+        } 
+    }
 
-
-const exibeResultados = (stringMaior, objetoDivisao, valorDiferenca) => {
-    console.log(stringMaior)
-    console.log(objetoDivisao.divisivelNum1porNum2)
-    console.log(objetoDivisao.divisivelNum2porNum1)
-    console.log(`A diferença entre eles é: ${valorDiferenca}`)
+    return maior
 }
 
-exerciciosLogicaProgramacao05(15, 30)
+const verificaMenorNumero = (array) => {
+    let menor = Infinity
+
+    for(let item of array){
+       
+        if(item < menor ) {
+            menor = item
+        } 
+    }
+
+    return menor
+}
+
+const verificaSegundoMaiorNumero = (maiorNumeroArray, array) => {
+    let segundoMaior = 0
+    let maior = -Infinity
+
+    for(let item of array){
+       
+        if( (item !== maiorNumeroArray) && (item > maior) ) {
+            segundoMaior = item
+            maior = item
+        } 
+    }
+    return segundoMaior
+}
+
+const verificaSegundoMenorNumero = (menorNumeroArray, array) => {
+    let segundoMenor = 0
+    let menor = Infinity
+
+    for(let item of array){
+       
+        if((item !== menorNumeroArray) && (item < menor) ) {
+            segundoMenor = item
+            menor = item
+        } 
+    }
+    return segundoMenor
+}
+
+const imprimirResultado = (segundoMaior, segundoMenor) => {
+    console.log(`O segundo maior numero é: ${segundoMaior}` )
+    console.log(`O segundo menor numero é: ${segundoMenor}` )
+}
+
+exerciciosDeFuncoes01(array)
+
