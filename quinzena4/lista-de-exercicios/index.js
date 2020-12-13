@@ -431,45 +431,94 @@
 
 /* ============================================================================================ */
 
-const exerciciosDeFuncoesDeArray03 = () => {
+// const exerciciosDeFuncoesDeArray03 = () => {
     
-    const pessoas = [
-        { nome: "Paula", idade: 12, altura: 1.8},
-        { nome: "João", idade: 20, altura: 1.3},
-        { nome: "Pedro", idade: 15, altura: 1.9},
-        { nome: "Luciano", idade: 22, altura: 1.8},
-        { nome: "Artur", idade: 10, altura: 1.2},
-        { nome: "Soter", idade: 70, altura: 1.9}
+//     const pessoas = [
+//         { nome: "Paula", idade: 12, altura: 1.8},
+//         { nome: "João", idade: 20, altura: 1.3},
+//         { nome: "Pedro", idade: 15, altura: 1.9},
+//         { nome: "Luciano", idade: 22, altura: 1.8},
+//         { nome: "Artur", idade: 10, altura: 1.2},
+//         { nome: "Soter", idade: 70, altura: 1.9}
+//     ]
+
+//     console.log("Pesoas que tem autorização para entrar no brinquedo: ", retornarQuemTemPermissao(pessoas) )
+//     console.log("Pesoas que NÃO tem autorização para entrar no brinquedo: ", retornarQuemNaoTemPermissao(pessoas) )
+
+// }
+
+// const retornarQuemTemPermissao = (arrayDePessoas) => {
+//     const novoArray = arrayDePessoas.filter((pessoa) => {
+//         if( (pessoa.altura >= 1.5) && (pessoa.idade > 14) && (pessoa.idade < 60)){
+//             return true
+//         } 
+//         return false
+//     })
+
+//     return novoArray
+// }
+
+// const retornarQuemNaoTemPermissao = (arrayDePessoas) => {
+//     const novoArray = arrayDePessoas.filter((pessoa) => {
+//         if( (pessoa.altura < 1.5) || (pessoa.idade < 14) || (pessoa.idade > 60)){
+//             return true
+//         } 
+//         return false
+//     })
+
+//     return novoArray
+// }
+
+// exerciciosDeFuncoesDeArray03()
+
+
+/* ============================================================================================ */
+
+let arrayDeEmail = []
+const exerciciosDeFuncoesDeArray04 = () => {
+    
+    const consultas = [
+        { nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
+        { nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
+        { nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
+        { nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
     ]
-
-    console.log("Pesoas que tem autorização para entrar no brinquedo: ", retornarQuemTemPermissao(pessoas) )
-    console.log("Pesoas que NÃO tem autorização para entrar no brinquedo: ", retornarQuemNaoTemPermissao(pessoas) )
+    
+    criarArrayDeEmail(consultas)
+    console.log(arrayDeEmail)
 
 }
 
-const retornarQuemTemPermissao = (arrayDePessoas) => {
-    const novoArray = arrayDePessoas.filter((pessoa) => {
-        if( (pessoa.altura >= 1.5) && (pessoa.idade > 14) && (pessoa.idade < 60)){
-            return true
-        } 
-        return false
+
+const criarArrayDeEmail = (arrayConsultas) => {
+    arrayDeEmail = arrayConsultas.map((paciente) => {
+        if(paciente.cancelada === false) {
+            return `Olá, ${retornarGenero(paciente.genero)} ${ paciente.nome }. Estamos enviando esta mensagem para ${ retornaPalavraMasculinoOuFeminino(paciente.genero) } da sua consulta no dia ${ paciente.dataDaConsulta }. Por favor, acuse o recebimento deste e-mail.`
+        } else {
+            return `Olá, ${ retornarGenero(paciente.genero) } ${ paciente.nome }. Infelizmente, sua consulta marcada para o dia ${ paciente.dataDaConsulta } foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la. `
+        }
     })
 
-    return novoArray
+    
 }
 
-const retornarQuemNaoTemPermissao = (arrayDePessoas) => {
-    const novoArray = arrayDePessoas.filter((pessoa) => {
-        if( (pessoa.altura < 1.5) || (pessoa.idade < 14) || (pessoa.idade > 60)){
-            return true
-        } 
-        return false
-    })
-
-    return novoArray
+const retornarGenero = (genero) => {
+    if(genero === "masculino") {
+        return "Sr."
+    } else {
+        return "Sra."
+    }
 }
 
-exerciciosDeFuncoesDeArray03()
+const retornaPalavraMasculinoOuFeminino = (genero) => {
+    if(genero === "masculino"){
+        return "lembrá-lo"
+    } else {
+        return "lembrá-la"
+    }
+}
+
+exerciciosDeFuncoesDeArray04()
 
 
 /* ============================================================================================ */
