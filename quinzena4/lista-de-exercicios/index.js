@@ -391,43 +391,87 @@
 
 /* ============================================================================================ */
 
-const exerciciosDeFuncoesDeArray02= () => {
-    const array = [1, 2, 3, 4, 5, 6]
+// const exerciciosDeFuncoesDeArray02= () => {
+//     const array = [1, 2, 3, 4, 5, 6]
 
-    console.log("Entradas do array multiplicados por 2: ", retornarMultiplicadoPor2(array))
-    console.log("Entradas do array multiplicados por 3 e como String: ", retornarMultiplicadosPor3String(array))
-    console.log("Retorno com string dizendo se numero é par ou impar: ", retornarDizendoParOuImpar(array))
-}
+//     console.log("Entradas do array multiplicados por 2: ", retornarMultiplicadoPor2(array))
+//     console.log("Entradas do array multiplicados por 3 e como String: ", retornarMultiplicadosPor3String(array))
+//     console.log("Retorno com string dizendo se numero é par ou impar: ", retornarDizendoParOuImpar(array))
+// }
 
-const retornarMultiplicadoPor2 = (arrayDeNumeros) => {
-    const arrayMultiplicadosPor2 = arrayDeNumeros.map((item) => {
-        return item * 2
-    })
+// const retornarMultiplicadoPor2 = (arrayDeNumeros) => {
+//     const arrayMultiplicadosPor2 = arrayDeNumeros.map((item) => {
+//         return item * 2
+//     })
 
-    return arrayMultiplicadosPor2
-}
+//     return arrayMultiplicadosPor2
+// }
 
-const retornarMultiplicadosPor3String = (arrayDeNumeros) => {
-    const arrayMultiplicadosPor3EString = arrayDeNumeros.map((item) => {
-        return `${item * 3}`
-    })
+// const retornarMultiplicadosPor3String = (arrayDeNumeros) => {
+//     const arrayMultiplicadosPor3EString = arrayDeNumeros.map((item) => {
+//         return `${item * 3}`
+//     })
 
-    return arrayMultiplicadosPor3EString
-}
+//     return arrayMultiplicadosPor3EString
+// }
 
-const retornarDizendoParOuImpar = (arrayDeNumeros) => {
-    const arrayDizendoParOuImpar = arrayDeNumeros.map((item) => {
-        if(item % 2 === 0){
-            return `${item} é par`
-        } else {
-            return `${item} é impar`
-        }
-    })
+// const retornarDizendoParOuImpar = (arrayDeNumeros) => {
+//     const arrayDizendoParOuImpar = arrayDeNumeros.map((item) => {
+//         if(item % 2 === 0){
+//             return `${item} é par`
+//         } else {
+//             return `${item} é impar`
+//         }
+//     })
 
-    return arrayDizendoParOuImpar
-}
+//     return arrayDizendoParOuImpar
+// }
 
-exerciciosDeFuncoesDeArray02()
+// exerciciosDeFuncoesDeArray02()
 
 /* ============================================================================================ */
+
+const exerciciosDeFuncoesDeArray03 = () => {
+    
+    const pessoas = [
+        { nome: "Paula", idade: 12, altura: 1.8},
+        { nome: "João", idade: 20, altura: 1.3},
+        { nome: "Pedro", idade: 15, altura: 1.9},
+        { nome: "Luciano", idade: 22, altura: 1.8},
+        { nome: "Artur", idade: 10, altura: 1.2},
+        { nome: "Soter", idade: 70, altura: 1.9}
+    ]
+
+    console.log("Pesoas que tem autorização para entrar no brinquedo: ", retornarQuemTemPermissao(pessoas) )
+    console.log("Pesoas que NÃO tem autorização para entrar no brinquedo: ", retornarQuemNaoTemPermissao(pessoas) )
+
+}
+
+const retornarQuemTemPermissao = (arrayDePessoas) => {
+    const novoArray = arrayDePessoas.filter((pessoa) => {
+        if( (pessoa.altura >= 1.5) && (pessoa.idade > 14) && (pessoa.idade < 60)){
+            return true
+        } 
+        return false
+    })
+
+    return novoArray
+}
+
+const retornarQuemNaoTemPermissao = (arrayDePessoas) => {
+    const novoArray = arrayDePessoas.filter((pessoa) => {
+        if( (pessoa.altura < 1.5) || (pessoa.idade < 14) || (pessoa.idade > 60)){
+            return true
+        } 
+        return false
+    })
+
+    return novoArray
+}
+
+exerciciosDeFuncoesDeArray03()
+
+
+/* ============================================================================================ */
+
 
