@@ -474,53 +474,85 @@
 
 /* ============================================================================================ */
 
-let arrayDeEmail = []
-const exerciciosDeFuncoesDeArray04 = () => {
+// let arrayDeEmail = []
+// const exerciciosDeFuncoesDeArray04 = () => {
     
-    const consultas = [
-        { nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
-        { nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
-        { nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
-        { nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
-    ]
+//     const consultas = [
+//         { nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
+//         { nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
+//         { nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
+//         { nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
+//     ]
     
-    criarArrayDeEmail(consultas)
-    console.log(arrayDeEmail)
+//     criarArrayDeEmail(consultas)
+//     console.log(arrayDeEmail)
 
-}
+// }
 
 
-const criarArrayDeEmail = (arrayConsultas) => {
-    arrayDeEmail = arrayConsultas.map((paciente) => {
-        if(paciente.cancelada === false) {
-            return `Olá, ${retornarGenero(paciente.genero)} ${ paciente.nome }. Estamos enviando esta mensagem para ${ retornaPalavraMasculinoOuFeminino(paciente.genero) } da sua consulta no dia ${ paciente.dataDaConsulta }. Por favor, acuse o recebimento deste e-mail.`
-        } else {
-            return `Olá, ${ retornarGenero(paciente.genero) } ${ paciente.nome }. Infelizmente, sua consulta marcada para o dia ${ paciente.dataDaConsulta } foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la. `
-        }
-    })
+// const criarArrayDeEmail = (arrayConsultas) => {
+//     arrayDeEmail = arrayConsultas.map((paciente) => {
+//         if(paciente.cancelada === false) {
+//             return `Olá, ${retornarGenero(paciente.genero)} ${ paciente.nome }. Estamos enviando esta mensagem para ${ retornaPalavraMasculinoOuFeminino(paciente.genero) } da sua consulta no dia ${ paciente.dataDaConsulta }. Por favor, acuse o recebimento deste e-mail.`
+//         } else {
+//             return `Olá, ${ retornarGenero(paciente.genero) } ${ paciente.nome }. Infelizmente, sua consulta marcada para o dia ${ paciente.dataDaConsulta } foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la. `
+//         }
+//     })
 
     
-}
+// }
 
-const retornarGenero = (genero) => {
-    if(genero === "masculino") {
-        return "Sr."
-    } else {
-        return "Sra."
-    }
-}
+// const retornarGenero = (genero) => {
+//     if(genero === "masculino") {
+//         return "Sr."
+//     } else {
+//         return "Sra."
+//     }
+// }
 
-const retornaPalavraMasculinoOuFeminino = (genero) => {
-    if(genero === "masculino"){
-        return "lembrá-lo"
-    } else {
-        return "lembrá-la"
-    }
-}
+// const retornaPalavraMasculinoOuFeminino = (genero) => {
+//     if(genero === "masculino"){
+//         return "lembrá-lo"
+//     } else {
+//         return "lembrá-la"
+//     }
+// }
 
-exerciciosDeFuncoesDeArray04()
+// exerciciosDeFuncoesDeArray04()
 
 
 /* ============================================================================================ */
 
+const contas = [
+    { cliente: "João", saldoTotal: 1000, compras: [100, 200, 300] },
+    { cliente: "Paula", saldoTotal: 7500, compras: [200, 1040] },
+    { cliente: "Pedro", saldoTotal: 10000, compras: [5140, 6100, 100, 2000] },
+    { cliente: "Luciano", saldoTotal: 100, compras: [100, 200, 1700] },
+    { cliente: "Artur", saldoTotal: 1800, compras: [200, 300] },
+    { cliente: "Soter", saldoTotal: 1200, compras: [] }
+]
 
+const exerciciosDeFuncoesDeArray05 = () => {
+    
+    atualizaSaldoTotal(contas)
+    console.log("Contas atualizadas: ", contas)
+    
+}
+
+const atualizaSaldoTotal = (arrayDeContas) => {
+    arrayDeContas.forEach((conta, index, array) => {
+        conta.saldoTotal = conta.saldoTotal - retornarSomaArrayCompras(conta.compras)
+    }) 
+
+}
+
+const retornarSomaArrayCompras = (arrayCompras) => {
+    let soma = 0
+    arrayCompras.forEach((item) => {
+        soma += item
+    })
+
+    return soma
+}
+
+exerciciosDeFuncoesDeArray05()
