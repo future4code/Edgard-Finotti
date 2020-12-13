@@ -353,41 +353,81 @@
 
 /* ============================================================================================ */
 
-const exerciciosDeFuncoesDeArray01= () => {
-    const array = [
-        { nome: "Pedro", idade: 20 },
-        { nome: "João", idade: 10 },
-        { nome: "Paula", idade: 12 },
-        { nome: "Artur", idade: 89 } 
-    ]
+// const exerciciosDeFuncoesDeArray01= () => {
+//     const array = [
+//         { nome: "Pedro", idade: 20 },
+//         { nome: "João", idade: 10 },
+//         { nome: "Paula", idade: 12 },
+//         { nome: "Artur", idade: 89 } 
+//     ]
 
-    console.log("Array de Adultos (idade >= 20) = " , retornarAdultos(array))
-    console.log("Array de Crianças (idade < 20) = " , retornarCriancas(array))
+//     console.log("Array de Adultos (idade >= 20) = " , retornarAdultos(array))
+//     console.log("Array de Crianças (idade < 20) = " , retornarCriancas(array))
+// }
+
+// const retornarAdultos = (array) => {
+//     const arrayAdultos = array.filter((pessoa) => {
+//         if(pessoa.idade >= 20) {
+//             return true
+//         }
+//         return false
+//     })
+
+//     return arrayAdultos
+// }
+
+// const retornarCriancas = (array) => {
+//     const arrayCriancas = array.filter((pessoa) => {
+//         if(pessoa.idade < 20) {
+//             return true
+//         }
+//         return false
+//     })
+
+//     return arrayCriancas
+// }
+
+// exerciciosDeFuncoesDeArray01()
+
+/* ============================================================================================ */
+
+const exerciciosDeFuncoesDeArray02= () => {
+    const array = [1, 2, 3, 4, 5, 6]
+
+    console.log("Entradas do array multiplicados por 2: ", retornarMultiplicadoPor2(array))
+    console.log("Entradas do array multiplicados por 3 e como String: ", retornarMultiplicadosPor3String(array))
+    console.log("Retorno com string dizendo se numero é par ou impar: ", retornarDizendoParOuImpar(array))
 }
 
-const retornarAdultos = (array) => {
-    const arrayAdultos = array.filter((pessoa) => {
-        if(pessoa.idade >= 20) {
-            return true
-        }
-        return false
+const retornarMultiplicadoPor2 = (arrayDeNumeros) => {
+    const arrayMultiplicadosPor2 = arrayDeNumeros.map((item) => {
+        return item * 2
     })
 
-    return arrayAdultos
+    return arrayMultiplicadosPor2
 }
 
-const retornarCriancas = (array) => {
-    const arrayCriancas = array.filter((pessoa) => {
-        if(pessoa.idade < 20) {
-            return true
-        }
-        return false
+const retornarMultiplicadosPor3String = (arrayDeNumeros) => {
+    const arrayMultiplicadosPor3EString = arrayDeNumeros.map((item) => {
+        return `${item * 3}`
     })
 
-    return arrayCriancas
+    return arrayMultiplicadosPor3EString
 }
 
-exerciciosDeFuncoesDeArray01()
+const retornarDizendoParOuImpar = (arrayDeNumeros) => {
+    const arrayDizendoParOuImpar = arrayDeNumeros.map((item) => {
+        if(item % 2 === 0){
+            return `${item} é par`
+        } else {
+            return `${item} é impar`
+        }
+    })
+
+    return arrayDizendoParOuImpar
+}
+
+exerciciosDeFuncoesDeArray02()
 
 /* ============================================================================================ */
 
