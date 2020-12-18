@@ -24,28 +24,28 @@ function App() {
       <div className="page-section-container">
         <h2>Experiências profissionais</h2>
         <CardGrande 
-          imagem="https://s3.amazonaws.com/future4.com.br/static/headf4-c492117ca2373dc85ca81bf715b3dc2a.png" 
-          nome="Labenu" 
-          descricao="Formando desenvolvedores para o mercado de trabalho!" 
+          imagem="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/1280px-IBM_logo.svg.png" 
+          nome="IBM Brasil – Indústria e Máquinas e Serviços LTDA." 
+          descricao="Responsável em prestar suporte a determinados clientes, resolução de incidentes quando possível em primeiro nível, geração de solicitações e chamados de  problemas para  os responsáveis, com atividades que envolvem tanto o suporte ao hardware como também de a alguns sistemas específicos e básico de administração de usuário." 
         />
         
         <CardGrande 
-          imagem="https://imagens.canaltech.com.br/empresas/4418.400.jpg" 
-          nome="NASA" 
-          descricao="Apontando defeitos." 
+          imagem="https://lh3.googleusercontent.com/proxy/196HOg0F0i3LPBh50rHLR_A8toHe6_Xz9cEqXm1xVRh1LAvn5F10PRNhY763ezueXSLnZdzdbketHfS1J4E8FsFAAxYxjV6m25jXcwr9LeROC8cdaL4-uikCMuSLweoFZkyzCkgK6o4ORoCJ3Q" 
+          nome="Sonda Procwork Infomática LTDA (Terceirizado IBM)." 
+          descricao="Responsável em prestar suporte de primeiro nível, resolução de problemas de hardware e configuração  de  software,  e  geração  de  chamados  referentes  a  aplicações  comerciais como o Sap." 
         />
       </div>
 
       <div className="page-section-container">
         <h2>Minhas redes sociais</h2>
         <ImagemButton 
-          imagem="https://d2v9ipibika81v.cloudfront.net/uploads/sites/261/2017/01/facebook-logo-3.png" 
-          texto="Facebook" 
+          imagem="https://www.flaticon.com/svg/static/icons/svg/145/145807.svg" 
+          texto="Linkedin" 
         />        
 
         <ImagemButton 
-          imagem="https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-1-1.png" 
-          texto="Twitter" 
+          imagem="https://www.flaticon.com/svg/static/icons/svg/733/733553.svg" 
+          texto="GitHub" 
         />        
       </div>
     </div>
