@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 import CardGrande from './components/CardGrande/CardGrande';
 import ImagemButton from './components/ImagemButton/ImagemButton';
-import imagemPerfil  from './imagem/foto.jpg'
+import imagemPerfil  from './imagem/foto.jpg';
+import CardPequeno from './components/CardPequeno/CardPequeno';
 
 function App() {
   return (
@@ -18,6 +19,22 @@ function App() {
         <ImagemButton 
           imagem="https://image.flaticon.com/icons/png/512/117/117472.png" 
           texto="Ver mais"
+        />
+      </div>
+
+      <div className="page-section-container">
+        <CardPequeno 
+          imagem="https://www.flaticon.com/svg/static/icons/svg/1782/1782765.svg"
+          textoTipo="Email: "
+          email="edgardfinotti@yahoo.com.br"
+        />
+      </div>
+
+      <div className="page-section-container">
+        <CardPequeno 
+          imagem="https://www.flaticon.com/premium-icon/icons/svg/1009/1009850.svg"
+          textoTipo="Endereço:"
+          email="Rua Labenu."
         />
       </div>
 
