@@ -1,0 +1,18 @@
+
+.itens-compartilhar {
+    height: 60px;
+    /* width: 100%; */
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.itens-compartilhar button {
+    height: 80%;
+    
+}
+
+.itens-compartilhar button img {
+    height: 90%;
+}

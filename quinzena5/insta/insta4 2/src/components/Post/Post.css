@@ -29,3 +29,17 @@
 .post-photo {
     width: 100%;
 }
+
+.post-container span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: blue;
+    font-weight: bold;
+}
+
+.compartilhar {
+    text-align: center;
+    color: blue;
+}
