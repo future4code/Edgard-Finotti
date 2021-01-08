@@ -1,5 +1,4 @@
 import React  from 'react'
-// import './Post.css'
 
 import {IconeComContador} from '../IconeComContador/IconeComContador'
 
@@ -23,7 +22,7 @@ import {IconeCompartilhar} from '../IconeCompartilhar/IconeCompartilhar'
 import { BotoesCompartilhar } from '../BotoesCompartilhar/BotoesCompartilhar'
 import styled from 'styled-components'
 
-{/* ================ STYLED COMPONENTS: ================ */}
+/* ================ STYLED COMPONENTS: ================ */
 const ContainerPosts = styled.div`
   border: 1px solid gray;
   width: 300px;
@@ -56,6 +55,24 @@ const DivisaoCompartilhar = styled.div`
   text-align: center;
   color: blue;
 `
+
+const ItemsCompartilhar = styled.div`
+  height: 60px;
+  
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`
+
+const InformacaoSalvo = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: blue;
+  font-weight: bold;
+`
+
 
 class Post extends React.Component {
   state = {
@@ -129,10 +146,14 @@ class Post extends React.Component {
       iconeCurtida = iconeCoracaoBranco
     }
 
+    if(this.state.comentado) {
+
+    }
+
     let componentePostSalvo
     if(this.state.salvo) {
       IconeSalvo = iconeSalvarPreto
-      componentePostSalvo = <span>Salvo</span>
+      componentePostSalvo = <InformacaoSalvo>Salvo</InformacaoSalvo>
     } else {
       IconeSalvo = iconeSalvarBranco
     }
@@ -151,7 +172,7 @@ class Post extends React.Component {
           value={this.state.mensagemCompartilhar}
           onChange={this.onChangeInputCompartilhar}
         />
-        <div className={'itens-compartilhar'}>
+        <ItemsCompartilhar>
           <BotoesCompartilhar
             imagem= {iconeFacebook}
             onClickButton={() => this.onClickButton("Facebook", this.state.mensagemCompartilhar)}
@@ -164,7 +185,7 @@ class Post extends React.Component {
             imagem= {iconeTwitter}
             onClickButton={() => this.onClickButton("Twitter", this.state.mensagemCompartilhar)}
           />
-        </div>
+        </ItemsCompartilhar>
       </DivisaoCompartilhar>
     }
 

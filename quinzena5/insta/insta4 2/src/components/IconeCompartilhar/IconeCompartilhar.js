@@ -1,8 +1,19 @@
 import React from 'react'
-import './IconeCompartilhar.css'
+import styled from 'styled-components'
+
+
+/* ================ STYLED COMPONENTS: ================ */
+const DivisaoIconesCompartilhar = styled.div`
+	height: 100%;
+    display: flex;
+    align-items: center;
+`
+const ImagemIconeCompartilhar = styled.img`
+	height: 60%;
+`
 
 export function IconeCompartilhar(props) {
-    return <div className={'icon-compartilhar'}>
-		<img alt={'Icone-Compartilhar'} src={props.icone} onClick={props.onClickIcone}/>
-	</div>
+    return <DivisaoIconesCompartilhar>
+		<ImagemIconeCompartilhar alt={'Icone-Compartilhar'} src={props.icone} onClick={props.onClickIcone}/>
+	</DivisaoIconesCompartilhar>
 }

@@ -1,6 +1,16 @@
 import React from 'react'
-// import './BotoesCompartilhar.css'
+import styled from 'styled-components'
+
+
+/* ================ STYLED COMPONENTS: ================ */
+const BotaoCompartilhar = styled.button`
+    height: 80%;
+`
+const ImagemBotao = styled.img`
+    height: 90%;
+`
 
 export function BotoesCompartilhar(props) {
-    return <button onClick={props.onClickButton}><img alt="Imagem-Compartilhar" src={props.imagem}></img></button>
+    
+    return <BotaoCompartilhar onClick={props.onClickButton}><ImagemBotao alt="Imagem-Compartilhar" src={props.imagem}></ImagemBotao></BotaoCompartilhar>
 }
