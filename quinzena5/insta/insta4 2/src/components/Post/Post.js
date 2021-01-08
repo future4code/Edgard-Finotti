@@ -1,5 +1,5 @@
 import React  from 'react'
-import './Post.css'
+// import './Post.css'
 
 import {IconeComContador} from '../IconeComContador/IconeComContador'
 
@@ -21,7 +21,41 @@ import iconeInstagram from '../../img/InstagramLogo.svg'
 
 import {IconeCompartilhar} from '../IconeCompartilhar/IconeCompartilhar'
 import { BotoesCompartilhar } from '../BotoesCompartilhar/BotoesCompartilhar'
- 
+import styled from 'styled-components'
+
+{/* ================ STYLED COMPONENTS: ================ */}
+const ContainerPosts = styled.div`
+  border: 1px solid gray;
+  width: 300px;
+  margin-bottom: 10px;
+`
+
+const CabecalhoPost = styled.div`
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+`
+const RodapePost = styled.div`
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  justify-content: space-between;
+`
+const FotoUsuario = styled.img`
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+`
+const FotoPost = styled.img`
+  width: 100%;
+`
+const DivisaoCompartilhar = styled.div`
+  text-align: center;
+  color: blue;
+`
 
 class Post extends React.Component {
   state = {
@@ -110,7 +144,7 @@ class Post extends React.Component {
 
     let componenteCompartilhar
     if(this.state.compartilhar) {
-      componenteCompartilhar = <div className="compartilhar">
+      componenteCompartilhar = <DivisaoCompartilhar>
         <h3>Compartilhe:</h3>
         <input 
           placeholder="Mensagem Comentário"
@@ -131,18 +165,18 @@ class Post extends React.Component {
             onClickButton={() => this.onClickButton("Twitter", this.state.mensagemCompartilhar)}
           />
         </div>
-      </div>
+      </DivisaoCompartilhar>
     }
 
-    return <div className={'post-container'}>
-          <div className={'post-header'}>
-            <img className={'user-photo'} src={this.props.fotoUsuario} alt={'Imagem do usuario'}/>
+    return <ContainerPosts>
+          <CabecalhoPost>
+            <FotoUsuario src={this.props.fotoUsuario} alt={'Imagem do usuario'}/>
             <p>{this.props.nomeUsuario}</p>
-          </div>
+          </CabecalhoPost>
 
-          <img className={'post-photo'} src={this.props.fotoPost} alt={'Imagem do post'}/>
-
-          <div className={'post-footer'}>
+          <FotoPost src={this.props.fotoPost} alt={'Imagem do post'}/>
+          
+          <RodapePost>
             <IconeComContador
               icone={iconeCurtida}
               onClickIcone={this.onClickCurtida}
@@ -166,11 +200,11 @@ class Post extends React.Component {
             />
 
             
-          </div>
+          </RodapePost>
           {componenteComentario}
           {componentePostSalvo}
           {componenteCompartilhar}
-        </div>
+        </ContainerPosts>
 
       
   }
