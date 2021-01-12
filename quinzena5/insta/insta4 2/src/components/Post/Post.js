@@ -21,6 +21,7 @@ import iconeInstagram from '../../img/InstagramLogo.svg'
 import {IconeCompartilhar} from '../IconeCompartilhar/IconeCompartilhar'
 import { BotoesCompartilhar } from '../BotoesCompartilhar/BotoesCompartilhar'
 import styled from 'styled-components'
+// import Comentarios from '../Comentarios/Comentarios'
 
 /* ================ STYLED COMPONENTS: ================ */
 const ContainerPosts = styled.div`
@@ -79,10 +80,17 @@ class Post extends React.Component {
     curtido: false,
     numeroCurtidas: 0,
     comentando: false,
+    comentado: false,
+    novoComentario: "",
     numeroComentarios: 0,
     salvo: false,
     compartilhar: false,
-    mensagemCompartilhar: ""
+    mensagemCompartilhar: "",
+    comentarios: [
+      {
+        texto:""
+      }
+    ]
   }
 
   onClickCurtida = () => {
@@ -103,13 +111,6 @@ class Post extends React.Component {
   onClickComentario = () => {
     this.setState({
       comentando: !this.state.comentando
-    })
-  }
-
-  aoEnviarComentario = () => {
-    this.setState({
-      comentando: false,
-      numeroComentarios: this.state.numeroComentarios + 1
     })
   }
 
@@ -136,6 +137,38 @@ class Post extends React.Component {
     })
   }
 
+  retiraValorListaBranco = (lista) => {
+		const novaLista = lista.filter((item) => {
+			
+			if(item.texto !== "") {
+				return true
+			} else {
+				return false
+			}
+		})
+		
+		return novaLista
+	}
+
+  aoEnviarComentario = (texto) => {
+    this.setState({
+      comentando: false,
+      numeroComentarios: this.state.numeroComentarios + 1,
+      comentado: true,
+      // novoComentario: texto
+    })
+
+    const novoComentario = {
+			texto: texto
+		}
+		const novosComentarios = [ novoComentario, ...this.state.comentarios]
+
+		const listaSemValorBranco = this.retiraValorListaBranco(novosComentarios)
+		
+		this.setState({ comentarios: listaSemValorBranco })
+
+  }
+
   render() {
     let iconeCurtida
     let IconeSalvo
@@ -146,9 +179,11 @@ class Post extends React.Component {
       iconeCurtida = iconeCoracaoBranco
     }
 
-    if(this.state.comentado) {
-
-    }
+    const listadeComentarios = this.state.comentarios.map((comentario) => {
+      return (
+          <p key={comentario.texto}>{comentario.texto}</p>
+      )
+    })
 
     let componentePostSalvo
     if(this.state.salvo) {
@@ -160,7 +195,17 @@ class Post extends React.Component {
     
     let componenteComentario
     if(this.state.comentando) {
-      componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario}/>
+      componenteComentario = <SecaoComentario 
+        aoEnviar={this.aoEnviarComentario}
+      />
+    }
+
+    let componenteComentarios
+    if(this.state.comentado) {
+      componenteComentarios = <div>
+        <h3>Comentários:</h3>
+        {listadeComentarios}
+      </div>
     }
 
     let componenteCompartilhar
@@ -225,6 +270,7 @@ class Post extends React.Component {
           {componenteComentario}
           {componentePostSalvo}
           {componenteCompartilhar}
+          {componenteComentarios}
         </ContainerPosts>
 
       

@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import styled from 'styled-components'
 
 
+
 /* ================ STYLED COMPONENTS: ================ */
 const ContainerComentario = styled.div`
 	display: flex;
@@ -14,25 +15,43 @@ const CampoComentario = styled.input`
     margin-right: 5px;
 `
 
+
 export class SecaoComentario extends Component {
 	state = {
-		textoComentario: ""
+		valorInputComentario: "",
+		comentado: false
 	}
 
 	onChangeComentario = (event) => {
 		this.setState({
-			textoComentario: event.target.value
+			valorInputComentario: event.target.value
 		})
+		
 	}
 
-	render() {
-		return <ContainerComentario>
-			<CampoComentario
-				placeholder={'Comentário'}
-				value={this.state.textoComentario}
-				onChange={this.onChangeComentario}
-			/>
-			<button onClick={this.props.aoEnviar}>Enviar</button>
-		</ContainerComentario>
+
+	enviaComentario = () => {
+		this.props.aoEnviar(this.state.valorInputComentario)
 	}
+	
+
+	render() {
+
+		return (
+			<div>
+				<ContainerComentario>
+					<CampoComentario
+						placeholder={'Comentário'}
+						value={this.state.valorInputComentario}
+						onChange={this.onChangeComentario}
+					/>
+					<button onClick={this.enviaComentario}>Enviar</button>	
+				</ContainerComentario>
+				
+			</div>
+			
+		) 
+
+	}
+
 }
