@@ -1,5 +1,6 @@
 import React  from 'react'
 import styled from 'styled-components'
+import InformacoesEnsinoSuperior from '../InformacoesEnsinoSuperior/InformacoesEnsinoSuperior'
 
 const ContainerDadosGerais = styled.div`
     display: flex;
@@ -31,7 +32,8 @@ class DadosGerais extends React.Component {
         nome: "",
         idade: "",
         email: "",
-        escolaridade: ""
+        escolaridade: 'superiorIncompleto'
+
     }
 
     onChangeNome = (event) => {
@@ -58,11 +60,9 @@ class DadosGerais extends React.Component {
         })
     }
 
-    enviaEtapa1 = () => {
-        console.log(this.state)
-        console.log()
+    onChangeSelect = (event) => {
+        this.setState({escolaridade: event.target.value})
     }
-
     
 
     render() {
@@ -89,8 +89,8 @@ class DadosGerais extends React.Component {
             />
 
             <Pergunta>{this.props.perguntaEscolaridade}</Pergunta>
-            <SelectEscolaridade>
-                <option value="medioIncompleto" selected>Ensino Médio Incompleto</option>
+            <SelectEscolaridade value={this.state.select} onChange={this.onChangeSelect}>
+                <option value="medioIncompleto" >Ensino Médio Incompleto</option>
                 <option value="medioCompleto">Ensino Médio Completo</option>
                 <option value="superiorIncompleto">Ensino Superior Incompleto</option>
                 <option value="superiorCompleto">Ensino Superior Completo</option>
@@ -99,7 +99,7 @@ class DadosGerais extends React.Component {
             {/* <ComponenteSelecao/> */}
 
 
-            <ButtonProximaEtapa onClick={this.enviaEtapa1}>Próxima Etapa</ButtonProximaEtapa>
+            <ButtonProximaEtapa onClick={this.props.onClick}>Próxima Etapa</ButtonProximaEtapa>
         </ContainerDadosGerais>
         
     }
