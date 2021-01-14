@@ -1,4 +1,10 @@
 import React  from 'react'
+import Select from 'react-select'
+import styled from 'styled-components'
+
+const ContainerDadosGerais = styled.div`
+
+`
 
 class DadosGerais extends React.Component {
 
@@ -35,11 +41,26 @@ class DadosGerais extends React.Component {
 
     enviaEtapa1 = () => {
         console.log(this.state)
+        console.log()
     }
+
+    
 
     render() {
 
-        return <div>
+        // const opcoes = [
+        //     {value:'medioIncompleto', label:'Ensino Médio Incompleto'},
+        //     {value:'medioCompleto', label:'Ensino Médio Completo'},
+        //     {value:'superiorIncompleto', label:'Ensino Superior Incompleto'},
+        //     {value:'superiorCompleto', label:'Ensino Superior Completo'}
+        // ]
+
+        // const ComponenteSelecao = () => (
+        //     <Select options={opcoes} />
+        // )
+        
+
+        return <ContainerDadosGerais>
             <h2>{this.props.titulo}</h2>
 
             <p>{this.props.perguntaNome}</p>
@@ -68,9 +89,11 @@ class DadosGerais extends React.Component {
                 <option value="superiorCompleto">Ensino Superior Completo</option>
 
             </select>
+            {/* <ComponenteSelecao/> */}
+
 
             <button onClick={this.enviaEtapa1}>Próxima Etapa</button>
-        </div>
+        </ContainerDadosGerais>
         
     }
 }
