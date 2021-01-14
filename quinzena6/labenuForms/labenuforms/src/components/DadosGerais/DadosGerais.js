@@ -1,9 +1,28 @@
 import React  from 'react'
-import Select from 'react-select'
 import styled from 'styled-components'
 
 const ContainerDadosGerais = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+const Titulo = styled.h2`
+    
+`
 
+const Pergunta = styled.p`
+
+`
+
+const InputPergunta = styled.input`
+    
+`
+const SelectEscolaridade = styled.select`
+
+`
+
+const ButtonProximaEtapa = styled.button`
+    margin-top: 40px;
 `
 
 class DadosGerais extends React.Component {
@@ -48,51 +67,39 @@ class DadosGerais extends React.Component {
 
     render() {
 
-        // const opcoes = [
-        //     {value:'medioIncompleto', label:'Ensino Médio Incompleto'},
-        //     {value:'medioCompleto', label:'Ensino Médio Completo'},
-        //     {value:'superiorIncompleto', label:'Ensino Superior Incompleto'},
-        //     {value:'superiorCompleto', label:'Ensino Superior Completo'}
-        // ]
-
-        // const ComponenteSelecao = () => (
-        //     <Select options={opcoes} />
-        // )
-        
-
         return <ContainerDadosGerais>
-            <h2>{this.props.titulo}</h2>
+            <Titulo>{this.props.titulo}</Titulo>
 
-            <p>{this.props.perguntaNome}</p>
-            <input 
+            <Pergunta>{this.props.perguntaNome}</Pergunta>
+            <InputPergunta 
                 value={this.state.nome}
                 onChange={this.onChangeNome}
             />
 
-            <p>{this.props.perguntaIdade}</p>
-            <input 
+            <Pergunta>{this.props.perguntaIdade}</Pergunta>
+            <InputPergunta 
                 value={this.state.idade}
                 onChange={this.onChangeIdade}
             />
 
-            <p>{this.props.perguntaEmail}</p>
-            <input 
+            <Pergunta>{this.props.perguntaEmail}</Pergunta>
+            <InputPergunta
                 value={this.state.email}
                 onChange={this.onChangeEmail}
             />
 
-            <p>{this.props.perguntaEscolaridade}</p>
-            <select>
+            <Pergunta>{this.props.perguntaEscolaridade}</Pergunta>
+            <SelectEscolaridade>
                 <option value="medioIncompleto" selected>Ensino Médio Incompleto</option>
                 <option value="medioCompleto">Ensino Médio Completo</option>
                 <option value="superiorIncompleto">Ensino Superior Incompleto</option>
                 <option value="superiorCompleto">Ensino Superior Completo</option>
 
-            </select>
+            </SelectEscolaridade>
             {/* <ComponenteSelecao/> */}
 
 
-            <button onClick={this.enviaEtapa1}>Próxima Etapa</button>
+            <ButtonProximaEtapa onClick={this.enviaEtapa1}>Próxima Etapa</ButtonProximaEtapa>
         </ContainerDadosGerais>
         
     }
