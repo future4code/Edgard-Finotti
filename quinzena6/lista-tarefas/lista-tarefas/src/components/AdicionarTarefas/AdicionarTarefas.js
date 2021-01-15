@@ -27,11 +27,11 @@ export class AdicionarTarefas extends React.Component {
     }
     
     enviarTarefa = () => {
-
+        this.props.criarTarefa(this.state.tarefa)
     }
 
     render() {
-
+        console.log(this.state)
         return <DivisaoAdicionarTarefas>
             <CampoTarefa 
                 value={this.state.tarefa}

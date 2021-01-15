@@ -5,19 +5,30 @@ import { AdicionarTarefas } from '../AdicionarTarefas/AdicionarTarefas'
 export class ListadeTarefas extends React.Component {
     state = {
         tarefas: [
-            {
-                
-            }
+           
         ],
 
+        // posicaoArray: 0,
         novaTarefa: ""
     }
 
-    render() {
+    criarTarefa = (novaTarefa) => {
+        const novoObjetoTarefa = {
+            texto: novaTarefa
+        }
 
+        const novasTarefas = [novoObjetoTarefa, ...this.state.tarefas]
+
+       this.setState({ tarefas: novasTarefas })
+    }
+
+    render() {
+        console.log(this.state)
         return <div>
             <h2>Lista de Tarefas</h2>
-            <AdicionarTarefas />
+            <AdicionarTarefas 
+                criarTarefa={this.criarTarefa}
+            />
         </div>
 
     }
