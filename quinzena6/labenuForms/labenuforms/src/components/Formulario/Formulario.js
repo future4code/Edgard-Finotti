@@ -13,7 +13,10 @@ class Formulario extends React.Component {
         escolaridade: "",
 
         curso: "",
-        unidade:""
+        unidade:"",
+
+        motivoNaoFezCurso: "",
+        cursoComplementar: ""
     }
 
     aoEnviarEtapa01 = (objeto) => {
@@ -32,6 +35,13 @@ class Formulario extends React.Component {
             unidade: objeto.unidade    
         })
         
+    }
+
+    aoEnviarEtapa03 = (objeto) => {
+        this.setState({
+            motivoNaoFezCurso: objeto.motivoNãoTerminou,
+            cursoComplementar: objeto.cursoComplementar    
+        })
     }
 
     render() {
@@ -53,12 +63,12 @@ class Formulario extends React.Component {
                 perguntaUnidade= {"6. Qual a unidade de ensino?"}
                 aoEnviar={this.aoEnviarEtapa02}
             /> 
-        }else if(this.state.etapaFormulario === 3) {
+        }else if(this.state.escolaridade === "medioIncompleto" || this.state.escolaridade === "medioCompleto" ) {
             componenteFormulario = <Etapa03 
                 titulo={"ETAPA 3 - INFORMAÇÕES GERAIS DE ENSINO"}
                 perguntaMotivoNãoTerminou={"5. Por que você não iniciou um curso de graduação?"}
                 perguntaCursoComplementar={"6. Você fez algum curso complementar?"}
-                onClick={this.aoEnviar}
+                aoEnviar={this.aoEnviarEtapa03}
             />
         }else if(this.state.etapaFormulario === 4) {
             componenteFormulario = <Etapa04

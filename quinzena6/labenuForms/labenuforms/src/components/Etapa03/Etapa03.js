@@ -42,6 +42,10 @@ class Etapa03 extends React.Component {
         this.setState({cursoComplementar: event.target.value})
     }
 
+    enviaDados = () => {
+        this.props.aoEnviar(this.state)
+    }
+
     render()  {
         return <DivisaoEtapa3>
             <Titulo>{this.props.titulo}</Titulo>
@@ -59,7 +63,7 @@ class Etapa03 extends React.Component {
                 <option value="ingles">Curso de Inglês</option>
             </SelectCursoComplementar>
 
-            <ButtonProximaEtapa onClick={this.props.onClick}>Próxima Etapa</ButtonProximaEtapa> 
+            <ButtonProximaEtapa onClick={this.enviaDados}>Próxima Etapa</ButtonProximaEtapa> 
         </DivisaoEtapa3>
     }
 
