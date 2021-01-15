@@ -16,7 +16,9 @@ class Formulario extends React.Component {
         unidade:"",
 
         motivoNaoFezCurso: "",
-        cursoComplementar: ""
+        cursoComplementar: "",
+
+        fim: false
     }
 
     aoEnviarEtapa01 = (objeto) => {
@@ -32,7 +34,8 @@ class Formulario extends React.Component {
     aoEnviarEtapa02 = (objeto) => {
         this.setState({
             curso: objeto.curso,
-            unidade: objeto.unidade    
+            unidade: objeto.unidade,
+            fim: true    
         })
         
     }
@@ -40,7 +43,8 @@ class Formulario extends React.Component {
     aoEnviarEtapa03 = (objeto) => {
         this.setState({
             motivoNaoFezCurso: objeto.motivoNãoTerminou,
-            cursoComplementar: objeto.cursoComplementar    
+            cursoComplementar: objeto.cursoComplementar,
+            fim: true  
         })
     }
 
@@ -70,7 +74,9 @@ class Formulario extends React.Component {
                 perguntaCursoComplementar={"6. Você fez algum curso complementar?"}
                 aoEnviar={this.aoEnviarEtapa03}
             />
-        }else if(this.state.etapaFormulario === 4) {
+        }
+        
+        if(this.state.fim) {
             componenteFormulario = <Etapa04
                 titulo={"O FORMULÁRIO ACABOU"}
                 textoAgradecimento={"Muito obrigado por participar! Entraremos em contato!"}
