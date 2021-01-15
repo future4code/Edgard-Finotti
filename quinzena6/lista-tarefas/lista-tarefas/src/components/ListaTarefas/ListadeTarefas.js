@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { AdicionarTarefas } from '../AdicionarTarefas/AdicionarTarefas'
 
-export class ListadeTarefas extends Component {
+export class ListadeTarefas extends React.Component {
     state = {
         tarefas: [
             {

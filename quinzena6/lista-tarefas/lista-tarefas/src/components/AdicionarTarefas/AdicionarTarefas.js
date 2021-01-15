@@ -1,7 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export class AdicionarTarefas extends Component {
+const DivisaoAdicionarTarefas = styled.div`
+
+`
+
+const CampoTarefa = styled.input`
+
+`
+
+const BotaoAdicionarTarefa = styled.button`
+    margin-left: 16px;
+`
+
+export class AdicionarTarefas extends React.Component {
 
     state = {
         tarefa: ""
@@ -15,19 +27,19 @@ export class AdicionarTarefas extends Component {
     }
     
     enviarTarefa = () => {
-        
+
     }
 
     render() {
 
-        return <div>
-            <input 
+        return <DivisaoAdicionarTarefas>
+            <CampoTarefa 
                 value={this.state.tarefa}
                 onChange={this.onChangeTarefa}
             />
 
-            <button onClick={this.enviarTarefa}>Adicionar</button>
-        </div>
+            <BotaoAdicionarTarefa onClick={this.enviarTarefa}>Adicionar</BotaoAdicionarTarefa>
+        </DivisaoAdicionarTarefas>
 
     }
 
