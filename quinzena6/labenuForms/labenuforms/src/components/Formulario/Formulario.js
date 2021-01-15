@@ -7,15 +7,26 @@ import Etapa04 from '../Etapa04/Etapa04'
 class Formulario extends React.Component {
 
     state = {
-        etapaFormulario: 1
+        etapaFormulario: 1,
+        nome: "",
+        idade: "",
+        email: "",
+        escolaridade: 'superiorIncompleto'
     }
 
-    aoEnviar = () => {
-        this.setState({etapaFormulario: Number(this.state.etapaFormulario) + 1})
+    aoEnviarEtapa01 = (objeto) => {
+        
+        this.setState({
+            etapaFormulario: Number(this.state.etapaFormulario) + 1,
+            nome: objeto.nome,
+            idade: objeto.idade,
+            email: objeto.email,
+            escolaridade: objeto.escolaridade
+        })
     }
 
     render() {
-
+        console.log(this.state)
         let componenteFormulario
         if(this.state.etapaFormulario === 1) {
             componenteFormulario = <Etapa01 
@@ -24,7 +35,7 @@ class Formulario extends React.Component {
                 perguntaIdade= {"2. Qual a sua idade ?" }
                 perguntaEmail= {"3. Qual o seu email ?" } 
                 perguntaEscolaridade= {"4. Qual a sua escolaridade ?"}  
-                onClick={this.aoEnviar}
+                aoEnviar={this.aoEnviarEtapa01}
             />
         } else if(this.state.etapaFormulario === 2) {
             componenteFormulario = <Etapa02

@@ -32,7 +32,7 @@ class Etapa01 extends React.Component {
         nome: "",
         idade: "",
         email: "",
-        escolaridade: 'superiorIncompleto'
+        escolaridade: "medioCompleto"
 
     }
 
@@ -64,6 +64,9 @@ class Etapa01 extends React.Component {
         this.setState({escolaridade: event.target.value})
     }
     
+    enviaDados = () => {
+        this.props.aoEnviar(this.state)
+    }
 
     render() {
 
@@ -99,7 +102,7 @@ class Etapa01 extends React.Component {
             {/* <ComponenteSelecao/> */}
 
 
-            <ButtonProximaEtapa onClick={this.props.onClick}>Próxima Etapa</ButtonProximaEtapa>
+            <ButtonProximaEtapa onClick={this.enviaDados}>Próxima Etapa</ButtonProximaEtapa>
         </ContainerDadosGerais>
         
     }
