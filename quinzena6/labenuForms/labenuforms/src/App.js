@@ -1,6 +1,5 @@
-import logo from './logo.svg';
+
 import './App.css';
-import DadosGerais from './components/DadosGerais/DadosGerais';
 import Formulario from './components/Formulario/Formulario';
 
 

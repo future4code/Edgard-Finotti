@@ -1,6 +1,6 @@
 import React  from 'react'
 import styled from 'styled-components'
-import InformacoesEnsinoSuperior from '../InformacoesEnsinoSuperior/InformacoesEnsinoSuperior'
+import Etapa02 from '../Etapa02/Etapa02'
 
 const ContainerDadosGerais = styled.div`
     display: flex;
@@ -26,7 +26,7 @@ const ButtonProximaEtapa = styled.button`
     margin-top: 40px;
 `
 
-class DadosGerais extends React.Component {
+class Etapa01 extends React.Component {
 
     state = {
         nome: "",
@@ -89,7 +89,7 @@ class DadosGerais extends React.Component {
             />
 
             <Pergunta>{this.props.perguntaEscolaridade}</Pergunta>
-            <SelectEscolaridade value={this.state.select} onChange={this.onChangeSelect}>
+            <SelectEscolaridade value={this.state.escolaridade} onChange={this.onChangeSelect}>
                 <option value="medioIncompleto" >Ensino Médio Incompleto</option>
                 <option value="medioCompleto">Ensino Médio Completo</option>
                 <option value="superiorIncompleto">Ensino Superior Incompleto</option>
@@ -105,4 +105,4 @@ class DadosGerais extends React.Component {
     }
 }
 
-export default DadosGerais
+export default Etapa01
