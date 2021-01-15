@@ -1,20 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 import { AdicionarTarefas } from '../AdicionarTarefas/AdicionarTarefas'
+import { Filtros } from '../Filtros/Filtros'
 
 export class ListadeTarefas extends React.Component {
     state = {
-        tarefas: [
-           
-        ],
-
-        // posicaoArray: 0,
-        novaTarefa: ""
+        tarefas: [ ]
     }
 
     criarTarefa = (novaTarefa) => {
         const novoObjetoTarefa = {
-            texto: novaTarefa
+            texto: novaTarefa,
+            completo: false,
+            id: Date.now()
         }
 
         const novasTarefas = [novoObjetoTarefa, ...this.state.tarefas]
@@ -28,6 +26,9 @@ export class ListadeTarefas extends React.Component {
             <h2>Lista de Tarefas</h2>
             <AdicionarTarefas 
                 criarTarefa={this.criarTarefa}
+            />
+            <Filtros
+                tarefas={this.state.tarefas}
             />
         </div>
 
