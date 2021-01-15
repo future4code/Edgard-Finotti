@@ -41,7 +41,10 @@ class Etapa02 extends React.Component {
         })
     }
 
-
+    enviaDados = () => {
+        this.props.aoEnviar(this.state)
+    }
+    
     render () {
         return <DivisaoEtapa2>
             <Titulo>{this.props.titulo}</Titulo>
@@ -58,7 +61,7 @@ class Etapa02 extends React.Component {
                 onChange={this.onChangeUnidade}
             />
 
-            <BotaoProximaEtapa onClick={this.props.onClick}>Próxima Etapa</BotaoProximaEtapa>
+            <BotaoProximaEtapa onClick={this.enviaDados}>Próxima Etapa</BotaoProximaEtapa>
         </DivisaoEtapa2>
     }
 }
