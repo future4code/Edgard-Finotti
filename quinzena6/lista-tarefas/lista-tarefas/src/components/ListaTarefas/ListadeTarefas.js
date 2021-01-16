@@ -18,6 +18,7 @@ export class ListadeTarefas extends React.Component {
         const novasTarefas = [novoObjetoTarefa, ...this.state.tarefas]
 
        this.setState({ tarefas: novasTarefas })
+
     }
 
     alterarTarefa = (tarefaId) => {

@@ -2,22 +2,31 @@ import React from 'react'
 import styled from 'styled-components'
 
 const DivisaoFiltros = styled.div`
-   
+   width:600px;
+   margin-left: auto;
+   margin-left: auto;
+
+`
+
+const DivisaoFiltrosOpcoes = styled.div`
+    display: flex;
+    align-items: center;
 `
 
 const ParagrafoTextoFiltro = styled.p`
      display: inline-block;
      margin-right: 16px;
 
-     
 `
 
 const SelectFiltros = styled.select`
   
 `
 
-const ParagrafoFiltroTarefa = styled.p`
+const ParagrafoFiltroTarefa = styled.li`
     text-decoration: ${props => props.traco ? "line-through" : "none"   };
+    text-align:left;
+    
 `
 
 export class Filtros extends React.Component {
@@ -84,12 +93,15 @@ export class Filtros extends React.Component {
         }
 
         return <DivisaoFiltros>
-           <ParagrafoTextoFiltro>Filtro:</ParagrafoTextoFiltro>
-           <SelectFiltros value={this.state.valorSelect} onChange={this.onChangeSelect} >
-                <option value="nenhum">Nenhum</option>
-                <option value="pendente">Pendentes</option>
-                <option value="completa">Completas</option>
-           </SelectFiltros>
+            <DivisaoFiltrosOpcoes>
+                <ParagrafoTextoFiltro>Filtro:</ParagrafoTextoFiltro>
+                <SelectFiltros value={this.state.valorSelect} onChange={this.onChangeSelect} >
+                    <option value="nenhum">Nenhum</option>
+                    <option value="pendente">Pendentes</option>
+                    <option value="completa">Completas</option>
+                </SelectFiltros>
+            </DivisaoFiltrosOpcoes>
+           
             {componenteFiltro}
             
             
