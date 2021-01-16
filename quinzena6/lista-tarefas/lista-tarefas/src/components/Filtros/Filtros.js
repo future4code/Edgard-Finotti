@@ -8,10 +8,16 @@ const DivisaoFiltros = styled.div`
 const ParagrafoTextoFiltro = styled.p`
      display: inline-block;
      margin-right: 16px;
+
+     
 `
 
 const SelectFiltros = styled.select`
-   
+  
+`
+
+const ParagrafoFiltroTarefa = styled.p`
+    text-decoration: ${props => props.traco ? "line-through" : "none"   };
 `
 
 export class Filtros extends React.Component {
@@ -32,15 +38,19 @@ export class Filtros extends React.Component {
         this.props.onClickTarefa(tarefaId)
     }
 
+    adicionaEstilizacao = (statusObjetoCompleto) => {
+        if(statusObjetoCompleto === true) {
+             return "text-decoration:line-through"
+        }
+    }
     
     render() {
-        console.log(this.props)
-        console.log(this.state)
+        
 
         let componenteFiltro
         if(this.state.valorSelect === "nenhum") {
             let listaFiltroTodos = this.props.tarefas.map((tarefa) => {
-                return <p key={tarefa.id} onClick={() => this.onClickTarefa(tarefa.id)} >{tarefa.texto}</p>
+                return <ParagrafoFiltroTarefa traco={tarefa.completo} key={tarefa.id} onClick={() => this.onClickTarefa(tarefa.id) } >{tarefa.texto}</ParagrafoFiltroTarefa>
             })
             componenteFiltro = <div>{listaFiltroTodos}</div>
         }
@@ -54,7 +64,7 @@ export class Filtros extends React.Component {
             })
             
             let lista = listaFiltroPendentes.map((tarefa) => {
-                return <p key={tarefa.id} onClick={() => this.onClickTarefa(tarefa.id)}>{tarefa.texto}</p>
+                return <ParagrafoFiltroTarefa traco={tarefa.completo} key={tarefa.id} onClick={() => this.onClickTarefa(tarefa.id)}>{tarefa.texto}</ParagrafoFiltroTarefa>
             })
             componenteFiltro = <div>{lista}</div>
         } 
@@ -68,7 +78,7 @@ export class Filtros extends React.Component {
                 return false
             })
             let lista = listaFiltroCompletas.map((tarefa) => {
-                return <p key={tarefa.id} onClick={() => this.onClickTarefa(tarefa.id)}>{tarefa.texto}</p>
+                return <ParagrafoFiltroTarefa traco={tarefa.completo} key={tarefa.id} onClick={() => this.onClickTarefa(tarefa.id)}>{tarefa.texto}</ParagrafoFiltroTarefa>
             })
             componenteFiltro = <div>{lista}</div>
         }
