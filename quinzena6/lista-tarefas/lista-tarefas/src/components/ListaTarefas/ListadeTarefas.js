@@ -20,6 +20,22 @@ export class ListadeTarefas extends React.Component {
        this.setState({ tarefas: novasTarefas })
     }
 
+    alterarTarefa = (tarefaId) => {
+        const novaListaDeTarefas = this.state.tarefas.map((tarefa) => {
+            if(tarefa.id === tarefaId) {
+               const novaTarefa = {
+                   ...tarefa,
+                   completo: !tarefa.completo
+               } 
+               return novaTarefa
+            } else {
+                return tarefa
+            }
+        })
+
+        this.setState({ tarefas: novaListaDeTarefas})
+    }
+
     render() {
         console.log(this.state)
         return <div>
@@ -29,6 +45,7 @@ export class ListadeTarefas extends React.Component {
             />
             <Filtros
                 tarefas={this.state.tarefas}
+                onClickTarefa = {this.alterarTarefa}
             />
         </div>
 
