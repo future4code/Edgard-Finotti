@@ -39,10 +39,22 @@ export class ListadeTarefas extends React.Component {
     }
 
     componentDidUpdate() {
-        const tarefas = [this.state.tarefas]
+        
+        localStorage.setItem("tarefas", JSON.stringify(this.state.tarefas));
+    }
+
+    componentDidMount() {
+        const tarefaString = localStorage.getItem("tarefas");
+        console.log("TAREFA STRING: ", tarefaString)
     
-        localStorage.setItem("tarefas", JSON.stringify(tarefas));
-      }
+        if (tarefaString !== null) {
+          const tarefaObjeto = JSON.parse(tarefaString);
+    
+          this.setState({
+            tarefas: tarefaObjeto
+          });
+        }
+    }
 
     render() {
         console.log(this.state)
