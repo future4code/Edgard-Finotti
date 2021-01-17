@@ -34,6 +34,8 @@ export class AdicionarTarefas extends React.Component {
 		})
     }
 
+    
+
     render() {
         
         return <DivisaoAdicionarTarefas>

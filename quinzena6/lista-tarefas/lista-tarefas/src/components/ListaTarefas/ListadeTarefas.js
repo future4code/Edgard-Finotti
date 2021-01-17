@@ -8,6 +8,7 @@ export class ListadeTarefas extends React.Component {
         tarefas: [ ]
     }
 
+    
     criarTarefa = (novaTarefa) => {
         const novoObjetoTarefa = {
             texto: novaTarefa,
@@ -17,7 +18,7 @@ export class ListadeTarefas extends React.Component {
 
         const novasTarefas = [novoObjetoTarefa, ...this.state.tarefas]
 
-       this.setState({ tarefas: novasTarefas })
+        this.setState({ tarefas: novasTarefas })
 
     }
 
@@ -36,6 +37,12 @@ export class ListadeTarefas extends React.Component {
 
         this.setState({ tarefas: novaListaDeTarefas})
     }
+
+    componentDidUpdate() {
+        const tarefas = [this.state.tarefas]
+    
+        localStorage.setItem("tarefas", JSON.stringify(tarefas));
+      }
 
     render() {
         console.log(this.state)
