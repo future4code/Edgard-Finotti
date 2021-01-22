@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { DigitarMensagem } from '../DigitarMensagem/DigitarMensagem'
+import { Mensagem } from '../Mensagem/Mensagem'
 
 const DivisaoPrincipal = styled.div`
     width: 800px;
@@ -44,10 +45,11 @@ export class Principal extends React.Component {
         
         const listaMensagens
         if(this.state.mensagens.length !== 0) {
-            listaMensagens = this.state.mensagens.map((mensagem) => {
+            listaMensagens = this.state.mensagens.map((item) => {
                 return (
                     <Mensagem 
-                        
+                        usuario={item.usuario}
+                        mensagem={item.mensagem}
                     />
                 )
             })
