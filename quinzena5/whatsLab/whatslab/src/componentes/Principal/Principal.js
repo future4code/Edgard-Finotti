@@ -8,7 +8,7 @@ const DivisaoPrincipal = styled.div`
     border: 1px solid black;
 
     display: grid;
-    grid-template-rows: 96% auto;
+    grid-template-rows: 98% auto;
 
 `
 const DivisaoMensagens = styled.div`
@@ -25,6 +25,11 @@ export class Principal extends React.Component {
         mensagens: []
     }
 
+    receberMensagem = (usuario, mensagem) => {
+        console.log("usuario", usuario)
+        console.log("mensagem", mensagem)
+    }
+
     render() {
 
         return(
@@ -39,7 +44,7 @@ export class Principal extends React.Component {
                 <DivisaoDigitarMensagem>
 
                     <DigitarMensagem 
-
+                        onClickEnviarMensagem = {this.receberMensagem}
                     
                     />
 
