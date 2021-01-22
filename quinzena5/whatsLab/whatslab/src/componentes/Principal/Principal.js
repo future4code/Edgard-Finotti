@@ -26,11 +26,32 @@ export class Principal extends React.Component {
     }
 
     receberMensagem = (usuario, mensagem) => {
-        console.log("usuario", usuario)
-        console.log("mensagem", mensagem)
+
+        const novaMensagem = {
+            usuario: usuario,
+            mensagem: mensagem
+        }
+
+        const novaLista = [...this.state.mensagens]
+
+        novaLista.push(novaMensagem)
+
+        this.setState({mensagens: novaLista})
+
     }
 
     render() {
+        
+        const listaMensagens
+        if(this.state.mensagens.length !== 0) {
+            listaMensagens = this.state.mensagens.map((mensagem) => {
+                return (
+                    <Mensagem 
+                        
+                    />
+                )
+            })
+        }
 
         return(
             <DivisaoPrincipal>
