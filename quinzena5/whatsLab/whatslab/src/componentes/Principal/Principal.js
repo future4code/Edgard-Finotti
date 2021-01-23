@@ -47,22 +47,20 @@ export class Principal extends React.Component {
 
         this.setState({mensagens: novaLista, contador: novaMensagem.id})
 
-       
     }
 
-    // exibirListaMensagens = () => {
-    //     const listaMensagens = this.state.mensagens.map((item) => {
-    //         return (
-    //             <Mensagem
-    //                 key={this.mensagem} 
-    //                 usuario={item.usuario}
-    //                 mensagem={item.mensagem}
-    //             />
-    //         )
-    //     })
-    //     return listaMensagens
-    // }
+    apagarMensagemDoubleClick = (usuarioClicado, mensagemCLicada) => {
+        const novaLista = this.state.mensagens.filter((item) => {
+            if( !((item.usuario === usuarioClicado) && (item.mensagem === mensagemCLicada))){
+                return true
+            }
+            return false
+        })
 
+        this.setState({ mensagens: novaLista })
+    }
+
+    
     render() {
         
         let listaMensagens
@@ -73,10 +71,13 @@ export class Principal extends React.Component {
                         key={item.id} 
                         usuario={item.usuario}
                         mensagem={item.mensagem}
+                        doubleClickMensagem = {this.apagarMensagemDoubleClick}
                     />
                 )
             })
         }
+
+        
 
         return(
             
