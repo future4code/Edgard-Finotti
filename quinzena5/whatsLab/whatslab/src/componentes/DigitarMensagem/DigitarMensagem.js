@@ -22,27 +22,39 @@ export class DigitarMensagem extends React.Component {
 
     state = {
         inputUsuario: "",
-        inputMensagem: ""
+        inputMensagem: "",
+
+        usuario: "",
+        mensagem: ""
     }
 
+    apertarEnter = (event) => {
+        if(event.key === "Enter") {
+            this.enviarMensagem()
+        }
+    } 
+    
     onChangeInputUsuario = (event) => {
-        this.setState({ inputUsuario: event.target.value})
+        // this.setState({ inputUsuario: event.target.value})
+        this.setState({ usuario: event.target.value})
     }
 
     onChangeInputMensagem = (event) => {
-        this.setState({ inputMensagem: event.target.value})
+        // this.setState({ inputMensagem: event.target.value})
+        this.setState({ mensagem: event.target.value})
     }
 
     enviarMensagem = () => {
-        this.props.onClickEnviarMensagem(this.state.inputUsuario, this.state.inputMensagem)
+        this.setState({usuario: "", mensagem: "" })
+        this.props.onClickEnviarMensagem(this.state.usuario, this.state.mensagem)
     }
 
     render() {
 
         return( 
             <DivisaoDigitarMensagens>
-                <InputUsuario type="text" value={this.state.inputUsuario} onChange={this.onChangeInputUsuario} placeholder="Usuário" />
-                <InputMensagem type="text" value={this.state.inputMensagem} onChange={this.onChangeInputMensagem} placeholder="Mensagem" />
+                <InputUsuario type="text" value={this.state.usuario} onChange={this.onChangeInputUsuario} placeholder="Usuário" />
+                <InputMensagem type="text" value={this.state.mensagem} onChange={this.onChangeInputMensagem} placeholder="Mensagem"  onKeyDown={this.apertarEnter} />
                 <BotaoEnviarMensagem onClick={this.enviarMensagem}>Enviar</BotaoEnviarMensagem>
             </DivisaoDigitarMensagens>
         )
