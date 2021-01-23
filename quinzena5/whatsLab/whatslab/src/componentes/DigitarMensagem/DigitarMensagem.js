@@ -4,18 +4,30 @@ import styled from 'styled-components'
 const DivisaoDigitarMensagens = styled.div`
     display: grid;
     grid-template-columns: 20% auto 07%;
+
+    padding: 8px;
 `
 
 const InputUsuario = styled.input`
-     
+    padding: 8px;
+    margin: 0 8px 0 2px;
+    border-radius: 6px;
+    border: none;
 `
 
 const InputMensagem = styled.input`
-    
+    padding: 8px;
+    margin: 0 8px;
+    border-radius: 6px;
+    border: none;
 `
 
 const BotaoEnviarMensagem = styled.button`
-
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    font-weight: bold;
+    
 `
 
 export class DigitarMensagem extends React.Component {

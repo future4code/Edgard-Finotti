@@ -9,8 +9,9 @@ const DivisaoPrincipal = styled.div`
     border: 1px solid black;
 
     display: grid;
-    grid-template-rows: 98% auto;
+    grid-template-rows: 95% auto;
 
+    background-color: #e5ddd5;
 
 `
 const DivisaoMensagens = styled.div`
