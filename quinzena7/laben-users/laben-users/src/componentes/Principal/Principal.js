@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import axios from 'axios'
 import CadastroUsuario from '../CadastroUsuario/CadastroUsuario'
 import ListaUsuarios from '../ListaUsuarios/ListaUsuarios'
+import imagemExcluir from '../../images/remove.png'
 
 const BotaoIrParaLista = styled.button`
     margin: 16px 0 64px 16px;
@@ -17,6 +18,14 @@ class Principal extends React.Component {
         novoUsuario: { },
 
         usuarios: []
+    }
+
+    componentDidMount() {
+        this.pegarListaUsuarios();
+    }
+
+    irParaLista = () => {
+        this.setState({cadastrar: false})
     }
 
     onClickBotaoSalvarCadastroUsuario = (nome, email) => {
@@ -64,6 +73,8 @@ class Principal extends React.Component {
         .catch((err) => alert(err));
     }
 
+    
+
     render () {
 
         
@@ -76,13 +87,14 @@ class Principal extends React.Component {
         } else {
             componenteExibicao = <ListaUsuarios
                 listaDeUsuarios = {this.state.usuarios}
+                imagemBotaoExcluir = {imagemExcluir}
             />        
         }
 
 
         return (
             <div>
-                <BotaoIrParaLista>Ir para a página da lista</BotaoIrParaLista>
+                <BotaoIrParaLista onClick={this.irParaLista}>Ir para a página da lista</BotaoIrParaLista>
                 {componenteExibicao}
             </div>
             
