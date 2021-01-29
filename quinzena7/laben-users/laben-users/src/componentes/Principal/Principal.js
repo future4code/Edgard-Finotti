@@ -4,7 +4,7 @@ import axios from 'axios'
 import CadastroUsuario from '../CadastroUsuario/CadastroUsuario'
 
 const BotaoIrParaLista = styled.button`
-
+    margin: 16px 0 64px 16px;
 `
 
 class Principal extends React.Component {
