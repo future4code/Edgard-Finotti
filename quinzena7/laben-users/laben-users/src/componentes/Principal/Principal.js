@@ -64,16 +64,37 @@ class Principal extends React.Component {
         .get(
             "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
             {
-            headers: {
-                Authorization: "edgard-finotti-muyembe"
-            }
+                headers: {
+                    Authorization: "edgard-finotti-muyembe"
+                }
             }
         )
         .then((res) => this.setState({ usuarios: res.data}))
         .catch((err) => alert(err));
     }
 
-    
+    excluirUsuarioLista = (usuario) => {
+        axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${usuario.id}`,
+            {
+                headers: {
+                    Authorization: "edgard-finotti-muyembe"
+                }
+            } 
+        )
+        .then(res => {
+            alert(`Usuário ${usuario.name} excluido com sucesso !`)
+            this.pegarListaUsuarios()
+        })
+        .catch((err) => alert(err))
+    }
+
+    onClickExcluir = ( objetoUsuario) => {
+        this.excluirUsuarioLista(objetoUsuario)
+    }
+
+    cadastrarNovoUsuario = () => {
+        this.setState({cadastrar: true})
+    }
 
     render () {
 
@@ -88,6 +109,8 @@ class Principal extends React.Component {
             componenteExibicao = <ListaUsuarios
                 listaDeUsuarios = {this.state.usuarios}
                 imagemBotaoExcluir = {imagemExcluir}
+                onCLickBotaoExcluir = {this.onClickExcluir}
+                onCLickBotaoNovoUsuario = {this.cadastrarNovoUsuario}
             />        
         }
 
