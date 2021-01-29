@@ -2,15 +2,19 @@ import React from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 
+const BotaoIrParaLista = styled.button`
+
+`
+
 class Principal extends React.Component {
     state = {
-
+        cadastrar: true
     }
 
     render () {
 
         return (
-            <p>Página Principal</p>
+            <BotaoIrParaLista>Ir para a página da lista</BotaoIrParaLista>
         )
             
         
