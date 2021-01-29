@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 import CadastroUsuario from '../CadastroUsuario/CadastroUsuario'
+import ListaUsuarios from '../ListaUsuarios/ListaUsuarios'
 
 const BotaoIrParaLista = styled.button`
     margin: 16px 0 64px 16px;
@@ -13,7 +14,9 @@ class Principal extends React.Component {
     state = {
         cadastrar: true,
 
-        novoUsuario: { }
+        novoUsuario: { },
+
+        usuarios: []
     }
 
     onClickBotaoSalvarCadastroUsuario = (nome, email) => {
@@ -39,26 +42,48 @@ class Principal extends React.Component {
             }
         }
         )
-        .then(() => alert(`Usuário ${this.state.novoUsuario.name} adicionado com sucesso.`))
+        .then(() => {
+            alert(`Usuário ${this.state.novoUsuario.name} adicionado com sucesso.`)
+            this.setState({cadastrar: false})
+            this.pegarListaUsuarios()
+        })
         .catch((error) => alert(error))
+    }
+
+    pegarListaUsuarios = () => {
+        axios
+        .get(
+            "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
+            {
+            headers: {
+                Authorization: "edgard-finotti-muyembe"
+            }
+            }
+        )
+        .then((res) => this.setState({ usuarios: res.data}))
+        .catch((err) => alert(err));
     }
 
     render () {
 
         
 
-        let componenteCadastroUsuario
+        let componenteExibicao
         if(this.state.cadastrar) {
-            componenteCadastroUsuario = <CadastroUsuario 
+            componenteExibicao = <CadastroUsuario 
                 onClickBotaoSalvar = {this.onClickBotaoSalvarCadastroUsuario}
             />
+        } else {
+            componenteExibicao = <ListaUsuarios
+                listaDeUsuarios = {this.state.usuarios}
+            />        
         }
 
 
         return (
             <div>
                 <BotaoIrParaLista>Ir para a página da lista</BotaoIrParaLista>
-                {componenteCadastroUsuario}
+                {componenteExibicao}
             </div>
             
         )
