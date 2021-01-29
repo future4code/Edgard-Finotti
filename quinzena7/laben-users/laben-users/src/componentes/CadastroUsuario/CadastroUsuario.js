@@ -60,20 +60,23 @@ class CadastroUsuario extends React.Component {
         this.setState({inputEmail: event.target.value})
     }
 
+    clicarBotaoSalvar = () => {
+        this.props.onClickBotaoSalvar(this.state.inputNome, this.state.inputEmail)
+    }
+
     render () {
-        console.log("this.state.inputNome", this.state.inputNome)
-        console.log("this.state.inputEmail", this.state.inputEmail)
+        
 
         return (
             <DivisaoCadastroUsuario>
                 <DivisaoDadosUsuario>
-                    <LabelNome for="Nome">Nome:</LabelNome>
+                    <LabelNome>Nome:</LabelNome>
                     <InputNome type="text" id="Nome" name="Nome" onChange={this.onChangeInputNome} value={this.state.inputNome}></InputNome>
 
-                    <LabelEmail for="Mail">O email:</LabelEmail>
+                    <LabelEmail>O email:</LabelEmail>
                     <InputEmail type="email" id="Mail" name="Mail" onChange={this.onChangeInputEmail} value={this.state.inputEmail}></InputEmail>
 
-                    <BotaoSalvar>Salvar</BotaoSalvar>
+                    <BotaoSalvar onClick={this.clicarBotaoSalvar}>Salvar</BotaoSalvar>
                 </DivisaoDadosUsuario>
             </DivisaoCadastroUsuario>
         )
