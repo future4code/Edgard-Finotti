@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
+import CadastroUsuario from '../CadastroUsuario/CadastroUsuario'
 
 const BotaoIrParaLista = styled.button`
 
@@ -13,8 +14,18 @@ class Principal extends React.Component {
 
     render () {
 
+        let componenteCadastroUsuario
+        if(this.state.cadastrar) {
+            componenteCadastroUsuario = <CadastroUsuario />
+        }
+
+
         return (
-            <BotaoIrParaLista>Ir para a página da lista</BotaoIrParaLista>
+            <div>
+                <BotaoIrParaLista>Ir para a página da lista</BotaoIrParaLista>
+                {componenteCadastroUsuario}
+            </div>
+            
         )
             
         
