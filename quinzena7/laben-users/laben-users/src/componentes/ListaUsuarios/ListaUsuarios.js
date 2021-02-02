@@ -28,8 +28,6 @@ class ListaUsuarios extends React.Component {
             </DivisaoListarUsuarios>
             
         )
-            
-        
     }
 }
 
