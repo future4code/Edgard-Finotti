@@ -25,7 +25,7 @@ class Principal extends React.Component {
     }
 
     irParaLista = () => {
-        this.setState({cadastrar: false})
+        this.setState({cadastrar: !this.state.cadastrar})
     }
 
     onClickBotaoSalvarCadastroUsuario = (nome, email) => {
@@ -117,7 +117,7 @@ class Principal extends React.Component {
 
         return (
             <div>
-                <BotaoIrParaLista onClick={this.irParaLista}>Ir para a página da lista</BotaoIrParaLista>
+                <BotaoIrParaLista onClick={this.irParaLista}>{this.state.cadastrar ? "Ir para a página da lista" : "Cadastrar novo Usuário" }</BotaoIrParaLista>
                 {componenteExibicao}
             </div>
             
