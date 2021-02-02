@@ -34,17 +34,3 @@ export const MensagemListaVazia = styled.p`
     font-size: 32px;
     
 `
-
-export const DivisaoBotaoCadastrarUsuario = styled.div`
-    display: flex;
-    justify-content: flex-end;
-`
-
-export const BotaoCadastrarNovoUsuario = styled.button`
-    font-weight: bold;
-    padding: 8px;
-
-    :hover {
-        cursor: pointer;
-    }
-`

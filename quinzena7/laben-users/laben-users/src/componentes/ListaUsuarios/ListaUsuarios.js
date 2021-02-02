@@ -1,6 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
-import {BotaoCadastrarNovoUsuario, DivisaoBotaoCadastrarUsuario, DivisaoListagemDeUsuarios, DivisaoListarUsuarios, ImagemBotaoExcluir, MensagemListaVazia, NomeUsuario, Titulo } from './styled'
+import { DivisaoListagemDeUsuarios, DivisaoListarUsuarios, ImagemBotaoExcluir, MensagemListaVazia, NomeUsuario, Titulo } from './styled'
 
 class ListaUsuarios extends React.Component {
     
@@ -24,9 +23,6 @@ class ListaUsuarios extends React.Component {
 
         return (
             <DivisaoListarUsuarios>
-                <DivisaoBotaoCadastrarUsuario>
-                    <BotaoCadastrarNovoUsuario onClick={this.props.onCLickBotaoNovoUsuario}>Novo</BotaoCadastrarNovoUsuario>
-                </DivisaoBotaoCadastrarUsuario>
                 <Titulo>Usuários Cadastrados:</Titulo>
                 {componenteUsuarios}
             </DivisaoListarUsuarios>

@@ -8,6 +8,15 @@ import {BASE_URL, axiosConfig} from '../../contants/requisicoes'
 
 const BotaoIrParaLista = styled.button`
     margin: 16px 0 64px 16px;
+    font-weight: bold;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 1px solid darkgray;
+`
+const DivisaoPrincipal = styled.div`
+    width: 800px;
+    margin: 0 auto;
 `
 
 class Principal extends React.Component {
@@ -100,10 +109,10 @@ class Principal extends React.Component {
 
 
         return (
-            <div>
-                <BotaoIrParaLista onClick={this.irParaLista}>{this.state.cadastrar ? "Ir para a página da lista" : "Cadastrar novo Usuário" }</BotaoIrParaLista>
+            <DivisaoPrincipal>
+                <BotaoIrParaLista onClick={this.irParaLista}>{this.state.cadastrar ? "LISTA DE USUÁRIOS" : "NOVO USUÁRIO" }</BotaoIrParaLista>
                 {componenteExibicao}
-            </div>
+            </DivisaoPrincipal>
             
         )
             
