@@ -59,18 +59,24 @@ class Principal extends React.Component {
         .catch((error) => alert(error))
     }
 
-    pegarListaUsuarios = () => {
-        axios
-        .get(
-            "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
-            {
-                headers: {
-                    Authorization: "edgard-finotti-muyembe"
+    pegarListaUsuarios = async () => {
+
+        try {
+            const resposta = await axios
+            .get(
+                "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
+                {
+                    headers: {
+                        Authorization: "edgard-finotti-muyembe"
+                    }
                 }
-            }
-        )
-        .then((res) => this.setState({ usuarios: res.data}))
-        .catch((err) => alert(err));
+            )
+            this.setState({ usuarios: resposta.data})
+
+        } catch (erro) {
+            alert(erro)
+        }
+
     }
 
     excluirUsuarioLista = (usuario) => {
