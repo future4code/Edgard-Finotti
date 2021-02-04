@@ -1,5 +1,5 @@
 import { Principal } from './screens/Principal'
-import { DivisaoApp } from './style'
+import { DivisaoApp } from './styles'
 
 function App() {
   return (

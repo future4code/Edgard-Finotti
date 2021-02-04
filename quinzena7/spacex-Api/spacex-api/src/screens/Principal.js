@@ -1,4 +1,7 @@
 import React from 'react'
+import { Cabecalho } from '../components/Cabecalho/Cabecalho'
+import { DivisaoPrincipal } from './styles'
+import foguete from '../assets/rocket-icon.jpg'
 
 export class Principal extends React.Component {
 
@@ -8,8 +11,13 @@ export class Principal extends React.Component {
 
 
     render() {
-        return <div>
-            Componente Principal
-        </div>
+
+
+        return <DivisaoPrincipal>
+            <Cabecalho 
+                nomeEmpresa="SpaceX"
+                imagemLogo={foguete}
+            />
+        </DivisaoPrincipal>
     }
 }
