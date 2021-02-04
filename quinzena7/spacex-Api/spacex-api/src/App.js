@@ -1,10 +1,11 @@
-import './App.css';
+import { Principal } from './screens/Principal'
+import { DivisaoApp } from './style'
 
 function App() {
   return (
-    <div>
-
-    </div>
+    <DivisaoApp>
+      <Principal />
+    </DivisaoApp>
   );
 }
 
