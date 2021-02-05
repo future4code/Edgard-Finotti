@@ -10,6 +10,7 @@ export const Cabecalho = (props) => {
         
         <DivisaoMenu>
             <MenuLista>
+                <ItemMenu>Sobre</ItemMenu>
                 <ItemMenu>Cápsulas</ItemMenu>
                 <ItemMenu>Tripulação</ItemMenu>
                 <ItemMenu>Lançamentos</ItemMenu>

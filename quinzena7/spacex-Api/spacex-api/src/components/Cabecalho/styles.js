@@ -7,7 +7,7 @@ export const DivisaoCabecalho = styled.div`
     display: flex;
     justify-content: space-around;
 
-    height: 100%;
+    height: 15%;
 `
 export const DivisaoLogoENome = styled.div`
     height: 100%;
@@ -39,6 +39,7 @@ export const MenuLista = styled.ul`
 export const ItemMenu = styled.li`
     padding: 16px;
     color: white;
+    font-weight: bold;
     cursor: pointer;
 `
 
