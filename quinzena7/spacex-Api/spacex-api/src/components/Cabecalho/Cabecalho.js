@@ -1,21 +1,35 @@
 import React from 'react'
 import { DivisaoCabecalho, NomeEmpresa, ImagemLogo, DivisaoLogoENome, DivisaoMenu, ItemMenu, MenuLista } from './styles'
 
-export const Cabecalho = (props) => {
-    return <DivisaoCabecalho>
-        <DivisaoLogoENome>
-            <ImagemLogo src={props.imagemLogo} />
-            <NomeEmpresa>{props.nomeEmpresa}</NomeEmpresa>
-        </DivisaoLogoENome>
-        
-        <DivisaoMenu>
-            <MenuLista>
-                <ItemMenu>Sobre</ItemMenu>
-                <ItemMenu>Cápsulas</ItemMenu>
-                <ItemMenu>Tripulação</ItemMenu>
-                <ItemMenu>Lançamentos</ItemMenu>
-            </MenuLista>
 
-        </DivisaoMenu>
-    </DivisaoCabecalho>
+
+export class Cabecalho extends React.Component {
+
+    state= {
+
+    }
+
+    onClickMenu = (menu) => {
+        this.props.onClickMenu(menu)
+    }
+
+    render () {
+        return <DivisaoCabecalho>
+            <DivisaoLogoENome>
+                <ImagemLogo src={this.props.imagemLogo} />
+                <NomeEmpresa>{this.props.nomeEmpresa}</NomeEmpresa>
+            </DivisaoLogoENome>
+        
+            <DivisaoMenu>
+                <MenuLista>
+                    <ItemMenu onClick={() => this.onClickMenu("sobre")} >Sobre</ItemMenu>
+                    <ItemMenu onClick={() => this.onClickMenu("capsulas")}>Cápsulas</ItemMenu>
+                    <ItemMenu onClick={() => this.onClickMenu("tripulacao")}>Tripulação</ItemMenu>
+                    <ItemMenu onClick={() => this.onClickMenu("lancamentos")}>Lançamentos</ItemMenu>
+                </MenuLista>
+
+            </DivisaoMenu>
+        </DivisaoCabecalho>
+    }
+    
 }

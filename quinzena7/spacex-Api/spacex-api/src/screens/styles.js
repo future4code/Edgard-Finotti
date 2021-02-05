@@ -15,9 +15,28 @@ export const  DivisaoImagem = styled.div`
     
 `
 
+
+
 export const  ImagemTerra = styled.img`
     
     padding: 8px;
     
 
+`
+export const DivisaoConteudo =  styled.div`
+    width: 600px;
+    margin: 16px auto;
+`
+
+export const DivisaoInformacoesEmpresa = styled.div`
+    
+`
+
+export const TituloInformacoesEmpresa = styled.h1`
+    color: white;
+    text-align: center;
+`
+
+export const ParagrafoInformacaoEmpresa = styled.p`
+    color: white;
 `
