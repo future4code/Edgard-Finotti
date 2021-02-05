@@ -1,14 +1,15 @@
 import React from 'react'
 import { Cabecalho } from '../components/Cabecalho/Cabecalho'
-import { DivisaoPrincipal, DivisaoImagem, ImagemTerra, ParagrafoInformacaoEmpresa, DivisaoInformacoesEmpresa, DivisaoConteudo, TituloConteudo, DivisaoConteudoExibido } from './styles'
+import { DivisaoPrincipal, DivisaoImagem, ImagemTerra, ParagrafoInformacaoEmpresa, DivisaoInformacoesEmpresa, DivisaoConteudo, TituloConteudo, DivisaoConteudoExibido, DivisaoGifFoguete, ImagemGifFoguete } from './styles'
 import foguete from '../assets/rocket-icon.jpg'
 import spacexImage02 from '../assets/spacex-image02.jpg'
 import spacexImage03 from '../assets/spacex-image03.jpg'
 import spacexImage from '../assets/spacex-image.jpg'
-// import gifFoguete from '../assets/animation-gif.gif'
+import gifFoguete from '../assets/animation-gif.gif'
 import { BASE_URL } from '../constants/requisicoes'
 import axios from 'axios'
 import { Capsulas } from '../components/Capsulas/Capsulas'
+import { Tripulacao } from '../components/Tripulacao/Tripulacao'
 
 
 export class Principal extends React.Component {
@@ -16,7 +17,8 @@ export class Principal extends React.Component {
     state = {
         opcaoMenu: "inicial",
         informacoesEmpresa: {},
-        informacoesCapsulas: []
+        informacoesCapsulas: [],
+        tripulacao: []
     }
 
     pegarInformacoesEmpresa = async () => {
@@ -47,6 +49,17 @@ export class Principal extends React.Component {
 
     }
     
+    pegarInformacoesTripulacao = async () => {
+
+        try {
+            const resposta = await axios
+            .get(`${BASE_URL}/crew`)
+            this.setState({ tripulacao: resposta.data})
+        } catch (erro) {
+            alert(erro)
+        }
+
+    }
 
     render() { 
         
@@ -90,6 +103,33 @@ export class Principal extends React.Component {
                })
               
             }
+        }
+
+        if(this.state.opcaoMenu === "tripulacao") {
+            tituloConteudo = "Tripulação: "
+            if(this.state.tripulacao.length === 0) {
+                this.pegarInformacoesTripulacao()
+            }
+            else {
+                componenteConteudo = this.state.tripulacao.map((pessoa) => {
+                    return (
+                        <Tripulacao 
+                            key={pessoa.id}
+                            nome={pessoa.name}
+                            agencia={pessoa.agency}
+                            imagem={pessoa.image}
+                            status={pessoa.status}
+                        />   
+                    )    
+               })
+                
+            }
+        }
+
+        if(this.state.opcaoMenu === "inicial") {
+            componenteConteudo = <DivisaoGifFoguete>
+                <ImagemGifFoguete src={gifFoguete} />
+            </DivisaoGifFoguete>
         }
 
         return <DivisaoPrincipal>

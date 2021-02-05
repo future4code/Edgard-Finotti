@@ -8,7 +8,7 @@ export const  DivisaoPrincipal = styled.div`
 `
 export const  DivisaoImagem = styled.div`
     height: 40vh;
-    width: 100%;
+    
 
     display: flex;
     justify-content: space-between;
@@ -36,6 +36,8 @@ export const DivisaoConteudoExibido = styled.div`
     display: flex;
     flex-wrap:wrap;
     justify-content: center;
+
+    width: 100%;
 `
 
 export const DivisaoInformacoesEmpresa = styled.div`
@@ -46,6 +48,15 @@ export const DivisaoInformacoesEmpresa = styled.div`
 
 export const ParagrafoInformacaoEmpresa = styled.p`
     color: white;
+`
+
+
+export const DivisaoGifFoguete = styled.div`
+    height: 100%;
+`
+
+export const  ImagemGifFoguete = styled.img`
+    
 `
 
 

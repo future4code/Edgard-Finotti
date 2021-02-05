@@ -25,7 +25,6 @@ export class Cabecalho extends React.Component {
                     <ItemMenu onClick={() => this.onClickMenu("sobre")} >Sobre</ItemMenu>
                     <ItemMenu onClick={() => this.onClickMenu("capsulas")}>Cápsulas</ItemMenu>
                     <ItemMenu onClick={() => this.onClickMenu("tripulacao")}>Tripulação</ItemMenu>
-                    <ItemMenu onClick={() => this.onClickMenu("lancamentos")}>Lançamentos</ItemMenu>
                 </MenuLista>
 
             </DivisaoMenu>
