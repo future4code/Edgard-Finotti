@@ -3,11 +3,11 @@ import styled from 'styled-components'
 
 
 export const  DivisaoPrincipal = styled.div`
-    height: 100vh;
-    background-color: black;
+    
+    width: 100%;
 `
 export const  DivisaoImagem = styled.div`
-    height: 40%;
+    height: 40vh;
     width: 100%;
 
     display: flex;
@@ -24,19 +24,35 @@ export const  ImagemTerra = styled.img`
 
 `
 export const DivisaoConteudo =  styled.div`
-    width: 600px;
-    margin: 16px auto;
-`
-
-export const DivisaoInformacoesEmpresa = styled.div`
+    
+    
+   
     
 `
-
-export const TituloInformacoesEmpresa = styled.h1`
+export const TituloConteudo = styled.h1`
     color: white;
     text-align: center;
 `
 
+export const DivisaoConteudoExibido = styled.div`
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+`
+
+export const DivisaoInformacoesEmpresa = styled.div`
+    height: 100%;
+`
+
+
+
 export const ParagrafoInformacaoEmpresa = styled.p`
     color: white;
 `
+
+
+
+
+
+
+

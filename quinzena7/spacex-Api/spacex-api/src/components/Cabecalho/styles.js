@@ -7,7 +7,7 @@ export const DivisaoCabecalho = styled.div`
     display: flex;
     justify-content: space-around;
 
-    height: 15%;
+    height: 15vh;
 `
 export const DivisaoLogoENome = styled.div`
     height: 100%;
