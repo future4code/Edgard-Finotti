@@ -73,7 +73,7 @@ export class Principal extends React.Component {
         }
 
         if(this.state.opcaoMenu === "capsulas") {
-            tituloConteudo = "Capsulas: "
+            tituloConteudo = "Cápsulas: "
             if(this.state.informacoesCapsulas.length === 0) {
                 this.pegarInformacoesCapsulas()
             }

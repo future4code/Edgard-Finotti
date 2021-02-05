@@ -24,9 +24,7 @@ export const  ImagemTerra = styled.img`
 
 `
 export const DivisaoConteudo =  styled.div`
-    
-    
-   
+
     
 `
 export const TituloConteudo = styled.h1`
