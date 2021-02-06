@@ -18,7 +18,8 @@ export class Principal extends React.Component {
     render() {
         
         let componenteDadosExibidos
-        if(this.state.opcaoMenu === "Playlist") {
+        if(this.state.opcaoMenu === "Playlists") {
+
             componenteDadosExibidos =  <Playlist 
 
             />
@@ -31,7 +32,7 @@ export class Principal extends React.Component {
             />
 
             <Menu
-                itemsMenu={["Playlist", "Artistas", "Músicas", "Albuns"]}
+                itemsMenu={["Playlists", "Artistas", "Músicas", "Albuns"]}
                 onClickMenu={this.onCLickMenu}
             
             />

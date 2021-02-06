@@ -1,21 +1,46 @@
 import React from 'react'
-import { DivisaoPlaylist } from './stylesPlaylist'
+import { DivisaoPlaylists, DivisaoPlaylist, NomePlaylist } from './stylesPlaylist'
+import { BASE_URL } from '../../constants/requisicoes'
+import axios from 'axios'
 
 
 export class Playlist extends React.Component {
 
     state = {
-       
+       playlists: []
     }
 
+    componentDidMount() {
+        this.pegarPlaylists();
+    }
+
+    pegarPlaylists = async () => {
+        try {
+            const resposta = await axios.get(`${BASE_URL}/playlists`, {
+                headers: {
+                    "Authorization": "edgard-finotti-muyembe"
+                }    
+            }
+            );
+            
+            this.setState({ playlists: resposta.data.result.list });
+        } catch (erro) {
+          alert(erro.message);
+        }
+      };
     
 
     render() {
         
+        const componenteListagemPlaylist = this.state.playlists.map(playlist => {
+            return <DivisaoPlaylist key={playlist.id}>
+                <NomePlaylist>{playlist.name}</NomePlaylist>
+            </DivisaoPlaylist>
+        })
         
-        return <DivisaoPlaylist>
-            Playlist
-        </DivisaoPlaylist>
+        return <DivisaoPlaylists>
+            {componenteListagemPlaylist}
+        </DivisaoPlaylists>
 
 
     }
