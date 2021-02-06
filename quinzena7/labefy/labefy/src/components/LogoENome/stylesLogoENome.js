@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 
 export const DivisaoLogoNome = styled.div`
-    height: 100%;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
+    
 `
 
 export const ImagemLogo = styled.img`

@@ -1,5 +1,6 @@
 import React from 'react'
 import LogoENome from '../../components/LogoENome/LogoENome'
+import Menu from '../../components/Menu/Menu'
 import { DivisaoPrincipal } from './stylesPrincipal'
 
 export class Principal extends React.Component {
@@ -17,6 +18,12 @@ export class Principal extends React.Component {
                 imagem={"https://www.flaticon.com/svg/vstatic/svg/3043/3043665.svg?token=exp=1612644423~hmac=28110171c7419886dd599a1a0f96ab6b"}
                 nome={'Labefy'}
             />
+
+            <Menu
+                itemsMenu={["Playlist", "Artistas", "Músicas", "Albuns"]}
+            
+            />
+
         </DivisaoPrincipal>
 
     }
