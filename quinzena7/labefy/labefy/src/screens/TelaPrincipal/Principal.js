@@ -6,12 +6,20 @@ import { DivisaoPrincipal } from './stylesPrincipal'
 export class Principal extends React.Component {
 
     state = {
+        opcaoMenu: "inicial"
+    }
 
+    onCLickMenu = (opcao) => {
+        this.setState({opcaoMenu : opcao})
     }
 
 
-
     render() {
+        
+        let componenteDadosExibidos
+        if(this.state.opcaoMenu === "Playlist") {
+
+        }
 
         return <DivisaoPrincipal>
             <LogoENome 
@@ -21,6 +29,7 @@ export class Principal extends React.Component {
 
             <Menu
                 itemsMenu={["Playlist", "Artistas", "Músicas", "Albuns"]}
+                onClickMenu={this.onCLickMenu}
             
             />
 

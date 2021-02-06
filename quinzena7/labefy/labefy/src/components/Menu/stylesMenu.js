@@ -16,10 +16,6 @@ export const ItemMenu = styled.h3`
     color: white;
     cursor: pointer;
 
-    background-color: black;
-    padding: 8px 10px;
-    border-radius: 8px;
-
     :hover {
         color: greenyellow;
     }
