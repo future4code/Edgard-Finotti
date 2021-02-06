@@ -1,5 +1,5 @@
 import React from 'react'
-import { DivisaoPlaylists, DivisaoPlaylist, NomePlaylist } from './stylesPlaylist'
+import { DivisaoPlaylists, DivisaoPlaylist, NomePlaylist, Titulo, ConteudoPlaylist, DivisaoTitulo } from './stylesPlaylist'
 import { BASE_URL } from '../../constants/requisicoes'
 import axios from 'axios'
 
@@ -39,7 +39,14 @@ export class Playlist extends React.Component {
         })
         
         return <DivisaoPlaylists>
-            {componenteListagemPlaylist}
+            <DivisaoTitulo>
+                <Titulo>Suas Playlists:</Titulo>
+            </DivisaoTitulo>
+            
+            <ConteudoPlaylist>
+                {componenteListagemPlaylist}
+            </ConteudoPlaylist>
+            
         </DivisaoPlaylists>
 
 
