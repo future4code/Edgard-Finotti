@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Principal } from './screens/TelaPrincipal/Principal'
 
 const DivisaoApp = styled.div`
-  
+ 
 `
 
 const  App = () => {
