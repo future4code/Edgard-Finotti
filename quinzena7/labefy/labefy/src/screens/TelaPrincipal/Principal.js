@@ -1,6 +1,7 @@
 import React from 'react'
 import LogoENome from '../../components/LogoENome/LogoENome'
 import Menu from '../../components/Menu/Menu'
+import { Playlist } from '../../components/Playlist/Playlist'
 import { DivisaoPrincipal } from './stylesPrincipal'
 
 export class Principal extends React.Component {
@@ -18,7 +19,9 @@ export class Principal extends React.Component {
         
         let componenteDadosExibidos
         if(this.state.opcaoMenu === "Playlist") {
+            componenteDadosExibidos =  <Playlist 
 
+            />
         }
 
         return <DivisaoPrincipal>
@@ -32,6 +35,8 @@ export class Principal extends React.Component {
                 onClickMenu={this.onCLickMenu}
             
             />
+
+            {componenteDadosExibidos}
 
         </DivisaoPrincipal>
 
