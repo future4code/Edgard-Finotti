@@ -17,8 +17,8 @@ export class OpcoesPlaylist extends React.Component {
         
         return <DivisaoOpcoesPlaylist>
            
-            <BotaoListaDeMusicas onClick={}>Ver Músicas</BotaoListaDeMusicas>
-            <BotaoExcluirPlaylist onClick={}>Excluir Playlist</BotaoExcluirPlaylist>
+            <BotaoListaDeMusicas onClick={this.props.onClickBotaoVerMusicas}>Ver Músicas</BotaoListaDeMusicas>
+            <BotaoExcluirPlaylist onClick={this.props.onClickExcluirPlaylist}>Excluir Playlist</BotaoExcluirPlaylist>
 
             
         </DivisaoOpcoesPlaylist>
