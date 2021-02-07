@@ -6,22 +6,26 @@ export const DivisaoPlaylists = styled.div`
   
 `
 export const DivisaoTitulo = styled.div`
-  
-  
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 `
 
 export const Titulo = styled.h3`
   color: white;
-  text-align: center;
-  
+  justify-self: end;
 `
 
 export const ConteudoPlaylist = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 
-  margin-top: 16px;
+  margin-top: 0 16px;
+
 `
 
 
@@ -33,7 +37,7 @@ export const DivisaoPlaylist = styled.div`
 
   border-radius: 8px;
 
-  margin: 0 32px;
+  margin: 16px 32px;
 `
 
 

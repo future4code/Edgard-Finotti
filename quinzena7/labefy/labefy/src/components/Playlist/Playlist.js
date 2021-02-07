@@ -2,6 +2,8 @@ import React from 'react'
 import { DivisaoPlaylists, DivisaoPlaylist, NomePlaylist, Titulo, ConteudoPlaylist, DivisaoTitulo } from './stylesPlaylist'
 import { BASE_URL } from '../../constants/requisicoes'
 import axios from 'axios'
+import { BotaoAdicionarPlaylist } from '../BotaoAdicionarPlaylist/BotaoAdicionarPlaylist'
+import botaoAddPlaylist from '../../assets/playlist.svg'
 
 
 export class Playlist extends React.Component {
@@ -41,6 +43,10 @@ export class Playlist extends React.Component {
         return <DivisaoPlaylists>
             <DivisaoTitulo>
                 <Titulo>Suas Playlists:</Titulo>
+                <BotaoAdicionarPlaylist 
+                    imagemBotao={botaoAddPlaylist}
+                    onClickBotaoCriarPlaylist={this.pegarPlaylists}
+                />
             </DivisaoTitulo>
             
             <ConteudoPlaylist>
