@@ -4,6 +4,10 @@ import { BASE_URL } from '../../constants/requisicoes'
 import axios from 'axios'
 import { BotaoAdicionarPlaylist } from '../BotaoAdicionarPlaylist/BotaoAdicionarPlaylist'
 import botaoAddPlaylist from '../../assets/playlist.svg'
+import { OpcoesPlaylist } from '../OpcoesPlaylist/OpcoesPlaylist'
+import iconeExcluirPlaylist from '../../assets/remove.svg'
+import iconeExibirMusicasPlaylist from '../../assets/folder.svg'
+
 
 
 export class Playlist extends React.Component {
@@ -37,6 +41,12 @@ export class Playlist extends React.Component {
         const componenteListagemPlaylist = this.state.playlists.map(playlist => {
             return <DivisaoPlaylist key={playlist.id}>
                 <NomePlaylist>{playlist.name}</NomePlaylist>
+                <OpcoesPlaylist 
+                    imagemExcluirPlaylist={iconeExcluirPlaylist}
+                    imagemExibirMusicasPlaylist={iconeExibirMusicasPlaylist}
+                    onClickBotaoVerMusicas={}
+                    onClickExcluirPlaylist={}
+                />
             </DivisaoPlaylist>
         })
         

@@ -4,6 +4,7 @@ export const DivisaoPlaylists = styled.div`
   display: flex;
   flex-direction: column;
   
+  
 `
 export const DivisaoTitulo = styled.div`
   /* display: flex;
@@ -26,18 +27,23 @@ export const ConteudoPlaylist = styled.div`
 
   margin-top: 0 16px;
 
+  /* border-bottom: 1px solid white; */
+
 `
 
 
 export const DivisaoPlaylist = styled.div`
   background-color: #202124;
 
-  width: 200px;
-  height: 200px;
+  /* width: 200px;
+  height: 200px; */
 
   border-radius: 8px;
 
   margin: 16px 32px;
+
+  padding: 0 16px;
+
 `
 
 
