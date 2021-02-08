@@ -74,6 +74,25 @@ export class Playlist extends React.Component {
         }
     };
     
+    excluirPlaylist = async (idPlaylist, nomePlaylist) => {
+        const resposta = window.confirm(`Confirmar exclusão da Playlist ${nomePlaylist}`)
+        if(resposta){
+            try {
+                const resposta = await axios.delete(`${BASE_URL}/playlists/${idPlaylist}`, {
+                    headers: {
+                        "Authorization": "edgard-finotti-muyembe"
+                    }    
+                }
+                );
+                
+                this.pegarPlaylists()
+                
+            } catch (erro) {
+              alert(erro.message);
+            }
+        }
+        
+    };
 
     render() {
         
@@ -84,7 +103,7 @@ export class Playlist extends React.Component {
                     imagemExcluirPlaylist={iconeExcluirPlaylist}
                     imagemExibirMusicasPlaylist={iconeExibirMusicasPlaylist}
                     onClickBotaoVerMusicas={() => this.pegarMusicasPlaylist(playlist.id, playlist.name)}
-                    // onClickExcluirPlaylist={}
+                    onClickExcluirPlaylist={() => this.excluirPlaylist(playlist.id, playlist.name)}
                 />
             </DivisaoPlaylist>
         })
