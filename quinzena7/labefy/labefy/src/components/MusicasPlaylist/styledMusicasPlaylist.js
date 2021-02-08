@@ -38,3 +38,23 @@ export const IframeMusica = styled.iframe`
     margin: 8px auto;
 `
 
+export const DivisaoIconeDeletarMusica = styled.div`
+ 
+  height: 50px;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  
+
+`
+
+
+
+export const ImagemDeletarMusica = styled.img`
+  height: 60%;
+
+  margin: 0 16px;
+
+`

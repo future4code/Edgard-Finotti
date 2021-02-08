@@ -54,14 +54,27 @@ export const NomePlaylist = styled.h4`
   
 `
 
+export const DivisaoTituloMusicas = styled.div`
+  height: 50px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  margin-bottom: 32px;
+`
+
 export const TituloMusicasPlaylist = styled.h3`
   color: white;
   text-align: center;
 `
-
+export const ImagemAdicionarMusicaPlaylist = styled.img`
+  height: 80%;
+  cursor: pointer;
+`
 
 
 export const DivisaoMusicasPlaylist = styled.div`
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 `

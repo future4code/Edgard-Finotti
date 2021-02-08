@@ -1,5 +1,5 @@
 import React from 'react'
-import {DivisaoMusica, NomeMusica, NomeArtistaMusica, DivisaoTituloMusica, IframeMusica, DivisaoPlayMusica} from './styledMusicasPlaylist'
+import {DivisaoMusica, NomeMusica, NomeArtistaMusica, DivisaoTituloMusica, IframeMusica, DivisaoPlayMusica, DivisaoIconeDeletarMusica, ImagemDeletarMusica} from './styledMusicasPlaylist'
 
 
 
@@ -17,6 +17,9 @@ const  MusicasPlaylist = (props) => {
                 <IframeMusica src={props.url}  frameborder="0" allowtransparency="true" allow="encrypted-media"></IframeMusica>
             </DivisaoPlayMusica>
             
+            <DivisaoIconeDeletarMusica>
+              <ImagemDeletarMusica src={props.iconeDeletar} onClick={props.onClickDeletarMusica} />
+            </DivisaoIconeDeletarMusica>
       </DivisaoMusica>
     );
   }

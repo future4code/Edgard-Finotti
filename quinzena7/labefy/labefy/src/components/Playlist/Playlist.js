@@ -1,5 +1,5 @@
 import React from 'react'
-import { DivisaoPlaylists, DivisaoPlaylist, NomePlaylist, Titulo, ConteudoPlaylist, DivisaoTitulo, TituloMusicasPlaylist, DivisaoMusicasPlaylist } from './stylesPlaylist'
+import { DivisaoPlaylists, DivisaoPlaylist, NomePlaylist, Titulo, ConteudoPlaylist, DivisaoTitulo, TituloMusicasPlaylist, DivisaoMusicasPlaylist, DivisaoTituloMusicas, ImagemAdicionarMusicaPlaylist } from './stylesPlaylist'
 import { BASE_URL } from '../../constants/requisicoes'
 import axios from 'axios'
 import { BotaoAdicionarPlaylist } from '../BotaoAdicionarPlaylist/BotaoAdicionarPlaylist'
@@ -8,6 +8,8 @@ import { OpcoesPlaylist } from '../OpcoesPlaylist/OpcoesPlaylist'
 import iconeExcluirPlaylist from '../../assets/remove.svg'
 import iconeExibirMusicasPlaylist from '../../assets/folder.svg'
 import MusicasPlaylist from '../MusicasPlaylist/MusicasPlaylist'
+import iconeAddMusica from '../../assets/add-icon.svg'
+import iconeDeletarMusica from '../../assets/delete-button.svg'
 
 
 
@@ -16,7 +18,8 @@ export class Playlist extends React.Component {
     state = {
        playlists: [],
        musicas: [],
-       nomePlaylistSelecionada: ""
+       nomePlaylistSelecionada: "",
+       idPlaylistSelecionada: ""
     }
 
     componentDidMount() {
@@ -67,7 +70,7 @@ export class Playlist extends React.Component {
             }
             );
             
-            this.setState({ musicas: resposta.data.result.tracks, nomePlaylistSelecionada: nomePlaylist } )
+            this.setState({ musicas: resposta.data.result.tracks, nomePlaylistSelecionada: nomePlaylist, idPlaylistSelecionada: id } )
             
         } catch (erro) {
           alert(erro.message);
@@ -94,6 +97,26 @@ export class Playlist extends React.Component {
         
     };
 
+    deletarMusica = async (idMusica, idPlaylist, nomePlaylist) => {
+        const resposta = window.confirm("Confirmar exclusão da Musica ?")
+        if(resposta){
+            try {
+                const resposta = await axios.delete(`${BASE_URL}/playlists/${idPlaylist}/tracks/${idMusica}`, {
+                    headers: {
+                        "Authorization": "edgard-finotti-muyembe"
+                    }    
+                }
+                );
+                
+                this.pegarMusicasPlaylist(idPlaylist, nomePlaylist)
+                
+            } catch (erro) {
+              alert(erro.message);
+            }
+        }
+        
+    };
+
     render() {
         
         const componenteListagemPlaylist = this.state.playlists.map(playlist => {
@@ -111,13 +134,18 @@ export class Playlist extends React.Component {
         let componenteMusicasPlaylist
         let componenteTituloMusicasPlaylist
         if(this.state.musicas.length > 0) {
-            componenteTituloMusicasPlaylist = <TituloMusicasPlaylist>Músicas Playlist "{this.state.nomePlaylistSelecionada}"</TituloMusicasPlaylist>
+            componenteTituloMusicasPlaylist = <DivisaoTituloMusicas>
+                <TituloMusicasPlaylist>Músicas Playlist "{this.state.nomePlaylistSelecionada}"</TituloMusicasPlaylist>
+                <ImagemAdicionarMusicaPlaylist src={iconeAddMusica} />
+            </DivisaoTituloMusicas> 
             componenteMusicasPlaylist = this.state.musicas.map( musica => {
                 return <MusicasPlaylist 
                     key={musica.id}
                     nome={musica.name}
                     url={musica.url}
                     artista={musica.artist}
+                    iconeDeletar={iconeDeletarMusica}
+                    onClickDeletarMusica={() => this.deletarMusica(musica.id, this.state.idPlaylistSelecionada, this.state.nomePlaylistSelecionada)}
                 />
             })
         }
