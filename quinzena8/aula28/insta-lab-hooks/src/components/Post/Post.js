@@ -27,9 +27,15 @@ const Post = (props) => {
   };
 
   const onClickComentario = () => {
+    setComentando( !comentando )
   };
 
   const enviarComentario = (comentario) => {
+    const listaDeComentarios = [...comentarios, comentario]
+
+    setComentarios( listaDeComentarios ) 
+    setComentando( false )
+    setNumeroComentarios( numeroComentarios + 1)
   }
 
   return (
