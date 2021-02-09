@@ -4,12 +4,20 @@ import axios from 'axios'
 import CadastroUsuario from '../CadastroUsuario/CadastroUsuario'
 import ListaUsuarios from '../ListaUsuarios/ListaUsuarios'
 import imagemExcluir from '../../images/remove.png'
+import {BASE_URL, axiosConfig} from '../../contants/requisicoes'
 
 const BotaoIrParaLista = styled.button`
     margin: 16px 0 64px 16px;
+    font-weight: bold;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 1px solid darkgray;
 `
-
-
+const DivisaoPrincipal = styled.div`
+    width: 800px;
+    margin: 0 auto;
+`
 
 class Principal extends React.Component {
     state = {
@@ -25,7 +33,7 @@ class Principal extends React.Component {
     }
 
     irParaLista = () => {
-        this.setState({cadastrar: false})
+        this.setState({cadastrar: !this.state.cadastrar})
     }
 
     onClickBotaoSalvarCadastroUsuario = (nome, email) => {
@@ -43,44 +51,29 @@ class Principal extends React.Component {
         
         const body = novoUsuario
 
-        axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
-        body,
-        {
-            headers: {
-                Authorization:"edgard-finotti-muyembe"
-            }
-        }
-        )
-        .then(() => {
-            alert(`Usuário ${this.state.novoUsuario.name} adicionado com sucesso.`)
-            this.setState({cadastrar: false})
-            this.pegarListaUsuarios()
-        })
-        .catch((error) => alert(error))
+        axios.post(`${BASE_URL}/users`, body, axiosConfig)
+            .then(() => {
+                alert(`Usuário ${this.state.novoUsuario.name} adicionado com sucesso.`)
+                this.setState({cadastrar: false})
+                this.pegarListaUsuarios()
+            })
+            .catch((error) => alert(error))
     }
 
-    pegarListaUsuarios = () => {
-        axios
-        .get(
-            "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
-            {
-                headers: {
-                    Authorization: "edgard-finotti-muyembe"
-                }
-            }
-        )
-        .then((res) => this.setState({ usuarios: res.data}))
-        .catch((err) => alert(err));
+    pegarListaUsuarios = async () => {
+
+        try {
+            const resposta = await axios
+            .get(`${BASE_URL}/users`, axiosConfig)
+            this.setState({ usuarios: resposta.data})
+        } catch (erro) {
+            alert(erro)
+        }
+
     }
 
     excluirUsuarioLista = (usuario) => {
-        axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${usuario.id}`,
-            {
-                headers: {
-                    Authorization: "edgard-finotti-muyembe"
-                }
-            } 
-        )
+        axios.delete(`${BASE_URL}/users/${usuario.id}`, axiosConfig)
         .then(res => {
             alert(`Usuário ${usuario.name} excluido com sucesso !`)
             this.pegarListaUsuarios()
@@ -116,10 +109,10 @@ class Principal extends React.Component {
 
 
         return (
-            <div>
-                <BotaoIrParaLista onClick={this.irParaLista}>Ir para a página da lista</BotaoIrParaLista>
+            <DivisaoPrincipal>
+                <BotaoIrParaLista onClick={this.irParaLista}>{this.state.cadastrar ? "LISTA DE USUÁRIOS" : "NOVO USUÁRIO" }</BotaoIrParaLista>
                 {componenteExibicao}
-            </div>
+            </DivisaoPrincipal>
             
         )
             

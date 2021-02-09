@@ -1,49 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
 import axios from 'axios'
-
-const DivisaoCadastroUsuario = styled.div`
-    border: 1px solid black;
-    width: 350px;
-    height: 200px;
-    margin: 0 auto;
-`
-
-const DivisaoDadosUsuario = styled.div`
-    display: flex;
-    flex-direction: column;
-
-    padding: 16px 32px;
-`
-const LabelNome = styled.label`
-    font-weight: bold;
-`
-
-const InputNome = styled.input`
-    
-`
-
-const LabelEmail = styled.label`
-    margin-top: 16px;
-    font-weight: bold;
-`
-
-const InputEmail = styled.input`
-
-`
-const BotaoSalvar = styled.button`
-    margin-top: 32px;
-    width: 72px;
-    padding: 8px 16px;
-
-    align-self: center;
-    color: white;
-    background-color: blue;
-    font-weight: bold;
-    border: none;
-    border-radius: 4px;
-`
-
+import {BotaoSalvar, DivisaoCadastroUsuario, DivisaoDadosUsuario, InputEmail, InputNome, LabelEmail, LabelNome} from './styled'
 
 
 class CadastroUsuario extends React.Component {

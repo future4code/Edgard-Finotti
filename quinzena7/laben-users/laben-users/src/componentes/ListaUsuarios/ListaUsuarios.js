@@ -1,57 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
-
-
-const DivisaoListarUsuarios = styled.div`
-    width: 400px;
-    margin: 0 auto;
-`
-
-const Titulo = styled.h1`
-    text-align: center;
-`
-
-const DivisaoListagemDeUsuarios = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    height: 50px;
-    padding: 0 8px;
-
-    border-bottom: 1px solid black;
-`
-const NomeUsuario = styled.p`
-    font-size: 20px;
-`
-const ImagemBotaoExcluir = styled.img`
-    height: 50%;
-
-    :hover {
-        cursor: pointer;
-    } 
-`
-const MensagemListaVazia = styled.p`
-    text-align: center;
-    font-size: 32px;
-    
-`
-
-const DivisaoBotaoCadastrarUsuario = styled.div`
-    display: flex;
-    justify-content: flex-end;
-`
-
-const BotaoCadastrarNovoUsuario = styled.button`
-    font-weight: bold;
-    padding: 8px;
-
-    :hover {
-        cursor: pointer;
-    }
-`
-
-
+import { DivisaoListagemDeUsuarios, DivisaoListarUsuarios, ImagemBotaoExcluir, MensagemListaVazia, NomeUsuario, Titulo } from './styled'
 
 class ListaUsuarios extends React.Component {
     
@@ -75,16 +23,11 @@ class ListaUsuarios extends React.Component {
 
         return (
             <DivisaoListarUsuarios>
-                <DivisaoBotaoCadastrarUsuario>
-                    <BotaoCadastrarNovoUsuario onClick={this.props.onCLickBotaoNovoUsuario}>Novo</BotaoCadastrarNovoUsuario>
-                </DivisaoBotaoCadastrarUsuario>
                 <Titulo>Usuários Cadastrados:</Titulo>
                 {componenteUsuarios}
             </DivisaoListarUsuarios>
             
         )
-            
-        
     }
 }
 
