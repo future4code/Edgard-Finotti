@@ -43,16 +43,19 @@ const Post = (props) => {
   const caixaDeComentario = comentando ? (
     <SecaoComentario enviarComentario={enviarComentario} />
   ) : (
-    comentarios.map( comentario => {
+    comentarios.map( (comentario, index) => {
       return (
-        <CommentContainer>
+        <CommentContainer key={index}>
           <p>{comentario}</p>
         </CommentContainer>
       )
     })
   )
 
+  console.log("comentando", comentando)
+  console.log("comentarios", comentarios)
   return (
+    
     <PostContainer>
       <PostHeader>
         <UserPhoto src={props.fotoUsuario} alt={'Imagem do usuario'}/>
