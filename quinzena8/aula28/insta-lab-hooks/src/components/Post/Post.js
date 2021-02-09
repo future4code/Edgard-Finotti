@@ -18,10 +18,10 @@ const Post = (props) => {
 
   const onClickCurtida = () => {
     if(curtido) {
-      setCurtido( !curtido ),
+      setCurtido( !curtido )
       setNumeroCurtidas( numeroCurtidas - 1 )
     } else {
-      setCurtido( !curtido ),
+      setCurtido( !curtido )
       setNumeroCurtidas( numeroCurtidas + 1 )
     }
   };
@@ -63,18 +63,18 @@ const Post = (props) => {
 
       <PostFooter>
         <IconeComContador
-          // icone={iconeCurtida}
+          icone={iconeCurtida}
           onClickIcone={onClickCurtida}
-          // valorContador={numeroCurtidas}
+          valorContador={numeroCurtidas}
         />
 
         <IconeComContador
           icone={iconeComentario}
           onClickIcone={onClickComentario}
-          // valorContador={numeroComentarios}
+          valorContador={numeroComentarios}
         />
       </PostFooter>
-      {/* {caixaDeComentario} */}
+      {caixaDeComentario}
     </PostContainer>
   )
 }
