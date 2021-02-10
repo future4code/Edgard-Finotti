@@ -15,7 +15,7 @@ export class SecaoAdicionarPlaylist extends React.Component {
     }
     
     criarPlaylist = async () => {
-        
+        const autorizacao = this.props.autorizacao
         const body = {
             name: this.state.inputNomePlaylist
         };
@@ -26,7 +26,7 @@ export class SecaoAdicionarPlaylist extends React.Component {
                 body,
                 {
                   headers: {
-                    "Authorization": "edgard-finotti-muyembe"
+                    "Authorization": autorizacao
                   }
                 }
             )

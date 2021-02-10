@@ -26,6 +26,8 @@ export class BotaoAdicionarPlaylist extends React.Component {
         if(this.state.adicionarPlaylist) {
             componenteAdicionarPlaylist = <SecaoAdicionarPlaylist 
                 onClick={this.onClickCriarPlaylist}
+                autorizacao={this.props.autorizacao}
+
             />
         }
 

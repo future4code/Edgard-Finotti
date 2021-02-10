@@ -23,18 +23,24 @@ export class Playlist extends React.Component {
        exibirMusicas: false,
        adicionarMusica: false,
        nomePlaylistSelecionada: "",
-       idPlaylistSelecionada: ""
+       idPlaylistSelecionada: "",
+       autorizacao: ""
     }
 
     componentDidMount() {
+        // this.setState( {autorizacao : this.props.autorizacao} )
         this.pegarPlaylists();
+
     }
 
+    
+
     pegarPlaylists = async () => {
+        const autorizacao = this.props.autorizacao
         try {
             const resposta = await axios.get(`${BASE_URL}/playlists`, {
                 headers: {
-                    "Authorization": "edgard-finotti-muyembe"
+                    "Authorization": autorizacao
                 }    
             }
             );
@@ -48,11 +54,11 @@ export class Playlist extends React.Component {
     
 
     pegarMusicasPlaylist = async (id, nomePlaylist) => {
-        
+        const autorizacao = this.props.autorizacao
         try {
             const resposta = await axios.get(`${BASE_URL}/playlists/${id}/tracks`, {
                 headers: {
-                    "Authorization": "edgard-finotti-muyembe"
+                    "Authorization": autorizacao
                 }    
             }
             );
@@ -69,12 +75,13 @@ export class Playlist extends React.Component {
     };
     
     excluirPlaylist = async (idPlaylist, nomePlaylist) => {
+        const autorizacao = this.props.autorizacao
         const resposta = window.confirm(`Confirmar exclusão da Playlist ${nomePlaylist}`)
         if(resposta){
             try { 
                 const resposta = await axios.delete(`${BASE_URL}/playlists/${idPlaylist}`, {
                     headers: {
-                        "Authorization": "edgard-finotti-muyembe"
+                        "Authorization": autorizacao
                     }    
                 }
                 );
@@ -89,12 +96,13 @@ export class Playlist extends React.Component {
     };
 
     deletarMusica = async (idMusica, idPlaylist, nomePlaylist) => {
+        const autorizacao = this.props.autorizacao
         const resposta = window.confirm("Confirmar exclusão da Musica ?")
         if(resposta){
             try {
                 const resposta = await axios.delete(`${BASE_URL}/playlists/${idPlaylist}/tracks/${idMusica}`, {
                     headers: {
-                        "Authorization": "edgard-finotti-muyembe"
+                        "Authorization": autorizacao
                     }    
                 }
                 );
@@ -113,7 +121,7 @@ export class Playlist extends React.Component {
     }
 
     adicionarNovaMusicaPlaylist = async (nomeMusica, nomeArtista, link) => {
-
+        const autorizacao = this.props.autorizacao
         const body = {
             name: nomeMusica,
             artist: nomeArtista,
@@ -123,7 +131,7 @@ export class Playlist extends React.Component {
         try {  
             const resposta = await axios.post(`${BASE_URL}/playlists/${this.state.idPlaylistSelecionada}/tracks/`, body ,{
                 headers: {
-                    "Authorization": "edgard-finotti-muyembe"
+                    "Authorization": autorizacao
                 }    
             }
             );
@@ -194,6 +202,7 @@ export class Playlist extends React.Component {
                 <BotaoAdicionarPlaylist 
                     imagemBotao={botaoAddPlaylist}
                     onClickBotaoCriarPlaylist={this.pegarPlaylists}
+                    autorizacao={this.state.autorizacao}
                 />
             </DivisaoTitulo>
             
