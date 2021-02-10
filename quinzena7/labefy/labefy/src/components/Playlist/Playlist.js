@@ -1,5 +1,5 @@
 import React from 'react'
-import { DivisaoPlaylists, DivisaoPlaylist, NomePlaylist, Titulo, ConteudoPlaylist, DivisaoTitulo, TituloMusicasPlaylist, DivisaoMusicasPlaylist, DivisaoTituloMusicas, ImagemAdicionarMusicaPlaylist, ImagemLoading, MensagemListaMusicasVazia } from './stylesPlaylist'
+import { DivisaoPlaylists, DivisaoPlaylist, NomePlaylist, Titulo, ConteudoPlaylist, DivisaoTitulo, TituloMusicasPlaylist, DivisaoMusicasPlaylist, DivisaoTituloMusicas, ImagemAdicionarMusicaPlaylist, ImagemLoading, MensagemListaMusicasVazia, ConteudoAdicionarMusica, ConteudoMusicas } from './stylesPlaylist'
 import { BASE_URL } from '../../constants/requisicoes'
 import axios from 'axios'
 import { BotaoAdicionarPlaylist } from '../BotaoAdicionarPlaylist/BotaoAdicionarPlaylist'
@@ -11,6 +11,7 @@ import MusicasPlaylist from '../MusicasPlaylist/MusicasPlaylist'
 import iconeAddMusica from '../../assets/add-icon.svg'
 import iconeDeletarMusica from '../../assets/delete-button.svg'
 import animacaoLoading from '../../assets/animation-loading.gif'
+import { SecaoAdicionarMusica } from '../SecaoAdiconarMusica/SecaoAdicionarMusica'
 
 
 
@@ -20,6 +21,7 @@ export class Playlist extends React.Component {
        playlists: [],
        musicas: [],
        exibirMusicas: false,
+       adicionarMusica: false,
        nomePlaylistSelecionada: "",
        idPlaylistSelecionada: ""
     }
@@ -106,6 +108,10 @@ export class Playlist extends React.Component {
         
     };
 
+    exibirSecaoAdicionarMusica = () => {
+        this.setState({ adicionarMusica : !this.state.adicionarMusica })
+    }
+
     render() {
         
         const componenteListagemPlaylist = this.state.playlists.map(playlist => {
@@ -126,7 +132,7 @@ export class Playlist extends React.Component {
             if(this.state.exibirMusicas) {
                 componenteTituloMusicasPlaylist = <DivisaoTituloMusicas>
                     <TituloMusicasPlaylist>Músicas Playlist "{this.state.nomePlaylistSelecionada}"</TituloMusicasPlaylist>
-                    <ImagemAdicionarMusicaPlaylist src={iconeAddMusica} />
+                    <ImagemAdicionarMusicaPlaylist src={iconeAddMusica} onClick={this.exibirSecaoAdicionarMusica} />
                 </DivisaoTituloMusicas> 
                 componenteMusicasPlaylist = this.state.musicas.map( musica => {
                     return <MusicasPlaylist 
@@ -147,6 +153,12 @@ export class Playlist extends React.Component {
             componenteMusicasPlaylist = <MensagemListaMusicasVazia>Lista de Músicas Vazia.</MensagemListaMusicasVazia>
         }
         
+        let componenteAdicionarMusica
+        if(this.state.adicionarMusica) {
+            componenteAdicionarMusica = <SecaoAdicionarMusica 
+
+            />
+        }
         
         return <DivisaoPlaylists>
             <DivisaoTitulo>
@@ -163,7 +175,14 @@ export class Playlist extends React.Component {
 
             {componenteTituloMusicasPlaylist}
             <DivisaoMusicasPlaylist>
-                {componenteMusicasPlaylist}
+                <ConteudoMusicas>
+                    {componenteMusicasPlaylist}
+                </ConteudoMusicas>
+                
+                <ConteudoAdicionarMusica>
+                    {componenteAdicionarMusica}
+                </ConteudoAdicionarMusica>
+                
             </DivisaoMusicasPlaylist>
             
 
