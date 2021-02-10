@@ -29,9 +29,6 @@ export class SecaoAdicionarMusica extends React.Component {
     }
     
     render() {
-        console.log("inputNomeMusica", this.state.inputNomeMusica)
-        console.log("inputNomeArtista", this.state.inputNomeArtista)
-        console.log("inputLink", this.state.inputLink)
 
         return <DivisaoAdicionarMusica>
             <Titulo>Nova Música:</Titulo>
