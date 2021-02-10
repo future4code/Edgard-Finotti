@@ -78,3 +78,13 @@ export const DivisaoMusicasPlaylist = styled.div`
   display: flex;
   flex-wrap: wrap;
 `
+
+export const ImagemLoading = styled.img`
+  margin: 8px auto;
+
+`
+
+export const MensagemListaMusicasVazia = styled.h3`
+  color: white;
+  margin: 32px auto;
+`
