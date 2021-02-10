@@ -71,7 +71,7 @@ export class Playlist extends React.Component {
     excluirPlaylist = async (idPlaylist, nomePlaylist) => {
         const resposta = window.confirm(`Confirmar exclusão da Playlist ${nomePlaylist}`)
         if(resposta){
-            try {
+            try { 
                 const resposta = await axios.delete(`${BASE_URL}/playlists/${idPlaylist}`, {
                     headers: {
                         "Authorization": "edgard-finotti-muyembe"
@@ -111,6 +111,34 @@ export class Playlist extends React.Component {
     exibirSecaoAdicionarMusica = () => {
         this.setState({ adicionarMusica : !this.state.adicionarMusica })
     }
+
+    adicionarNovaMusicaPlaylist = async (nomeMusica, nomeArtista, link) => {
+
+        const body = {
+            name: nomeMusica,
+            artist: nomeArtista,
+            url: link
+        }
+        
+        try {  
+            const resposta = await axios.post(`${BASE_URL}/playlists/${this.state.idPlaylistSelecionada}/tracks/`, body ,{
+                headers: {
+                    "Authorization": "edgard-finotti-muyembe"
+                }    
+            }
+            );
+            
+            alert("Musica adicionada com sucesso.")
+            this.setState( { adicionarMusica: false})
+            this.pegarMusicasPlaylist(this.state.idPlaylistSelecionada, this.state.nomePlaylistSelecionada)
+            
+            
+        } catch (erro) {
+            alert(erro.message);
+        }
+        
+        
+    };
 
     render() {
         
@@ -156,7 +184,7 @@ export class Playlist extends React.Component {
         let componenteAdicionarMusica
         if(this.state.adicionarMusica) {
             componenteAdicionarMusica = <SecaoAdicionarMusica 
-
+                onClickAdicionarMusica = {this.adicionarNovaMusicaPlaylist}
             />
         }
         

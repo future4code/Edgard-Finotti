@@ -11,10 +11,7 @@ export class SecaoAdicionarMusica extends React.Component {
 
     }
 
-    // onCLickMenu = (opcao) => {
-    //     this.setState({opcaoMenu : opcao})
-    // }
-
+    
     onChangeInputNomeMusica = (event) => {
         this.setState({ inputNomeMusica: event.target.value })
     }
@@ -25,6 +22,10 @@ export class SecaoAdicionarMusica extends React.Component {
 
     onChangeInputLink = (event) => {
         this.setState({ inputLink: event.target.value })
+    }
+
+    onClickAdicionarMusica = () => {
+        this.props.onClickAdicionarMusica(this.state.inputNomeMusica, this.state.inputNomeArtista, this.state.inputLink)
     }
     
     render() {
@@ -44,7 +45,7 @@ export class SecaoAdicionarMusica extends React.Component {
             <LabelLink>Link:</LabelLink>
             <InputLink value={this.state.inputLink} onChange={this.onChangeInputLink} ></InputLink>
 
-            <BotaoAdicionarMusica>Adicionar</BotaoAdicionarMusica>
+            <BotaoAdicionarMusica onClick={this.onClickAdicionarMusica}>Adicionar</BotaoAdicionarMusica>
         </DivisaoAdicionarMusica>
     }
 
