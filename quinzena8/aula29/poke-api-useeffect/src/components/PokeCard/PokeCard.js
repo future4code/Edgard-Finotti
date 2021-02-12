@@ -1,6 +1,26 @@
 import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 
-export default function PokeCard() {
+export default function PokeCard(props) {
+    const [pokemon, setPokemon ] = useState({})
+
+    pegaPokemon = pokeName => {
+        axios
+          .get(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
+          .then(response => {
+            setPokemon(response.data)
+          })
+          .catch(err => {
+            console.log(err);
+          });
+      };
+
+
+    useEffect(() => {
+
+        pegaPokemon(props.pokemon)
+    
+    }, [])
 
     return <div>
         <p>{pokemon.name}</p>
