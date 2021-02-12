@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './App.css';
 import axios from 'axios'
+import PokeCard from './components/PokeCard/PokeCard';
 
 export default function App() {
   const [pokeList, setPokeList ] = useState([])
@@ -20,7 +21,7 @@ export default function App() {
   }
 
   const changePokeName = event => {
-    pokeName(event.target.value)
+    setPokeName(event.target.value)
   };
 
   useEffect(() => {

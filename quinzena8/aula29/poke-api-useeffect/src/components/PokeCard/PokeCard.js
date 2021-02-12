@@ -4,7 +4,7 @@ import axios from 'axios'
 export default function PokeCard(props) {
     const [pokemon, setPokemon ] = useState({})
 
-    pegaPokemon = pokeName => {
+    const pegaPokemon = pokeName => {
         axios
           .get(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
           .then(response => {
@@ -20,7 +20,7 @@ export default function PokeCard(props) {
 
         pegaPokemon(props.pokemon)
     
-    }, [])
+    }, [props.pokemon])
 
     return <div>
         <p>{pokemon.name}</p>
