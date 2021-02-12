@@ -19,6 +19,10 @@ export default function App() {
 
   }
 
+  const changePokeName = event => {
+    pokeName(event.target.value)
+  };
+
   useEffect(() => {
 
     pegarPokemons()
@@ -29,7 +33,7 @@ export default function App() {
   return (
     <div className="App">
       
-      <select onChange={this.changePokeName}>
+      <select onChange={changePokeName}>
         <option value={""}>Nenhum</option>
         {pokeList.map(pokemon => {
           return (
