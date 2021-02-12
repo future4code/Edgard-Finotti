@@ -1,16 +1,37 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css';
+import axios from 'axios'
 
 export default function App() {
-  const [pokeList, setPokeList ] = useStateate([])
-  const [pokeName, setPokeName ] = useStateate("")
+  const [pokeList, setPokeList ] = useState([])
+  const [pokeName, setPokeName ] = useState("")
+
+  const pegarPokemons = () => {
+
+    axios
+      .get("https://pokeapi.co/api/v2/pokemon/?limit=151")
+      .then(response => {
+        setPokeList(response.data.results)
+      })
+      .catch(err => {
+        console.log(err);
+      });
+
+  }
+
+  useEffect(() => {
+
+    pegarPokemons()
+
+  }, [])
+
 
   return (
     <div className="App">
       
       <select onChange={this.changePokeName}>
         <option value={""}>Nenhum</option>
-        {this.state.pokeList.map(pokemon => {
+        {pokeList.map(pokemon => {
           return (
             <option key={pokemon.name} value={pokemon.name}>
               {pokemon.name}
@@ -19,7 +40,7 @@ export default function App() {
         })}
       </select>
 
-      {this.state.pokeName && <PokeCard pokemon={this.state.pokeName} />}
+      {pokeName && <PokeCard pokemon={pokeName} />}
 
     </div>
   );
