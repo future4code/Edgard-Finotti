@@ -3,6 +3,8 @@ import './App.css';
 import { TelaPrincipal } from './screens/TelaPrincipal/TelaPrincipal';
 
 function App() {
+  document.title = "AstroMatch"
+  
   return (
     <div className="App">
       <TelaPrincipal />
