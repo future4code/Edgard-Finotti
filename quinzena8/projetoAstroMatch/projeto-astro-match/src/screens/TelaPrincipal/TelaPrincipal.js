@@ -6,6 +6,7 @@ import { Perfil } from '../../components/Perfil/Perfil'
 import axios from 'axios'
 import { BASE_URL, axiosConfig } from '../../constants/requisicoes'
 import { Match } from '../../components/Match/Match'
+import { BotaoLimpar } from '../../components/BotaoLimpar/BotaoLimpar'
 
 export function TelaPrincipal() {
     const [ mostrarTelaInicial, setMostrarTelaInicial ] = useState(true)
@@ -109,16 +110,20 @@ export function TelaPrincipal() {
     
 
     return (
-        <DivisaoPrincipal>
+        <>
+            <DivisaoPrincipal>
 
-            <Cabecalho 
-                imagemLogo = {logo}
-                mostrarTelaInicial = {mostrarTelaInicial}
-                aoClicarSobreIcone= {mudarEstadoMostrarTelaInicial}
-            />
+                <Cabecalho 
+                    imagemLogo = {logo}
+                    mostrarTelaInicial = {mostrarTelaInicial}
+                    aoClicarSobreIcone= {mudarEstadoMostrarTelaInicial}
+                />
 
-            {componentesExibicaoTelaInicial}
-            
-        </DivisaoPrincipal>
+                {componentesExibicaoTelaInicial}
+                
+            </DivisaoPrincipal>
+        
+            <BotaoLimpar />
+        </>
     )
 }
