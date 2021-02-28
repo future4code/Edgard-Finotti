@@ -26,9 +26,13 @@ export function Cabecalho(props) {
     props.mostrarTelaInicial ? 
         iconeMatchs = <IconeCabecalho 
             mostrarTelaInicial = {props.mostrarTelaInicial}
+            aoClicarSobre= {props.aoClicarSobreIcone}
         />
         : 
-        iconeInicial = <IconeCabecalho />
+        iconeInicial = <IconeCabecalho 
+            aoClicarSobre= {props.aoClicarSobreIcone}
+            mostrarTelaInicial = {props.mostrarTelaInicial}
+        />
 
 
     return (

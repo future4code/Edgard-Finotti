@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const DivisaoCabecalho = styled.div`
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #e0e0e0;
 
     height: 07%;
 

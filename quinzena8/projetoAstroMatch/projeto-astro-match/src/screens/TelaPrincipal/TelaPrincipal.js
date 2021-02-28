@@ -6,6 +6,9 @@ import logo from '../../assets/logoAstroMatch.png'
 export function TelaPrincipal() {
     const [ mostrarTelaInicial, setMostrarTelaInicial ] = useState(true)
     
+    const mudarEstadoMostrarTelaInicial = () => {
+        setMostrarTelaInicial( !mostrarTelaInicial )
+    }
 
     return (
         <DivisaoPrincipal>
@@ -13,6 +16,7 @@ export function TelaPrincipal() {
             <Cabecalho 
                 imagemLogo = {logo}
                 mostrarTelaInicial = {mostrarTelaInicial}
+                aoClicarSobreIcone= {mudarEstadoMostrarTelaInicial}
             />
 
 

@@ -13,12 +13,12 @@ export function IconeCabecalho(props) {
         <DivisaoIconeCabecalho telaInicial={props.mostrarTelaInicial}>
             {props.mostrarTelaInicial ? (
                 <Tooltip title="Matchs" arrow placement="right" >
-                    <StyleGroupAddIcon fontSize="large"  />
+                    <StyleGroupAddIcon onClick={props.aoClicarSobre} fontSize="large"  />
                 </Tooltip>
             )
                 :(
                     <Tooltip title="Perfis" arrow placement="left">
-                        <StyleGroupIcon fontSize="large" />
+                        <StyleGroupIcon onClick={props.aoClicarSobre} fontSize="large" />
                     </Tooltip>
                 )
             }
