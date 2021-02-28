@@ -1,12 +1,13 @@
 import React from 'react'
+import { DivisaoCabecalho } from './stylesCabecalho'
 
-export function Cabecalho() {
+export function Cabecalho(props) {
 
     
 
     return (
-        <div>
+        <DivisaoCabecalho>
             Cabecalho
-        </div>
+        </DivisaoCabecalho>
     )
 }
