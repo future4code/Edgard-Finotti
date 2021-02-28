@@ -26,10 +26,9 @@ export function TelaPrincipal() {
     }, [mostrarTelaInicial])
 
     const buscarPerfil = async () => {
-
+        
         try {
             const response = await axios.get(`${BASE_URL}/${axiosConfig.headers.Authorization}/person`)
-            
             setPerfil(response.data.profile)
         } catch(error) {
             console.log(error.response)
@@ -83,8 +82,21 @@ export function TelaPrincipal() {
 
     }
 
+    const onClickBotaoLimpar =  async() => {
+        try {
+            const response = await axios.put(`${BASE_URL}/${axiosConfig.headers.Authorization}/clear`)
+            
+            buscarMatchs()
+            buscarPerfil()
+            
+        } catch(error) {
+            console.log(error.response)
+        }
+    }
+
     let componentesExibicaoTelaInicial
     if(mostrarTelaInicial) {
+    
         componentesExibicaoTelaInicial = <> 
             <Perfil 
                 perfil={perfil}
@@ -93,10 +105,11 @@ export function TelaPrincipal() {
             />
 
         </>
+
     } else {
         
         componentesExibicaoTelaInicial = listaMatches.map((perfil) => {
-            console.log("PERFIL", perfil)
+            
             return <Match 
                 key={perfil.id}
                 foto={perfil.photo}
@@ -123,7 +136,9 @@ export function TelaPrincipal() {
                 
             </DivisaoPrincipal>
         
-            <BotaoLimpar />
+            <BotaoLimpar 
+                onClick={onClickBotaoLimpar}
+            />
         </>
     )
 }
