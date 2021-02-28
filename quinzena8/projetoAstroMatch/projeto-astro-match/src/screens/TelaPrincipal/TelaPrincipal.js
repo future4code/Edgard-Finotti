@@ -30,10 +30,46 @@ export function TelaPrincipal() {
 
     }
 
+    const naoCurtiuPerfil = (id) => {
+        const body = {
+            id: id,
+            choice: false
+        }
+
+        axios
+            .post(`${BASE_URL}/${axiosConfig.headers.Authorization}/choose-person`, body)
+            .then(() => {
+                buscarPerfil()
+            })
+            .catch((error) => {
+                alert(error.message)
+            })
+        
+    }
+
+    const matchNoPerfil = (id) => {
+        const body = {
+            id: id,
+            choice: true
+        }
+
+        axios
+            .post(`${BASE_URL}/${axiosConfig.headers.Authorization}/choose-person`, body)
+            .then(() => {
+                buscarPerfil()
+            })
+            .catch((error) => {
+                alert(error.message)
+            })
+        
+    }
+
     let componentesExibicaoTelaInicial
     componentesExibicaoTelaInicial = <> 
         <Perfil 
             perfil={perfil}
+            onClickBotaoMatch= {matchNoPerfil}
+            onClickBotaoNaoCurtiu= {buscarPerfil}
         />
 
     </>

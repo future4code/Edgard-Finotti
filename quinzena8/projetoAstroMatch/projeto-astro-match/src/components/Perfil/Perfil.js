@@ -6,7 +6,7 @@ import { Tooltip } from '@material-ui/core';
 
 export function Perfil(props) {
     
-    console.log("perfil", props.perfil)
+    
 
     return (
         <DiviCardPerfil>
@@ -25,10 +25,10 @@ export function Perfil(props) {
 
             <DivisaoAcoes>
                 <Tooltip title="Não Curti" arrow placement="bottom" >
-                    <StyleHighlightOffIcon style={{ fontSize: 70 }} />
+                    <StyleHighlightOffIcon onClick={() => props.onClickBotaoNaoCurtiu(props.perfil.id)} style={{ fontSize: 70 }} />
                 </Tooltip>
                 <Tooltip title="Match" arrow placement="bottom" >
-                    <StyleFavoriteBorderIcon style={{ fontSize: 70 }} />
+                    <StyleFavoriteBorderIcon onClick={() => props.onClickBotaoMatch(props.perfil.id)} style={{ fontSize: 70 }} />
                 </Tooltip>
                 
             </DivisaoAcoes>
