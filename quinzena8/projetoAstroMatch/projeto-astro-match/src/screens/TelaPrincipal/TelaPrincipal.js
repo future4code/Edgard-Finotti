@@ -5,10 +5,12 @@ import logo from '../../assets/logoAstroMatch.png'
 import { Perfil } from '../../components/Perfil/Perfil'
 import axios from 'axios'
 import { BASE_URL, axiosConfig } from '../../constants/requisicoes'
+import { Match } from '../../components/Match/Match'
 
 export function TelaPrincipal() {
     const [ mostrarTelaInicial, setMostrarTelaInicial ] = useState(true)
     const [ perfil, setPerfil ] = useState({})
+    const [ listaMatches, setListaMatches ] = useState([])
     
     const mudarEstadoMostrarTelaInicial = () => {
         setMostrarTelaInicial( !mostrarTelaInicial )
@@ -17,6 +19,10 @@ export function TelaPrincipal() {
     useEffect(() => {
         buscarPerfil()
     }, [])
+
+    useEffect(() => {
+        mostrarTelaInicial ? buscarPerfil() : buscarMatchs()
+    }, [mostrarTelaInicial])
 
     const buscarPerfil = async () => {
 
@@ -64,15 +70,43 @@ export function TelaPrincipal() {
         
     }
 
-    let componentesExibicaoTelaInicial
-    componentesExibicaoTelaInicial = <> 
-        <Perfil 
-            perfil={perfil}
-            onClickBotaoMatch= {matchNoPerfil}
-            onClickBotaoNaoCurtiu= {buscarPerfil}
-        />
+    const buscarMatchs = async () => {
 
-    </>
+        try {
+            const response = await axios.get(`${BASE_URL}/${axiosConfig.headers.Authorization}/matches`)
+            setListaMatches(response.data.matches)
+            
+        } catch(error) {
+            console.log(error.response)
+        }
+
+    }
+
+    let componentesExibicaoTelaInicial
+    if(mostrarTelaInicial) {
+        componentesExibicaoTelaInicial = <> 
+            <Perfil 
+                perfil={perfil}
+                onClickBotaoMatch= {matchNoPerfil}
+                onClickBotaoNaoCurtiu= {naoCurtiuPerfil}
+            />
+
+        </>
+    } else {
+        
+        componentesExibicaoTelaInicial = listaMatches.map((perfil) => {
+            console.log("PERFIL", perfil)
+            return <Match 
+                key={perfil.id}
+                foto={perfil.photo}
+                nome={perfil.name}
+            />
+        })
+    }
+    
+    
+
+    
 
     return (
         <DivisaoPrincipal>

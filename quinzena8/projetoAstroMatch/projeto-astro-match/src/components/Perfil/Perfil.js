@@ -24,7 +24,7 @@ export function Perfil(props) {
             </DivisaoCardPerfilImagem>
 
             <DivisaoAcoes>
-                <Tooltip title="Não Curti" arrow placement="bottom" >
+                <Tooltip title="Próximo Perfil" arrow placement="bottom" >
                     <StyleHighlightOffIcon onClick={() => props.onClickBotaoNaoCurtiu(props.perfil.id)} style={{ fontSize: 70 }} />
                 </Tooltip>
                 <Tooltip title="Match" arrow placement="bottom" >
