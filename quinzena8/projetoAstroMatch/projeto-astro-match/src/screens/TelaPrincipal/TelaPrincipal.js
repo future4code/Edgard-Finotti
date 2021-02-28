@@ -19,7 +19,7 @@ export function TelaPrincipal() {
     }, [])
 
     const buscarPerfil = async () => {
-        
+
         try {
             const response = await axios.get(`${BASE_URL}/${axiosConfig.headers.Authorization}/person`)
             
@@ -30,6 +30,14 @@ export function TelaPrincipal() {
 
     }
 
+    let componentesExibicaoTelaInicial
+    componentesExibicaoTelaInicial = <> 
+        <Perfil 
+            perfil={perfil}
+        />
+
+    </>
+
     return (
         <DivisaoPrincipal>
 
@@ -39,7 +47,7 @@ export function TelaPrincipal() {
                 aoClicarSobreIcone= {mudarEstadoMostrarTelaInicial}
             />
 
-            <Perfil />
+            {componentesExibicaoTelaInicial}
             
         </DivisaoPrincipal>
     )
