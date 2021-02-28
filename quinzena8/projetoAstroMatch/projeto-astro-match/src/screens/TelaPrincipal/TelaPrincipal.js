@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from 'react'
 import { Cabecalho } from '../../components/Cabecalho/Cabecalho'
-import { DivisaoPrincipal } from './stylesTelaPrincipal'
+import { DivisaoPrincipal, ImagemCarregandoCoracao } from './stylesTelaPrincipal'
 import logo from '../../assets/logoAstroMatch.png'
 import { Perfil } from '../../components/Perfil/Perfil'
 import axios from 'axios'
 import { BASE_URL, axiosConfig } from '../../constants/requisicoes'
 import { Match } from '../../components/Match/Match'
 import { BotaoLimpar } from '../../components/BotaoLimpar/BotaoLimpar'
+import gifLove from '../../assets/gif-love.gif'
+
 
 export function TelaPrincipal() {
     const [ mostrarTelaInicial, setMostrarTelaInicial ] = useState(true)
@@ -25,7 +27,10 @@ export function TelaPrincipal() {
         mostrarTelaInicial ? buscarPerfil() : buscarMatchs()
     }, [mostrarTelaInicial])
 
+    
+
     const buscarPerfil = async () => {
+       
         
         try {
             const response = await axios.get(`${BASE_URL}/${axiosConfig.headers.Authorization}/person`)
@@ -96,16 +101,21 @@ export function TelaPrincipal() {
 
     let componentesExibicaoTelaInicial
     if(mostrarTelaInicial) {
-    
-        componentesExibicaoTelaInicial = <> 
-            <Perfil 
-                perfil={perfil}
-                onClickBotaoMatch= {matchNoPerfil}
-                onClickBotaoNaoCurtiu= {naoCurtiuPerfil}
-            />
+        
+        perfil ? (
+            componentesExibicaoTelaInicial = <> 
+                <Perfil 
+                    perfil={perfil}
+                    onClickBotaoMatch= {matchNoPerfil}
+                    onClickBotaoNaoCurtiu= {naoCurtiuPerfil}
+                />
 
-        </>
-
+            </>
+        ) : (
+            componentesExibicaoTelaInicial = <ImagemCarregandoCoracao src={gifLove} alt="animacao_coracao" />
+        )
+            
+        
     } else {
         
         componentesExibicaoTelaInicial = listaMatches.map((perfil) => {

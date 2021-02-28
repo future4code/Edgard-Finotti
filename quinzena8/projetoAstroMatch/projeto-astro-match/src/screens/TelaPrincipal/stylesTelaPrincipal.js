@@ -7,3 +7,8 @@ export const DivisaoPrincipal = styled.div`
     border: 1px solid black;
     border-radius: 8px;
 `
+
+export const ImagemCarregandoCoracao = styled.img`
+    display: block;
+    margin: auto;
+`
