@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react'
+import { DivisaoPrincipal } from './stylesTelaPrincipal'
 
 export function TelaPrincipal() {
 
     
 
     return (
-        <div>
+        <DivisaoPrincipal>
             TELA PRINCIPAL
-        </div>
+        </DivisaoPrincipal>
     )
 }
