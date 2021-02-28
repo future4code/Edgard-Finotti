@@ -1,5 +1,5 @@
 import React from 'react'
-import { DivisaoCabecalho } from './stylesCabecalho'
+import { DivisaoCabecalho, ImagemLogo } from './stylesCabecalho'
 
 export function Cabecalho(props) {
 
@@ -7,7 +7,8 @@ export function Cabecalho(props) {
 
     return (
         <DivisaoCabecalho>
-            Cabecalho
+            <ImagemLogo src={props.imagemLogo} />
+
         </DivisaoCabecalho>
     )
 }
