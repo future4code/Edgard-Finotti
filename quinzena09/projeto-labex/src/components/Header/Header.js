@@ -1,6 +1,6 @@
 import React from 'react'
 import {DivHeader, DivIconProfileUser, DivLogo, DiviIconMenu, IconLogo, TextLogo} from './stylesHeader'
-import ListIcon from '@material-ui/icons/List'
+import { Menu } from '@material-ui/icons'
 import rocketIcon from '../../assets/rocket.png'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle'
 import { Tooltip } from '@material-ui/core'
@@ -11,7 +11,7 @@ export default function Header ({onClickMenu}) {
         <DivHeader>
       <DiviIconMenu>
         <Tooltip title="Menu" onClick={onClickMenu} >  
-          <ListIcon  
+          <Menu  
             style={{ fontSize: 30 }}
           />
         </Tooltip>

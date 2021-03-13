@@ -2,7 +2,7 @@ import styled  from 'styled-components'
 
 export const DivHeader = styled.div`
     width: 100%;
-    height: 90px;
+    height: 10%;
     border: 1px solid gray;
 
     /* display: flex;

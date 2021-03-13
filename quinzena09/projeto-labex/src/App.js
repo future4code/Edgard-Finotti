@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import Header from './components/Header/Header'
+import Menu from './components/Menu/Menu'
+import {DivApp} from './styledApp'
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 function App() {
   const [activeMenu, setActiveMenu] = useState(false)
@@ -10,9 +13,16 @@ function App() {
 
   console.log("activeMenu", activeMenu)
   return (
-    <Header 
-      onClickMenu={openMenu}
-    />
+    <React.Fragment>
+      <CssBaseline />
+      <DivApp>
+        <Header 
+          onClickMenu={openMenu}
+        />
+        {activeMenu && <Menu />}
+      </DivApp>
+    </React.Fragment>
+    
   );
 }
 
