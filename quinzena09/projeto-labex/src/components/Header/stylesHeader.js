@@ -5,11 +5,10 @@ export const DivHeader = styled.div`
     height: 10%;
     border: 1px solid gray;
 
-    /* display: flex;
+    display: flex;
     justify-content: space-around;
-    align-items: center; */
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+   
 `
 
 export const DiviIconMenu = styled.div`
@@ -37,23 +36,24 @@ export const DivLogo = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 90px;
+    height: 100%;
+    cursor: pointer;
 `
 
 export const DivIconProfileUser = styled.div`
-    height: 90px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 `
 export const ImageIconLogin = styled.img`
-    height: 50%;
+    height: 60%;
     cursor: pointer;
 `
 
 
 export const IconLogo = styled.img`
-    height: 50%;
+    height: 80%;
     margin: 0 8px;
 `
 

@@ -1,10 +1,14 @@
-// export const goToHomePage = (history) => {
-//     history.push("/");
-// };
+export const goToHomePage = (history) => {
+    history.push("/");
+};
   
 export const goToLoginUser = (history) => {
     history.push("/login");
 };
+
+export const goToRegisterToTravel = (history) => {
+    history.push("/registerToTravel");
+}
   
 // export const goToAboutPage = (history, lingua) => {
 // if (lingua === "pt") {
