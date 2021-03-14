@@ -1,4 +1,6 @@
+import axios from 'axios';
 import React, {useState} from 'react'
+import { BASE_URL } from '../../constants/requisitions';
 import {DivLogin, DivContentLogin, ButtonLoging, InputEmail, InputPassword, FormLogin, TextLogin} from './stylesLogin'
 
 export const useForm = (initialValues) => {
@@ -23,7 +25,19 @@ export default function Login () {
     const onSubmitForm = (event) => {
         event.preventDefault();
         console.log(form);
+        
+        postLogin()
     };
+
+    const postLogin = async () => {
+       try{
+            const response = await axios.post(`${BASE_URL}/login`, form )
+            window.localStorage.setItem("tokenLabex", response.data.token )
+        }catch(error) {
+            alert(error.message)
+        }
+     
+    }
 
     return (
         <DivLogin>
