@@ -1,9 +1,12 @@
 import axios from 'axios';
 import React, {useState} from 'react'
+import { useHistory } from 'react-router';
+import { goToRestrictedArea } from '../../components/routes/Coordinator';
 import { BASE_URL } from '../../constants/requisitions';
 import {DivLogin, DivContentLogin, ButtonLoging, InputEmail, InputPassword, FormLogin, TextLogin} from './stylesLogin'
 
 export const useForm = (initialValues) => {
+    
     const [form, setForm] = useState(initialValues);
   
     const onChange = (value, name) => {
@@ -13,7 +16,8 @@ export const useForm = (initialValues) => {
     return { form, onChange };
   };
 
-export default function Login () {
+export default function Login ({isLogged}) {
+    const history = useHistory();
     const { form, onChange } = useForm({ email: "", password: "" });
 
     const handleInputChange = (event) => {
@@ -33,6 +37,8 @@ export default function Login () {
        try{
             const response = await axios.post(`${BASE_URL}/login`, form )
             window.localStorage.setItem("tokenLabex", response.data.token )
+            isLogged()
+            goToRestrictedArea(history)
         }catch(error) {
             alert(error.message)
         }

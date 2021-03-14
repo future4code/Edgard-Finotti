@@ -9,6 +9,10 @@ export const goToLoginUser = (history) => {
 export const goToRegisterToTravel = (history) => {
     history.push("/registerToTravel");
 }
+
+export const goToRestrictedArea = (history) => {
+    history.push("/restrictArea");
+}
   
 // export const goToAboutPage = (history, lingua) => {
 // if (lingua === "pt") {
