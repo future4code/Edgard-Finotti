@@ -5,11 +5,14 @@ import rocketIcon from '../../assets/rocket.png'
 import iconLoginUser from '../../assets/iconlogin.png'
 import { Tooltip } from '@material-ui/core'
 import iconRegister from '../../assets/register.png'
+import { goToLoginUser } from '../routes/Coordinator'
+import { useHistory } from 'react-router'
 
-export default function Header ({clickIconLogin}) {
+export default function Header () {
+  const history = useHistory();
 
-    return (
-        <DivHeader>
+  return (
+    <DivHeader>
       <DiviIconMenu>
         <DivMenu>
             <DivRegisterTravel>
@@ -19,15 +22,15 @@ export default function Header ({clickIconLogin}) {
             </DivRegisterTravel>
         </DivMenu>
       </DiviIconMenu>
-      <DivLogo>
-        <IconLogo src={rocketIcon} />
-        <TextLogo>LabeX</TextLogo>
-      </DivLogo>
-      <DivIconProfileUser>
-        <Tooltip title="Login" onClick={clickIconLogin}>
-            <ImageIconLogin src={iconLoginUser} />
-        </Tooltip>
-      </DivIconProfileUser>
-    </DivHeader>
-    )
+    <DivLogo>
+      <IconLogo src={rocketIcon} />
+      <TextLogo>LabeX</TextLogo>
+    </DivLogo>
+    <DivIconProfileUser>
+      <Tooltip title="Login" onClick={() => goToLoginUser(history)}>
+          <ImageIconLogin src={iconLoginUser} />
+      </Tooltip>
+    </DivIconProfileUser>
+  </DivHeader>
+  )
 }
