@@ -44,4 +44,5 @@ export const ButtonLoging = styled.button`
     padding: 12px 16px;
     border-radius: 8px;
     border: none;
+    cursor: pointer;
 `
