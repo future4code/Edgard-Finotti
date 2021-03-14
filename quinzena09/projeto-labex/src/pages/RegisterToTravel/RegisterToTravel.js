@@ -14,6 +14,8 @@ import { ButtonSend,
 from './stylesRegisterToTravel'
 import axios from 'axios';
 import { BASE_URL } from '../../constants/requisitions';
+import { goToHomePage } from '../../components/routes/Coordinator';
+import { useHistory } from 'react-router';
 
 export const useForm = (initialValues) => {
     const [form, setForm] = useState(initialValues);
@@ -26,6 +28,7 @@ export const useForm = (initialValues) => {
 };
 
 export default function RegisterToTravel () {
+    const history = useHistory();
     const { form, onChange } = useForm({ name: "", age: "", applicationText: "", profession: "", country: ""  });
     const [ trips, setTrips ] = useState([])
     const [ idTripSelected, setIdTripSelected ] =  useState("")
@@ -66,7 +69,8 @@ export default function RegisterToTravel () {
         
         try{
             const response = await axios.post(`${BASE_URL}/trips/${idTrip}/apply`, form )
-            console.log(response.data.message)
+            alert(response.data.message)
+            goToHomePage(history)
         }catch(error) {
             alert(error.message)
         }
