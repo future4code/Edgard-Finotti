@@ -1,25 +1,30 @@
 import React, { useState } from 'react'
 import Header from './components/Header/Header'
-import Menu from './components/Menu/Menu'
-import {DivApp} from './styledApp'
+import {DivApp, DivInitial, ImageAtronaut, DivTextInitial, DivImageInitial} from './styledApp'
 import CssBaseline from '@material-ui/core/CssBaseline';
+import imageAstronauta from './assets/astronauta.jpg'
 
 function App() {
-  const [activeMenu, setActiveMenu] = useState(false)
+  // const [activeMenu, setActiveMenu] = useState(false)
 
-  const openMenu = () => {
-    setActiveMenu(!activeMenu)
-  }
+  // const openMenu = () => {
+  //   setActiveMenu(!activeMenu)
+  // }
 
-  console.log("activeMenu", activeMenu)
+  
   return (
     <React.Fragment>
       <CssBaseline />
       <DivApp>
-        <Header 
-          onClickMenu={openMenu}
-        />
-        {activeMenu && <Menu />}
+        <Header />
+        <DivInitial >
+          <DivTextInitial>
+            Venha para sua viagem ao Espaço
+          </DivTextInitial>
+          <DivImageInitial>
+            <ImageAtronaut src={imageAstronauta} />
+          </DivImageInitial>
+        </DivInitial>
       </DivApp>
     </React.Fragment>
     

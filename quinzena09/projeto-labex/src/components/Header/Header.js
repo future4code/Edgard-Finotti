@@ -1,20 +1,23 @@
 import React from 'react'
-import {DivHeader, DivIconProfileUser, DivLogo, DiviIconMenu, IconLogo, TextLogo} from './stylesHeader'
+import {DivHeader, DivIconProfileUser, DivLogo, DiviIconMenu, IconLogo, TextLogo, DivMenu, DivRegisterTravel, ImagemIconRegister, ImageIconLogin} from './stylesHeader'
 import { Menu } from '@material-ui/icons'
 import rocketIcon from '../../assets/rocket.png'
-import AccountCircleIcon from '@material-ui/icons/AccountCircle'
+import iconLoginUser from '../../assets/iconlogin.png'
 import { Tooltip } from '@material-ui/core'
+import iconRegister from '../../assets/register.png'
 
 export default function Header ({onClickMenu}) {
 
     return (
         <DivHeader>
       <DiviIconMenu>
-        <Tooltip title="Menu" onClick={onClickMenu} >  
-          <Menu  
-            style={{ fontSize: 30 }}
-          />
-        </Tooltip>
+        <DivMenu>
+            <DivRegisterTravel>
+                <Tooltip title="Inscrever-se para Viagem">
+                    <ImagemIconRegister src={iconRegister} />
+                </Tooltip>
+            </DivRegisterTravel>
+        </DivMenu>
       </DiviIconMenu>
       <DivLogo>
         <IconLogo src={rocketIcon} />
@@ -22,10 +25,7 @@ export default function Header ({onClickMenu}) {
       </DivLogo>
       <DivIconProfileUser>
         <Tooltip title="Login">
-          <AccountCircleIcon 
-            color="disabled"
-            style={{ fontSize: 40 }}
-          />
+            <ImageIconLogin src={iconLoginUser} />
         </Tooltip>
       </DivIconProfileUser>
     </DivHeader>

@@ -19,6 +19,20 @@ export const DiviIconMenu = styled.div`
     margin-left: 40px;
 `
 
+export const DivMenu = styled.div`
+    
+`
+
+export const DivRegisterTravel = styled.div`
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+`
+
+export const ImagemIconRegister = styled.img`
+    height: 80%;
+`
+
 export const DivLogo = styled.div`
     display: flex;
     align-items: center;
@@ -32,6 +46,11 @@ export const DivIconProfileUser = styled.div`
     align-items: center;
     justify-content: center;
 `
+export const ImageIconLogin = styled.img`
+    height: 50%;
+    cursor: pointer;
+`
+
 
 export const IconLogo = styled.img`
     height: 50%;
