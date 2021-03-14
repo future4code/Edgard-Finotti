@@ -6,7 +6,7 @@ import iconLoginUser from '../../assets/iconlogin.png'
 import { Tooltip } from '@material-ui/core'
 import iconRegister from '../../assets/register.png'
 
-export default function Header ({clickIconLogin}) {
+export default function Header ({onClickMenu}) {
 
     return (
         <DivHeader>
@@ -24,7 +24,7 @@ export default function Header ({clickIconLogin}) {
         <TextLogo>LabeX</TextLogo>
       </DivLogo>
       <DivIconProfileUser>
-        <Tooltip title="Login" onClick={clickIconLogin}>
+        <Tooltip title="Login">
             <ImageIconLogin src={iconLoginUser} />
         </Tooltip>
       </DivIconProfileUser>

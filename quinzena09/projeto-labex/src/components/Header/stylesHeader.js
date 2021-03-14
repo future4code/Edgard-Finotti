@@ -16,7 +16,7 @@ export const DiviIconMenu = styled.div`
     height: 90px;
     display: flex;
     align-items: center;
-    margin-left: 40px;
+    justify-content: center;
 `
 
 export const DivMenu = styled.div`
