@@ -11,7 +11,11 @@ export const goToRegisterToTravel = (history) => {
 }
 
 export const goToRestrictedArea = (history) => {
-    history.push("/restrictArea");
+    history.push("/homeRestrict/");
+}
+
+export const goToTravels = (history) => {
+    history.push("/travels");
 }
   
 // export const goToAboutPage = (history, lingua) => {

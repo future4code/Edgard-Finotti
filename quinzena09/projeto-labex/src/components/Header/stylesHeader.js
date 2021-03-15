@@ -28,6 +28,12 @@ export const DivRegisterTravel = styled.div`
     cursor: pointer;
 `
 
+export const ImagemIconHomeRestricted = styled.img`
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+`
+
 export const ImagemIconRegister = styled.img`
     height: 80%;
 `

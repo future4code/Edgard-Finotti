@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {DivHeader, DivIconProfileUser, DivLogo, DiviIconMenu, IconLogo, TextLogo, DivMenu, DivRegisterTravel, ImagemIconRegister, ImageIconLogin} from './stylesHeader'
+import {DivHeader, DivIconProfileUser, DivLogo, DiviIconMenu, IconLogo, TextLogo, DivMenu, DivRegisterTravel, ImagemIconRegister, ImageIconLogin, ImagemIconHomeRestricted} from './stylesHeader'
 import { Menu } from '@material-ui/icons'
 import rocketIcon from '../../assets/rocket.png'
 import iconLoginUser from '../../assets/iconlogin.png'
@@ -7,7 +7,8 @@ import { Tooltip } from '@material-ui/core'
 import iconLogin from '../../assets/iconlogin.png'
 import iconRegister from '../../assets/register.png'
 import iconLogout from '../../assets/iconLogout.png'
-import { goToLoginUser, goToHomePage, goToRegisterToTravel } from '../routes/Coordinator'
+import iconHomeRestricted from '../../assets/home.png'
+import { goToLoginUser, goToHomePage, goToRegisterToTravel, goToRestrictedArea, goToTravels } from '../routes/Coordinator'
 import { useHistory } from 'react-router'
 
 export default function Header ({token}) {
@@ -18,7 +19,7 @@ export default function Header ({token}) {
     (window.localStorage.getItem("tokenLabex") !== undefined && window.localStorage.getItem("tokenLabex") !== "")  
       ? setTokenLabex(window.localStorage.getItem("tokenLabex")) 
       : setTokenLabex("")
-  },[token ])
+  },[token])
 
   const logoutUser = () => {
     window.localStorage.setItem("tokenLabex", "" )
@@ -31,9 +32,21 @@ export default function Header ({token}) {
       <DiviIconMenu>
         <DivMenu>
             <DivRegisterTravel>
+              {(tokenLabex === "" || tokenLabex === undefined) ?
                 <Tooltip title="Inscrever-se para Viagem">
-                    <ImagemIconRegister src={iconRegister} onClick={() => goToRegisterToTravel(history) }/>
+                  <ImagemIconRegister 
+                    src={iconRegister} 
+                    onClick={() => goToRegisterToTravel(history) }
+                  />
                 </Tooltip>
+                :
+                <Tooltip title="Home Restrita">
+                  <ImagemIconHomeRestricted 
+                    src={iconHomeRestricted} 
+                    onClick={() => goToRestrictedArea(history) }
+                  />
+                </Tooltip>
+              }
             </DivRegisterTravel>
         </DivMenu>
       </DiviIconMenu>
