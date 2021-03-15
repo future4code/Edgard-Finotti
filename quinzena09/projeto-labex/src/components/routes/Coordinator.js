@@ -17,6 +17,10 @@ export const goToRestrictedArea = (history) => {
 export const goToTravels = (history) => {
     history.push("/travels");
 }
+
+export const goToDetailsTravels = (history) => {
+    history.push("/detailsTravel");
+}
   
 // export const goToAboutPage = (history, lingua) => {
 // if (lingua === "pt") {

@@ -7,6 +7,7 @@ import RegisterToTravel from "../../pages/RegisterToTravel/RegisterToTravel";
 import Travels from "../../pages/Travels/Travels";
 import Header from "../Header/Header";
 import RestrictedScreen from "../../pages/RestrictedScreen/RestrictedScreen";
+import DetailsTravel from "../../pages/DetailsTravel/DetailsTravel";
 
 
 
@@ -46,6 +47,9 @@ export default function Router() {
         </Route>
         <Route exact path={"/travels"}>
           <Travels />
+        </Route>
+        <Route exact path={"/detailsTravel"}>
+          <DetailsTravel />
         </Route>
         {/* <Route exact path={"/contatos"}>
           <ContactsPage />

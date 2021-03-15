@@ -14,7 +14,7 @@ import imagem01 from '../../assets/imagem01.jpg'
 import imagem02 from '../../assets/imagem02.jpg'
 import imagem03 from '../../assets/imagem03.jpg'
 import imagem04 from '../../assets/imagem04.jpg'
-import { goToTravels } from '../../components/routes/Coordinator'
+import { goToDetailsTravels, goToTravels } from '../../components/routes/Coordinator'
 import { useHistory } from 'react-router'
 
 export default function RestrictedScreen () {
@@ -26,7 +26,7 @@ export default function RestrictedScreen () {
                 <h4>Viagens</h4>
                 <ImageTravels src={imagem01} />
             </DivTravels>
-            <DivDetailsTravel>
+            <DivDetailsTravel onClick={() => goToDetailsTravels(history)}>
                 <h4>Detalhes e Candidatos Viagem</h4>
                 <ImageDetails src={imagem02} />
             </DivDetailsTravel>
