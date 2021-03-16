@@ -1,5 +1,4 @@
 import React from 'react'
-import axios from 'axios'
 import { DivisaoAdicionarPlaylist, ImagemAdicionarPlaylist } from './stylesBotaoAdicionarPlaylist'
 import { SecaoAdicionarPlaylist } from '../SecaoAdicionarPlaylist/SecaoAdicionarPlaylist'
 
@@ -27,6 +26,8 @@ export class BotaoAdicionarPlaylist extends React.Component {
         if(this.state.adicionarPlaylist) {
             componenteAdicionarPlaylist = <SecaoAdicionarPlaylist 
                 onClick={this.onClickCriarPlaylist}
+                autorizacao={this.props.autorizacao}
+
             />
         }
 

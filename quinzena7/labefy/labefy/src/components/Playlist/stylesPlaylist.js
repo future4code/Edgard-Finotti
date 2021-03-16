@@ -75,6 +75,26 @@ export const ImagemAdicionarMusicaPlaylist = styled.img`
 
 
 export const DivisaoMusicasPlaylist = styled.div`
+  display: grid;
+  grid-template-columns: 80% 20%; 
+`
+
+export const ImagemLoading = styled.img`
+  margin: 8px auto;
+
+`
+
+export const MensagemListaMusicasVazia = styled.h3`
+  color: white;
+  margin: 32px auto;
+`
+
+export const ConteudoMusicas = styled.div`
   display: flex;
   flex-wrap: wrap;
+
+  justify-content: center;
+`
+export const ConteudoAdicionarMusica = styled.div`
+  
 `

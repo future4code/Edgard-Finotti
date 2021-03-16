@@ -3,15 +3,29 @@ import LogoENome from '../../components/LogoENome/LogoENome'
 import Menu from '../../components/Menu/Menu'
 import { Playlist } from '../../components/Playlist/Playlist'
 import { DivisaoPrincipal } from './stylesPrincipal'
+import {Autorizacao} from '../../components/Autorizacao/Autorizacao'
 
 export class Principal extends React.Component {
 
     state = {
-        opcaoMenu: "inicial"
+        opcaoMenu: "inicial",
+        autorizacao: ""
     }
 
     onCLickMenu = (opcao) => {
-        this.setState({opcaoMenu : opcao})
+        if(this.state.autorizacao === "") {
+            this.setState( {opcaoMenu: "inicial"} )
+        } else {
+            this.setState({opcaoMenu : opcao})
+        }
+       
+    }
+
+    onClickEntrarAutorizacao = (valorAutorizacao) => {
+        this.setState( { autorizacao: valorAutorizacao, 
+            opcaoMenu: "Playlists"
+        } )
+
     }
 
 
@@ -21,7 +35,13 @@ export class Principal extends React.Component {
         if(this.state.opcaoMenu === "Playlists") {
 
             componenteDadosExibidos =  <Playlist 
+                autorizacao= {this.state.autorizacao}
+            />
+        }
 
+        if(this.state.opcaoMenu === "inicial") {
+            componenteDadosExibidos = <Autorizacao 
+                onClickEntrar={this.onClickEntrarAutorizacao}
             />
         }
 
